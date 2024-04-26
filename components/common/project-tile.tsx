@@ -233,7 +233,6 @@ const ProjectTile = ({
             target: "_blank",
             rel: "noreferrer",
           }}
-          href="#"
         ></Button>
         </div>
       </div>
