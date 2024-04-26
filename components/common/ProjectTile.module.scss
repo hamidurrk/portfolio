@@ -1,0 +1,84 @@
+.ProjectTile {
+  height: 22rem;
+  width: 38rem;
+  background: black;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+
+  @media (min-width: 768px) {
+    height: 26rem;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.ProjectImg {
+  @apply absolute top-0 rounded-xl shadow-xl;
+
+  width: 16.8rem !important;
+  transform: rotate(-22.5deg);
+  height: unset !important;
+  min-width: unset !important;
+  max-height: unset !important;
+  object-fit: contain !important;
+  left: unset !important;
+  right: 2rem !important;
+  bottom: unset !important;
+}
+
+.techIcons {
+  transform: rotate(-22.5deg) translateZ(2rem);
+}
+
+.modalContent {
+  position: absolute;
+  inset: 40px;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(0, 0, 0);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.75);
+  margin-top: 10vh;
+}
+
+.modalContent h1 {
+  color:rgb(204, 204, 204);
+  text-align: center;
+  font-size: x-large;
+}
+
+.modalContent h3 {
+  color: #666666; 
+  text-align: center;
+  font-size: medium;
+}
+
+.modalContent p {
+  color: #666666; 
+  text-align: left;
+  font-size: medium;
+}
+
+.modalContent button {
+  background-color: transparent; 
+  color: rgb(204, 204, 204);; 
+  border: 1px solid rgb(204, 204, 204);
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  display: block;
+  margin: 20px auto;
+}
+
+.modalContent button:hover {
+  background-color: #666666; 
+}
