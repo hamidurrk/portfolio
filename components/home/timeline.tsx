@@ -385,7 +385,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
           screenContainer.current.querySelector(`.slide-${index + 1}`),
           {
             opacity: 0,
-            delay: 0.3,
+            delay: 0.8,
           }
         );
       }
