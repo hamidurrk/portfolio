@@ -4,6 +4,7 @@ import ProjectTile from "../common/project-tile";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IDesktop, NO_MOTION_PREFERENCE_QUERY } from "pages";
+import Button, { ButtonTypes } from "../common/button";
 
 const PROJECT_STYLES = {
   SECTION:
@@ -15,7 +16,16 @@ const PROJECT_STYLES = {
 const ProjectsSection = ({ isDesktop }: IDesktop) => {
   const targetSectionRef: MutableRefObject<HTMLDivElement> = useRef(null);
   const sectionTitleElementRef: MutableRefObject<HTMLDivElement> = useRef(null);
+  const handleClick = () => {
+    // Find the "Skills" section by its ID
+    const skillsSection = document.getElementById('skills');
 
+    // Check if the section exists
+    if (skillsSection) {
+      // Scroll to the "Skills" section
+      skillsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   const [willChange, setwillChange] = useState(false);
   const [horizontalAnimationEnabled, sethorizontalAnimationEnabled] =
     useState(false);
@@ -124,10 +134,24 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
     >
       <p className="section-title-sm seq">PROJECTS</p>
       <h1 className="section-heading seq mt-2">My Works</h1>
-      <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
-        I have contributed in over 20+ projects ranging from Frontend
-        development, UI/UX design, Open Source, and Motion Graphics
-      </h2>
+      <div className="flex justify-between">
+        <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
+          I have contributed in over 20+ projects ranging from Frontend
+          development, UI/UX design, Open Source, and Motion Graphics
+        </h2>
+        <div className="link flex seq justify-center pt-4">
+        <Button
+          onClick={handleClick}
+          classes="link mr-3"
+          type={ButtonTypes.OUTLINE}
+          name="Skip"
+          otherProps={{
+            target: "_blank",
+            rel: "noreferrer",
+          }}
+        ></Button>
+        </div>
+    </div>
     </div>
   );
 
@@ -148,6 +172,7 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       className={`${isDesktop && "min-h-screen"} ${PROJECT_STYLES.SECTION}`}
       id={projectsSectionRef}
     >
+      
       {renderSectionTitle()}
       <div className={PROJECT_STYLES.PROJECTS_WRAPPER}>
         {renderProjectTiles()}
