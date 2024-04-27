@@ -56,7 +56,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
       (svg: string, node: LinkedTimelineNode) => {
         const { type, next } = node;
         let lineY = y;
-        let dotY = y + separation / 2;
+        let dotY = y - 70 + separation / 2;
 
         switch (type) {
           case NodeTypes.CHECKPOINT:
@@ -385,7 +385,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
           screenContainer.current.querySelector(`.slide-${index + 1}`),
           {
             opacity: 0,
-            delay: 2.35,
+            delay: 0.3,
           }
         );
       }
