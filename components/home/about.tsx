@@ -63,7 +63,7 @@ const AboutSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-        I am a passionate UI Engineer who bridges the gap between development
+        I am a passionate UI Developer who bridges the gap between development
         and design.{" "}
       </span>
       <span
