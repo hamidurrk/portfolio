@@ -46,7 +46,7 @@ export default function Home() {
 
       window.history.scrollRestoration = "manual";
 
-      setisDesktop(isDesktopResult);
+      // setisDesktop(isDesktopResult);
     }, DEBOUNCE_TIME);
   };
 

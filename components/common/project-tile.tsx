@@ -181,8 +181,8 @@ const ProjectTile = ({
       <div>
         <h1>{name}</h1>
         <h3>{description}</h3>
-        <div className="flex my-8 justify-between">
-          <div className="overflow-y-auto mx-4 w-1/2">
+        <div className="flex flex-col my-8 lg:justify-between">
+          <div className="lg:overflow-y-auto ml-4 pr-4 lg:mx-4 w-full lg:w-1/2">
             <div className="flex flex-col items-start w-full mt-12"> 
               <h2>Description: </h2>
               <p className="text-left justify-left">{details}</p>
@@ -216,7 +216,7 @@ const ProjectTile = ({
               </div>
             </div>
           </div>
-          <div className="w-1/2 mt-8">
+          <div className="w-full lg:w-1/2 mt-8">
             { embed && <div 
               dangerouslySetInnerHTML={{ __html: embed }}>
               </div>

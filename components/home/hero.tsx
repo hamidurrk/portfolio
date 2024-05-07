@@ -8,11 +8,11 @@ import HeroImage from "./hero-image";
 
 const HERO_STYLES = {
   SECTION:
-    "w-full flex md:items-center py-8 section-container min-h-screen relative mb-24",
-  CONTENT: "font-medium flex flex-col pt-32 md:pt-0 select-none",
+    "w-full flex items-center py-8 section-container min-h-screen relative mb-24 bg-gradient-to-t from-black to-transparent lg:from-transparent to-transparent overflow-hidden",
+  CONTENT: "font-medium flex flex-col justify-end h-full pt-32 md:pt-16 select-none absolute bottom-32 sm:bottom-24 lg:relative",
   SOCIAL_LINK: "link hover:opacity-80 duration-300 md:mr-4 mr-2",
   BG_WRAPPER:
-    "absolute right-0 md:mr-20 -z-1 w-full scale-125 sm:scale-100 flex justify-end items-center",
+    "absolute right-0 lg:mr-20 -z-1 w-full scale-[2] lg:scale-100 flex justify-center lg:justify-end lg:items-center",
   TYPED_SPAN: "text-xl sm:text-2xl md:text-4xl seq",
 };
 

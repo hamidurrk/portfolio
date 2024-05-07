@@ -405,7 +405,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     let start: string;
     let end: string;
     let additionalConfig = {};
-
+    
     // Slide as a trigger for Desktop
     if (isDesktop && !isSmallScreen()) {
       // Animation for right side slides
@@ -465,7 +465,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
 
   const renderSlides = (): React.ReactNode => (
     <div
-      className="max-w-full h-96 shadow-xl bg-transparent overflow-hidden"
+      className="max-w-full h-96 shadow-xl bg-transparent"
       ref={screenContainer}
     >
       <Image

@@ -133,16 +133,12 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       ref={sectionTitleElementRef}
     >
       <p className="section-title-sm seq">PROJECTS</p>
-      <h1 className="section-heading seq mt-2">My Works</h1>
-      <div className="flex justify-between">
-        <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
-          I have contributed in over 20+ projects ranging from Frontend
-          development, UI/UX design, Open Source, and Motion Graphics
-        </h2>
-        <div className="link flex seq justify-center pt-4">
+      <div className="flex seq justify-between">
+        <h1 className="section-heading seq mt-2">My Works</h1>
+        <div className="link flex seq justify-center items-center">
         <Button
           onClick={handleClick}
-          classes="link mr-3"
+          classes="link"
           type={ButtonTypes.OUTLINE}
           name="Skip"
           otherProps={{
@@ -152,6 +148,10 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
         ></Button>
         </div>
     </div>
+    <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
+          I have contributed in over 20+ projects ranging from Frontend
+          development, UI/UX design, Open Source, and Motion Graphics
+        </h2>
     </div>
   );
 
@@ -160,7 +160,8 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       <ProjectTile
         project={project}
         key={project.name}
-        animationEnabled={horizontalAnimationEnabled}
+        // animationEnabled={horizontalAnimationEnabled}
+        animationEnabled={true}
       ></ProjectTile>
     ));
 
