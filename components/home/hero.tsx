@@ -9,7 +9,7 @@ import HeroImage from "./hero-image";
 const HERO_STYLES = {
   SECTION:
     "w-full flex items-center py-8 section-container min-h-screen relative mb-24 bg-gradient-to-t from-black to-transparent lg:from-transparent to-transparent overflow-hidden",
-  CONTENT: "font-medium flex flex-col justify-end h-full pt-32 md:pt-32 select-none absolute bottom-36 sm:bottom-24 lg:relative",
+  CONTENT: "font-medium flex flex-col justify-end h-full pt-32 md:pt-32 select-none absolute bottom-36 sm:bottom-24 lg:relative lg:w-[40vw] cs2:w-auto",
   SOCIAL_LINK: "link hover:opacity-80 duration-300 md:mr-4 mr-2",
   BG_WRAPPER:
     "absolute right-0 lg:mr-20 -z-1 w-full scale-[2] lg:scale-100 flex justify-center lg:justify-end lg:items-center",
@@ -77,7 +77,7 @@ const HeroSection = React.memo(() => {
     <div className={HERO_STYLES.CONTENT}>
       <div className="md:mb-4 mb-2">
         <h2 className="text-4xl seq">I am</h2>
-        <h1 className="text-3xl seq">Md Hamidur Rahman Khan</h1>
+        <h1 className="section-heading seq mt-2">Md Hamidur Rahman Khan</h1>
       </div>
       <p className="mb-4">
         <span className={HERO_STYLES.TYPED_SPAN} ref={typedSpanElement}></span>
