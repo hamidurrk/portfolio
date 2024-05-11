@@ -423,13 +423,29 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
       };
       duration = timeline.totalDuration() / svgCheckpointItems.length;
     } else {
-      // Clearing out the right side on mobile devices
-      screenContainer.current.innerHTML = "";
+      // // Clearing out the right side on mobile devices
+      // screenContainer.current.innerHTML = "";
 
-      trigger = svgContainer.current;
-      start = "top center";
-      end = `+=${svgLength}`;
-      duration = 3;
+      // trigger = svgContainer.current;
+      // start = "top center";
+      // end = `+=${svgLength}`;
+      // duration = 3;
+
+      
+      // Animation for right side slides
+      setSlidesAnimation(timeline);
+
+      const platformHeight =
+        screenContainer.current.getBoundingClientRect().height;
+
+      trigger = screenContainer.current;
+      start = `top ${(window.innerHeight - platformHeight) / 4}`;
+      end = `+=${svgLength - platformHeight}`;
+      additionalConfig = {
+        pin: true,
+        pinSpacing: true,
+      };
+      duration = timeline.totalDuration() / svgCheckpointItems.length;
     }
 
     ScrollTrigger.create({
@@ -475,8 +491,8 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
         width={644}
         height={34}
       />
-      <div className="relative h-full w-full -mt-2">
-        <div className="absolute top-0 left-0 h-full w-full">
+      <div className="relative pb-[58%] mt-[50vh] cs1:mt-[30vh] md:-mt-2">
+        <div className="absolute h-full w-full">
           {svgCheckpointItems.map((item, index) => (
             <Image
               className={`link w-full absolute top-0 object-cover slide-${
@@ -523,7 +539,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
         <div className="col-span-12 md:col-span-6 line-svg" ref={svgContainer}>
           {renderSVG()}
         </div>
-        <div className="col-span-12 md:col-span-6 md:flex hidden">
+        <div className="absolute right-0 left-0 md:static md:col-span-6 md:flex">
           {renderSlides()}
         </div>
       </div>

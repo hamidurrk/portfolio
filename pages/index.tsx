@@ -46,7 +46,7 @@ export default function Home() {
 
       window.history.scrollRestoration = "manual";
 
-      // setisDesktop(isDesktopResult);
+      setisDesktop(isDesktopResult);
     }, DEBOUNCE_TIME);
   };
 
@@ -62,6 +62,10 @@ export default function Home() {
     <div className="fixed top-0 left-0 h-screen w-screen bg-black -z-1"></div>
   );
 
+  const renderGap = (): React.ReactNode => (
+    <div style={{ height: "35vh" }}></div>
+  );
+
   return (
     <>
       <Head>
@@ -75,10 +79,11 @@ export default function Home() {
           {renderBackdrop()}
           <HeroSection />
           <AboutSection />
-          <ProjectsSection isDesktop={isDesktop} />
+          <ProjectsSection isDesktop={true} />
           <QuoteSection />
           <SkillsSection />
           <TimelineSection isDesktop={isDesktop} />
+          {isDesktop ? null : renderGap()}
           <CollaborationSection />
           <Footer />
         </main>
