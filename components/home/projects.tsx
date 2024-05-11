@@ -133,9 +133,9 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       ref={sectionTitleElementRef}
     >
       <p className="section-title-sm seq">PROJECTS</p>
-      <div className="flex seq justify-between">
+      <div className="flex justify-between w-[90vw] md:w-auto">
         <h1 className="section-heading seq mt-2">My Works</h1>
-        <div className="link flex seq items-center">
+        <div className="flex seq items-center">
         <Button
           onClick={handleClick}
           classes="link"
