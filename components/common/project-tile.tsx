@@ -5,6 +5,7 @@ import VanillaTilt from "vanilla-tilt";
 import Modal from 'react-modal';
 import { IProject } from "../../constants";
 import Button, { ButtonTypes } from "../common/button";
+import { isSmallScreen } from "pages";
 
 const ProjectTile = ({
   project,
@@ -41,18 +42,18 @@ const ProjectTile = ({
   const renderTechIcons = (techStack: string[]): React.ReactNode => (
     <div
       className={`
-      ${styles.techIcons} w-1/2 h-full absolute left-24 top-0 sm:flex items-center hidden
+      ${styles.techIcons} w-1/2 h-full absolute left-24 top-0 flex items-center 
     `}
     >
       <div className="flex flex-col pb-8">
         {techStack.map((tech, i) => (
-          <div className={`${i % 2 === 0 && "ml-16"} mb-4`} key={tech}>
+          <div className={`${i % 2 === 0 && "ml-16"} -mb-2 sm:mb-4`} key={tech}>
             <Image
               src={`/projects/tech/${tech}.svg`}
               alt={tech}
-              height={45}
+              height={isSmallScreen ? 40 : 45}
               objectFit="contain"
-              width={45}
+              width={isSmallScreen ? 40 : 45}
             />
           </div>
         ))}

@@ -135,7 +135,7 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       <p className="section-title-sm seq">PROJECTS</p>
       <div className="flex seq justify-between">
         <h1 className="section-heading seq mt-2">My Works</h1>
-        <div className="link flex seq justify-center items-center">
+        <div className="link flex seq items-center">
         <Button
           onClick={handleClick}
           classes="link"
