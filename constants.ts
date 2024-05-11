@@ -148,21 +148,99 @@ export const PROJECTS: IProject[] = [
 ];
 
 export const SKILLS = {
-  frontend: [
+  languages: [
     "javascript",
-    "react",
-    "redux",
+    "python",
+    "typescript",
+    "cpp",
+    "c",
+    "csharp",
+    "java",
+    "php",
+    "solidity",
+    "r",
+    "html",
+    "css",
+    "markdown",
+    "sql"
+  ],
+  frontend: [
     "next",
-    "angular",
+    "react",
     "gsap",
     "tailwind",
     "sass",
-    "svg",
-    "html",
-    "css",
+    "figma"
   ],
-  userInterface: ["figma", "sketch", "illustrator", "photoshop"],
-  other: ["git", "webpack", "gulp", "lightroom", "aftereffects"],
+  backend: [
+    "flask",
+    "fastapi",
+    "django",
+    "laravel"
+  ],
+  roboticsIotEmbedded: [
+    "ros",
+    "arduino",
+    "raspberry",
+    "esp32",
+    "thingspeak",
+    "opencv",
+    "yolo"
+  ],
+  blockchain: [
+    "web3.py",
+    "etherium",
+    "ipfs",
+    "corda",
+    "hyperledger"
+  ],
+  webscraping: [
+    "selenium",
+    "bs4",
+    "requests",
+    "lxml"
+  ],
+  database: [
+    "firebase",
+    "mongo",
+    "postgres",
+    "sqlite",
+    "mysql",
+    "gitpages",
+    "vercel",
+    "wordpress"
+  ],
+  statistics: [
+    "pandas",
+    "numpy",
+    "sklearn",
+    "matplotlib"
+  ],
+  hosting: [
+    "gitpages",
+    "vercel",
+    "wordpress"
+  ],
+  desktopApp: [
+    "ctk", 
+    "tk", 
+    "swing"
+  ],
+  gfxdesign: [
+    "illustrator", 
+    "photoshop",
+    "premiere"
+  ],
+  threedgfx: [
+    "fusion", 
+    "blender", 
+    "easeda"
+  ],
+  other: [
+    "git", 
+    "jupyter", 
+    "remix"
+  ],
 };
 
 export enum Branch {
