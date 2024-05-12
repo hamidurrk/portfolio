@@ -205,10 +205,7 @@ export const SKILLS = {
     "mongo",
     "postgres",
     "sqlite",
-    "mysql",
-    "gitpages",
-    "vercel",
-    "wordpress"
+    "mysql"
   ],
   statistics: [
     "pandas",
@@ -234,7 +231,7 @@ export const SKILLS = {
   threedgfx: [
     "fusion", 
     "blender", 
-    "easeda"
+    "easyda"
   ],
   other: [
     "git", 
