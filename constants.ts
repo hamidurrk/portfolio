@@ -188,7 +188,7 @@ export const SKILLS = {
     "yolo"
   ],
   blockchain: [
-    "web3.py",
+    "web3",
     "etherium",
     "ipfs",
     "corda",
@@ -231,7 +231,7 @@ export const SKILLS = {
   threedgfx: [
     "fusion", 
     "blender", 
-    "easyda"
+    "easyeda"
   ],
   other: [
     "git", 
