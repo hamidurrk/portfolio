@@ -180,17 +180,17 @@ export const SKILLS = {
   ],
   roboticsIotEmbedded: [
     "ros",
+    "esp32",
     "arduino",
     "raspberry",
-    "esp32",
     "thingspeak",
     "opencv",
     "yolo"
   ],
   blockchain: [
     "web3",
-    "etherium",
     "ipfs",
+    "etherium",
     "corda",
     "hyperledger"
   ],

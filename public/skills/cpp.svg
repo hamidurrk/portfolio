@@ -3,7 +3,7 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 70 70" style="enable-background:new 0 0 70 70;" xml:space="preserve">
 <style type="text/css">
-	.st0{clip-path:url(#SVGID_00000082332440178781651080000000178341667904547769_);fill:#041C48;}
+	.st0{clip-path:url(#SVGID_00000082332440178781651080000000178341667904547769_);fill:#680d25;}
 	
 		.st1{clip-path:url(#SVGID_00000082332440178781651080000000178341667904547769_);fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;stroke-opacity:0.2;}
 	.st2{display:none;clip-path:url(#SVGID_00000082332440178781651080000000178341667904547769_);}
@@ -23,7 +23,7 @@
 	<clipPath id="SVGID_00000072279827947323944840000003929168165495917227_">
 		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
 	</clipPath>
-	<path style="clip-path:url(#SVGID_00000072279827947323944840000003929168165495917227_);fill:#041C48;" d="M10,0h50
+	<path style="clip-path:url(#SVGID_00000072279827947323944840000003929168165495917227_);fill:#680d25;" d="M10,0h50
 		c5.5,0,10,4.5,10,10v50c0,5.5-4.5,10-10,10H10C4.5,70,0,65.5,0,60V10C0,4.5,4.5,0,10,0z"/>
 	
 		<path style="clip-path:url(#SVGID_00000072279827947323944840000003929168165495917227_);fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;stroke-opacity:0.2;" d="
