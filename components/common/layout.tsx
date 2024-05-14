@@ -22,7 +22,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <meta property="og:image" content={METADATA.imgUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta name="keywords" content="UI/UX design, Python bots, web solutions, robots, robotics, innovation, blockchain, awards, Notre Dame College, Olympiads, portfolio" />
+        <meta name="author" content="Md Hamidur Rahman Khan" />
+        <meta name="twitter:title" content={METADATA.title} />
+        <meta name="twitter:description" content={METADATA.description} />
+        <meta name="twitter:image" content={METADATA.imgUrl} />
+        <meta name="robots" content="index, follow" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="canonical" href={METADATA.siteUrl} />
       </Head>
       {children}
     </>
@@ -30,3 +37,5 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default Layout;
+
+
