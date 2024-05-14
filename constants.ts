@@ -2,7 +2,7 @@ export const METADATA = {
   title: "Portfolio | Md Hamidur Rahman Khan",
   description:
     "I love to explore the boundaries of innovation. I take responsibility to craft an aesthetic UX using modern frontend architecture. I create python bots, web crawlers, analyzers and many more for multi-disciplinary needs.",
-  siteUrl: "",
+  siteUrl: "https://portfolio-hamidur.vercel.app/_next/image?url=%2Fhrk.jpg&w=1080&q=75",
 };
 
 export const MENULINKS = [
