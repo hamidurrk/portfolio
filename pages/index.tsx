@@ -70,6 +70,11 @@ export default function Home() {
     <>
       <Head>
         <title>{METADATA.title}</title>
+        <meta property="og:image" content="<generated>" />
+        <meta property="og:image:type" content="<generated>" />
+        <meta property="og:image:width" content="<generated>" />
+        <meta property="og:image:height" content="<generated>" />
+        <meta property="og:image:alt" content="About Me" />
       </Head>
       <Layout>
         <Header />
