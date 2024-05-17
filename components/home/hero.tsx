@@ -73,6 +73,14 @@ const HeroSection = React.memo(() => {
       </a>
     ));
 
+    const openChat = () => {
+      const targetElement = document.querySelector('.chaport-launcher-operator-photo');
+      
+      if (targetElement) {
+        (targetElement as HTMLElement).click();
+      }
+    };
+
   const renderHeroContent = (): React.ReactNode => (
     <div className={HERO_STYLES.CONTENT}>
       <div className="md:mb-4 mb-2">
@@ -98,7 +106,7 @@ const HeroSection = React.memo(() => {
           classes="ml-3"
           type={ButtonTypes.PRIMARY}
           name="Let's Talk"
-          href={SOCIAL_LINKS.facebook}
+          onClick={openChat}
           otherProps={{
             target: "_blank",
             rel: "noreferrer",

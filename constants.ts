@@ -35,7 +35,8 @@ export const TYPED_STRINGS = [
   "Experienced in Blockchain",
   "Experienced in Blockchain and DApps",
   "Pioneering Robotics Solutions Developer",
-  "Adaptive GFX Designer and Video Editor",
+  "Skilled GFX Designer",
+  "Skilled Video Editor",
 ];
 
 export const EMAIL = "hamidurrk@gmail.com";
@@ -43,8 +44,6 @@ export const EMAIL = "hamidurrk@gmail.com";
 export const SOCIAL_LINKS = {
   github: "https://github.com/hamidurrk",
   linkedin: "https://www.linkedin.com/in/hamidurrk/",
-  instagram: "https://www.instagram.com/hamidur_rk/",
-  facebook: "https://www.facebook.com/hamidur.rk",
   twitter: "https://twitter.com/hamidurrk",
 };
 

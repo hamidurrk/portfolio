@@ -182,7 +182,7 @@ const ProjectTile = ({
       <div>
         <h1>{name}</h1>
         <h3>{description}</h3>
-        <div className="flex flex-col my-8 lg:justify-between">
+        <div className="flex lg:flex-row flex-col my-8 lg:justify-between">
           <div className="lg:overflow-y-auto ml-4 pr-4 lg:mx-4 w-full lg:w-1/2">
             <div className="flex flex-col items-start w-full mt-12"> 
               <h2>Description: </h2>
