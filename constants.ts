@@ -30,12 +30,12 @@ export const MENULINKS = [
 ];
 
 export const TYPED_STRINGS = [
-  "I am a robotics enthusiast",
-  "I am a programmer",
-  "I am a full stack web developer",
-  "I am a blockchain developer",
-  "I am a graphics designer",
-  "I am a student",
+  "I develop innovative software solutions",
+  "Experienced in Full-stack WebApps",
+  "Experienced in Blockchain",
+  "Experienced in Blockchain and DApps",
+  "Pioneering Robotics Solutions Developer",
+  "Adaptive GFX Designer and Video Editor",
 ];
 
 export const EMAIL = "hamidurrk@gmail.com";
@@ -626,4 +626,3 @@ export interface BranchNode {
   type: NodeTypes.CONVERGE | NodeTypes.DIVERGE;
 }
 
-export const GTAG = "UA-163844688-1";
