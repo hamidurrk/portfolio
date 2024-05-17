@@ -13,7 +13,7 @@ const HERO_STYLES = {
   SOCIAL_LINK: "link hover:opacity-80 duration-300 md:mr-4 mr-2",
   BG_WRAPPER:
     "absolute right-0 lg:mr-20 -z-1 w-full scale-[2] lg:scale-100 flex justify-center lg:justify-end lg:items-center",
-  TYPED_SPAN: "text-xl sm:text-2xl md:text-4xl seq",
+  TYPED_SPAN: "text-xl sm:text-2xl lg:text-3xl cs2:text-4xl seq",
 };
 
 const HeroSection = React.memo(() => {
@@ -25,9 +25,9 @@ const HeroSection = React.memo(() => {
   ): Typed => {
     return new Typed(typedSpanElement.current, {
       strings: TYPED_STRINGS,
-      typeSpeed: 30,
-      backSpeed: 30,
-      backDelay: 800,
+      typeSpeed: 15,
+      backSpeed: 10,
+      backDelay: 1300,
       loop: true,
     });
   };

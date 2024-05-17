@@ -34,9 +34,9 @@ export const TYPED_STRINGS = [
   "Experienced in Full-stack WebApps",
   "Experienced in Blockchain",
   "Experienced in Blockchain and DApps",
-  "Pioneering Robotics Solutions Developer",
+  "Robotics Systems Developer",
   "Skilled GFX Designer",
-  "Skilled Video Editor",
+  "Skilled GFX Designer &amp; Video Editor",
 ];
 
 export const EMAIL = "hamidurrk@gmail.com";
