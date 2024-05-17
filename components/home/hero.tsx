@@ -71,7 +71,8 @@ const HeroSection = React.memo(() => {
       >
         <Image src={`/social/${el}.svg`} alt={el} width={40} height={40} />
       </a>
-    ));
+    )
+  );
 
     const openChat = () => {
       const targetElement = document.querySelector('.chaport-launcher-operator-photo');
@@ -80,7 +81,7 @@ const HeroSection = React.memo(() => {
         (targetElement as HTMLElement).click();
       }
     };
-
+    
   const renderHeroContent = (): React.ReactNode => (
     <div className={HERO_STYLES.CONTENT}>
       <div className="md:mb-4 mb-2">
@@ -90,7 +91,8 @@ const HeroSection = React.memo(() => {
       <p className="mb-4">
         <span className={HERO_STYLES.TYPED_SPAN} ref={typedSpanElement}></span>
       </p>
-      <div className="flex seq mb-5">{renderSocialLinks()}</div>
+      <div className="flex seq mb-5">{renderSocialLinks()}
+    </div>
       <div className="flex seq">
         <Button
           classes="mr-3"
