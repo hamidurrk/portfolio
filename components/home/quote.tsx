@@ -6,18 +6,23 @@ const QuoteSection = () => {
   const quoteRef: MutableRefObject<HTMLDivElement> = useRef(null);
   const targetSection: MutableRefObject<HTMLDivElement> = useRef(null);
 
-  const [willChange, setwillChange] = useState(false);
+  const [willChange, setWillChange] = useState(false);
 
   const initQuoteAnimation = (
     quoteRef: MutableRefObject<HTMLDivElement>,
     targetSection: MutableRefObject<HTMLDivElement>
   ): ScrollTrigger => {
+    const textStrongElements = gsap.utils.toArray(
+      quoteRef.current.querySelectorAll(".text-strong")
+    );
+
     const timeline = gsap.timeline({ defaults: { ease: Linear.easeNone } });
     timeline
       .from(quoteRef.current, { opacity: 0, duration: 2 })
-      .to(quoteRef.current.querySelector(".text-strong"), {
+      .to(textStrongElements, {
         backgroundPositionX: "100%",
         duration: 1,
+        stagger: 0.2, // Add stagger to animate each element with a delay
       });
 
     return ScrollTrigger.create({
@@ -26,7 +31,7 @@ const QuoteSection = () => {
       end: "center center",
       scrub: 0,
       animation: timeline,
-      onToggle: (self) => setwillChange(self.isActive),
+      onToggle: (self) => setWillChange(self.isActive),
     });
   };
 
@@ -44,7 +49,11 @@ const QuoteSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-        I pay <span className="text-strong font-bold">strong</span> attention to the details my clients demand. 
+        I push the boundaries of innovation with{" "}
+        <span className="text-strong font-bold"><br />intelligent robots</span>,{" "}
+        <span className="text-strong font-bold"><br />machine learning</span>,{" "}
+        <span className="text-strong font-bold">blockchain</span>, and{" "}
+        <span className="text-strong font-bold"><br />dynamic web solutions</span>.
       </h1>
     </div>
   );
