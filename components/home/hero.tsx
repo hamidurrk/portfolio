@@ -5,6 +5,7 @@ import Image from "next/image";
 import { gsap, Linear } from "gsap";
 import Button, { ButtonTypes } from "../common/button";
 import HeroImage from "./hero-image";
+import styles from "./Hero.module.scss"
 
 const HERO_STYLES = {
   SECTION:
@@ -92,6 +93,14 @@ const HeroSection = React.memo(() => {
         <span className={HERO_STYLES.TYPED_SPAN} ref={typedSpanElement}></span>
       </p>
       <div className="flex seq mb-5">{renderSocialLinks()}
+      <a href={`mailto:${EMAIL}`} className={`${styles.emailBox}`} 
+        rel="noreferrer"
+        target="_blank">
+        <Image className={`${styles.emailSvg} link`} src={`/social/email.svg`} width={40} height={40} />
+        <div className={styles.content}>
+          hamidurrk@gmail.com
+        </div>
+      </a>
     </div>
       <div className="flex seq">
         <Button

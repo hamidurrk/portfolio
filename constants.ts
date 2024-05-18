@@ -45,7 +45,7 @@ export const SOCIAL_LINKS = {
   github: "https://github.com/hamidurrk",
   linkedin: "https://www.linkedin.com/in/hamidurrk/",
   twitter: "https://twitter.com/hamidurrk",
-  email: "mailto:hamidurrk@gmail.com",
+  // email: "mailto:hamidurrk@gmail.com",
 };
 
 export interface IProject {
