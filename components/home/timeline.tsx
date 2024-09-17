@@ -523,9 +523,9 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     <div className="flex flex-col">
       <p className="section-title-sm seq">MILESTONES</p>
       <h1 className="section-heading seq mt-2">Timeline</h1>
-      <h2 className="text-2xl md:max-w-2xl w-full seq mt-2">
+      {/* <h2 className="text-2xl md:max-w-2xl w-full seq mt-2">
         A quick recap of proud moments
-      </h2>
+      </h2> */}
     </div>
   );
 

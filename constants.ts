@@ -150,12 +150,11 @@ export const PROJECTS: IProject[] = [
 
 export const SKILLS = {
   languages: [
-    "javascript",
     "python",
+    "javascript",
     "typescript",
     "cpp",
     "c",
-    "csharp",
     "java",
     "php",
     "solidity",
@@ -170,19 +169,17 @@ export const SKILLS = {
     "react",
     "gsap",
     "tailwind",
-    "sass",
     "figma"
   ],
   backend: [
     "flask",
     "fastapi",
     "django",
-    "laravel"
   ],
   roboticsIotEmbedded: [
+    "arduino",
     "ros",
     "esp32",
-    "arduino",
     "raspberry",
     "thingspeak",
     "opencv",
@@ -192,14 +189,11 @@ export const SKILLS = {
     "web3",
     "ipfs",
     "etherium",
-    "corda",
     "hyperledger"
   ],
   webscraping: [
     "selenium",
-    "bs4",
-    "requests",
-    "lxml"
+    "bs4"
   ],
   database: [
     "firebase",
@@ -214,11 +208,6 @@ export const SKILLS = {
     "sklearn",
     "matplotlib"
   ],
-  hosting: [
-    "gitpages",
-    "vercel",
-    "wordpress"
-  ],
   desktopApp: [
     "ctk", 
     "tk", 
@@ -231,12 +220,10 @@ export const SKILLS = {
   ],
   threedgfx: [
     "fusion", 
-    "blender", 
     "easyeda"
   ],
   other: [
     "git", 
-    "jupyter", 
     "remix"
   ],
 };
@@ -258,6 +245,25 @@ export enum ItemSize {
 }
 
 export const TIMELINE: Array<TimelineNodeV2> = [
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "2024",
+    size: ItemSize.LARGE,
+    shouldDrawLine: false,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    month: "Sept",
+    title: "Started B.Sc. in Computational Engineering and Artificial Intelligence",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Currently studying the vast field of Machine Learning at LUT University in Finland",
+    image: "/timeline/lut_logo.png",
+    slideImage: "/timeline/lut.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
   {
     type: NodeTypes.CHECKPOINT,
     title: "2023",

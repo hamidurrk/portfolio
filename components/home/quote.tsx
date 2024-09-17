@@ -42,14 +42,16 @@ const QuoteSection = () => {
   }, [quoteRef, targetSection]);
 
   const renderQuote = (): React.ReactNode => (
-    <div className="tall:py-60 py-72 section-container">
+    <div className="tall:py-40 py-48 section-container">
       <h1
         ref={quoteRef}
         className={`font-medium text-4xl md:text-5xl text-center ${
           willChange ? "will-change-opacity" : ""
         }`}
       >
-        I push the boundaries of innovation with{" "}
+        A student of
+        <span className="text-3xl md:text-4xl"><br />Computational Engineering & Artificial Intelligence</span>
+        {" "}
         <span className="text-strong font-bold"><br />intelligent robots</span>,{" "}
         <span className="text-strong font-bold"><br />machine learning</span>,{" "}
         <span className="text-strong font-bold">blockchain</span>, and{" "}

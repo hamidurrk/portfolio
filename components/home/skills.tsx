@@ -154,12 +154,12 @@ const SkillsSection = () => {
                 SKILLS.database
                 )}
             </div>
-            <div>
+            {/* <div>
               {renderSkillColumn(
                 "Cloud Hosting", 
                 SKILLS.hosting
                 )}
-            </div>
+            </div> */}
           </div>
 
           <div className="flex flex-wrap mt-10">

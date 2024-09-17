@@ -6,7 +6,7 @@ import { isSmallScreen, NO_MOTION_PREFERENCE_QUERY } from "pages";
 const COLLABORATION_STYLE = {
   SLIDING_TEXT: "opacity-20 text-5xl md:text-7xl font-bold whitespace-nowrap",
   SECTION:
-    "w-full relative select-none tall:py-36 py-48 section-container flex flex-col",
+    "w-full relative select-none tall:py-24 py-30 section-container flex flex-col",
   TITLE: "mt-6 md:mt-8 font-medium text-4xl md:text-5xl text-center",
 };
 
@@ -92,22 +92,21 @@ const CollaborationSection = () => {
         willChange ? "will-change-opacity" : ""
       }`}
     >
-      Interested in <span className="text-strong font-bold">Collaboration</span>
-      ?
+      A quick recap of <span className="text-strong font-bold">Proud Moments</span>
     </h1>
   );
 
   return (
     <section className={COLLABORATION_STYLE.SECTION} ref={targetSection}>
       {renderSlidingText(
-        " Full Stack Web Development  UI/UX Design ",
+        " Academics Awards Activities Experiences ",
         "ui-left"
       )}
 
       {renderTitle()}
 
       {renderSlidingText(
-        " Blockchain Development  Robotics  Electronics ",
+        " Competitions Adjudications Voluntary-Works ",
         "mt-6 md:mt-8 ui-right"
       )}
     </section>

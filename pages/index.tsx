@@ -70,7 +70,6 @@ export default function Home() {
     <>
       <Head>
         <title>{METADATA.title}</title>
-
       </Head>
       <Layout>
         <Header />
@@ -79,13 +78,13 @@ export default function Home() {
         <main className="flex-col flex">
           {renderBackdrop()}
           <HeroSection />
-          <AboutSection />
-          <ProjectsSection isDesktop={true} />
           <QuoteSection />
           <SkillsSection />
+          <ProjectsSection isDesktop={true} />
+          <CollaborationSection />
           <TimelineSection isDesktop={isDesktop} />
           {isDesktop ? null : renderGap()}
-          <CollaborationSection />
+          <AboutSection />
           <Footer />
         </main>
         <Scripts />
