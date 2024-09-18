@@ -5,10 +5,13 @@ import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+import Lenis from '@studio-freight/lenis'
+
 import Layout from "@/components/common/layout";
 import Header from "@/components/common/header";
 import ProgressIndicator from "@/components/common/progress-indicator";
 import Cursor from "@/components/common/cursor";
+import HeroParallax from "@/components/home/hero-parallax";
 import HeroSection from "@/components/home/hero";
 import ProjectsSection from "@/components/home/projects";
 import QuoteSection from "@/components/home/quote";
@@ -30,6 +33,7 @@ export interface IDesktop {
 }
 
 export default function Home() {
+
   gsap.registerPlugin(ScrollTrigger);
   gsap.config({ nullTargetWarn: false });
 
@@ -77,7 +81,8 @@ export default function Home() {
         <Cursor isDesktop={isDesktop} />
         <main className="flex-col flex">
           {renderBackdrop()}
-          <HeroSection />
+          <HeroParallax />
+          {/* <HeroSection /> */}
           <QuoteSection />
           <SkillsSection />
           <ProjectsSection isDesktop={true} />
