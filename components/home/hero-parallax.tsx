@@ -1,5 +1,5 @@
 import styles from './Styles.module.scss';
-import Picture1 from '../../public/hero-parallax/1.jpeg';
+import Picture1 from '../../public/hero-parallax/hero_img_3.png';
 import Picture2 from '../../public/hero-parallax/2.jpeg';
 import Picture3 from '../../public/hero-parallax/3.jpg';
 import Picture4 from '../../public/hero-parallax/4.jpg'

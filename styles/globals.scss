@@ -198,6 +198,7 @@ a {
 
 .text-gradient {
   background: linear-gradient(90deg, #6dd5ed 0%, #2193b0 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -211,6 +212,7 @@ a {
     #2193b0 100%
   );
   background-size: 200% 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
