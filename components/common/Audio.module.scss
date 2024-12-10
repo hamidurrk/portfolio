@@ -1,0 +1,107 @@
+$secondary: #B19162;
+$tertiary: #573217;
+
+.audioContainer {
+  margin-top: 5px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8DD1F1;
+}
+
+.playButton {
+  position: absolute;
+  z-index: 60;
+  transform: scale(1.5);
+  color: yellow;
+  display: none;
+}
+
+.loaderList {
+  list-style: none;
+  padding: 0;
+}
+
+.loader {
+  width: 6vw;
+  aspect-ratio: 1 / 1;
+  
+  &.vinyl {
+    background: #000;
+    background-image:
+    -webkit-radial-gradient(
+      rgba(0,0,0,1) 0,
+      rgba(0,0,0,1) 1%,
+      rgba(255,83,0,1) 2%,
+      rgba(255,83,0,1) 21%,
+      rgba(255,83,0,1) 22%,
+      rgba(255,83,0,1) 23%,
+      rgba(255,83,0,.5) 24%,
+      rgba(255,255,255,0) 25%,
+      rgba(255,255,255,0) 40%,
+      rgba(255,255,255,.1) 41%,
+      rgba(255,255,255,0) 43%,
+      rgba(255,255,255,.1) 45%,
+      rgba(255,255,255,0) 46%,
+      rgba(255,255,255,0) 53%,
+      rgba(255,255,255,.1) 54%,
+      rgba(255,255,255,0) 55%,
+      rgba(255,255,255,0) 60%,
+      rgba(255,255,255,.1) 61%,
+      rgba(255,255,255,0) 62%,
+      rgba(255,255,255,.1) 63%,
+      rgba(255,255,255,0) 64%,
+      rgba(255,255,255,.1) 65%,
+      rgba(255,255,255,0) 66%), 
+    -webkit-linear-gradient(
+      45deg, 
+      #000 0%, 
+      #000 30%, 
+      rgba(47,47,47,1) 50%,
+      #000 70%, 
+      #000 100%
+    );
+  background-image:
+    radial-gradient(
+      rgba(0,0,0,1) 0,
+      rgba(0,0,0,1) 1%,
+      rgba(255,183,0,1) 2%,
+      rgba(255,123,0,1) 21%,
+      rgba(255,113,0,1) 22%,
+      rgba(255,103,0,1) 23%,
+      rgba(255,93,0,.5) 24%,
+      rgba(255,255,255,0) 25%,
+      rgba(255,255,255,0) 40%,
+      rgba(255,255,255,.1) 41%,
+      rgba(255,255,255,0) 43%,
+      rgba(255,255,255,.1) 45%,
+      rgba(255,255,255,0) 46%,
+      rgba(255,255,255,0) 53%,
+      rgba(255,255,255,.1) 54%,
+      rgba(255,255,255,0) 55%,
+      rgba(255,255,255,0) 60%,
+      rgba(255,255,255,.1) 61%,
+      rgba(255,255,255,0) 62%,
+      rgba(255,255,255,.1) 63%,
+      rgba(255,255,255,0) 64%,
+      rgba(255,255,255,.1) 65%,
+      rgba(255,255,255,0) 66%),
+    linear-gradient(
+      45deg,
+      #000 0%,
+      #000 30%,
+      rgba(47,47,47,1) 50%,
+      #000 70%,
+      #000 100%
+    );
+    border-radius: 100%;
+    animation-play-state: running;
+    animation: spin 4s linear infinite;
+  }
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}

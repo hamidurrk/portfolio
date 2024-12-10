@@ -1,0 +1,158 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  padding: 5px;
+  list-style: none;
+  margin: 0;
+
+  .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      // transform: scale(1.05);
+      z-index: 10;
+
+      ~ .description {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .tab:not(:hover) {
+        opacity: 0.3;
+      }
+    }
+  }
+  .x {
+    background-color: #ffffff;
+  }
+  
+  .github {
+    /* styles specific to Facebook */
+    background-color: #0D1117;
+  }
+  
+  .linkedin {
+    /* styles specific to LinkedIn */
+    background-color: #0077b5;
+  }
+  
+  .whatsapp {
+    /* styles specific to YouTube */
+    color: white;
+    background-color: #25D366;
+  }
+  
+  .email {
+    /* styles specific to Tumblr */
+    background-color: #E0181A;
+  }
+  
+  .discord {
+    /* styles specific to Dribbble */
+    background-color: #5865F2;
+  }
+}
+
+.description {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #fef5e1;
+  transform: scale(1.01);
+  // border: 1px solid #b19162;
+  // opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  overflow: hidden;
+  // z-index: 20;
+
+  &.linkedin { 
+    background-color: #0077b5; 
+    padding-left: 33.3%;
+    h1, p {
+      color: white;
+      text-align: end;
+    }
+  }
+
+  &.github { 
+    background-color: #0D1117; 
+    padding-top: 35%;
+    display: flex;
+    h1, p {
+      color: white;
+      text-align: end;
+    }
+  }
+
+  &.whatsapp { 
+    background-color: #25D366; 
+    padding-right: 33.3%;
+    h1, p {
+      color: white;
+      text-align: start;
+    }
+  }
+
+  &.x { 
+    background-color: white; 
+    padding-left: 33.3%;
+    h1, p {
+      color: black;
+      text-align: end;
+    }
+  }
+
+  &.gmail { 
+    background-color: #E0181A; 
+    padding-bottom: 50%;
+    display: flex;
+    h1 {
+      color: white;
+      text-align: end;
+    }
+    p {
+      color: white;
+      text-align: start;
+      padding-left: 15px;
+    }
+  }
+
+  &.discord { 
+    background-color: #5865F2; 
+    padding-right: 33.3%;
+    h1, p {
+      color: white;
+      text-align: start;
+    }
+  }
+
+  h1 {
+    color: #573217;
+    margin: 0 0 10px;
+    font-size: 60%;
+  }
+
+  p {
+    color: #b19162;
+    font-size: 40%;
+  }
+}
+}

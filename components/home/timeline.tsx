@@ -165,7 +165,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     const foreignObjectY = y - dotSize / 2;
     const foreignObjectWidth = svgWidth - (dotSize / 2 + 10 + offset);
 
-    const titleSizeClass = size === ItemSize.LARGE ? "text-6xl" : "text-2xl";
+    const titleSizeClass = size === ItemSize.LARGE ? "text-6xl" : "text-2xl text-gradient";
     const logoString = image
       ? `<img src='${image}' class='h-8 mb-2' loading='lazy' width='100' height='32' alt='${image}' />`
       : "";

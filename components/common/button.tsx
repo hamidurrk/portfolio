@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 export enum ButtonTypes {
   PRIMARY = "primary",
+  SECONDARY = "secondary",
   OUTLINE = "outline",
   WHITE = "white",
 }
@@ -39,6 +40,8 @@ const Button = ({
   function getButtonTypeStyles(type: ButtonTypes) {
     return type === ButtonTypes.PRIMARY
       ? styles.primary
+      : type === ButtonTypes.SECONDARY
+      ? styles.secondary
       : type === ButtonTypes.WHITE
       ? styles.white
       : styles.outline;

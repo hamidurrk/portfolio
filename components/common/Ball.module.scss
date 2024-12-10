@@ -1,0 +1,57 @@
+.background {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ball {
+  position: absolute;
+  bottom: 20%;
+  width: calc(100vh * 0.04);
+  height: calc(100vh * 0.04);
+  border-radius: 50%;
+  background-color: #F44336;
+  animation: bounce 0.7s cubic-bezier(0, 0, 0.2, 1) alternate infinite;
+  animation-play-state: running;
+  box-shadow: inset -5px -5px 5px rgba(0,0,0,.6);
+  z-index: 2;
+}
+
+.shadow {
+  background: radial-gradient(closest-side at 50% 50%, #000 0%, #fff 100%);
+  width: calc(100vh * 0.1 * 0.9);
+  height: calc(100vh * 0.1 * 0.25);
+  position: absolute;
+  bottom: 18%;
+  animation-play-state: running;
+  animation: grow 0.7s cubic-bezier(0, 0, 0.2, 1) forwards infinite alternate
+}
+
+@keyframes bounce{
+  0% {transform: translatey(0)}
+  100% {transform: translatey(-200%)}
+}
+
+@keyframes backgroundChange {
+  0% { 
+    background: #F44336;
+  }
+  50% {
+    background: #1E88E5;
+  }
+  100% {
+    background: #FDD835;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1)
+  }
+
+  to {
+    transform: scale(0.4)
+  }
+}

@@ -39,6 +39,12 @@ export const TYPED_STRINGS = [
   "Skilled GFX Designer &amp; Video Editor",
 ];
 
+// full-stack web developer | 
+// blockchain developer | 
+// data analysis & web scraping |
+// software as a service developer | 
+// robotics systems developer | 
+
 export const EMAIL = "hamidurrk@gmail.com";
 
 export const SOCIAL_LINKS = {
@@ -350,18 +356,18 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "First Runner Up, Robotronics 2.0",
-    month: "Jun",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Acheieved 2nd position in the Line Follower Competition University level National Round",
-    image: "/timeline/robotronics.png",
-    slideImage: "/timeline/ruet.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "First Runner Up, Robotronics 2.0",
+  //   month: "Jun",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "Acheieved 2nd position in the Line Follower Competition University level National Round",
+  //   image: "/timeline/robotronics.png",
+  //   slideImage: "/timeline/ruet.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
   {
     type: NodeTypes.CHECKPOINT,
     title: "2021",
@@ -381,66 +387,66 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Workshop Instructor | Drone Basics",
-    month: "Sep",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Taught 400+ individuals about introductory robotics through drone technology",
-    image: "/timeline/teslalab.svg",
-    slideImage: "/timeline/teslalab.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Starting as an Advisor, leaving the President position",
-    month: "Mar",
-    size: ItemSize.SMALL,
-    subtitle:
-      "During my presidency, I mentored 45 national team, took 14 workshops, 100+ robotics-oriented classes, to train up more than 150 students of Notre Dame College",
-    image: "/timeline/nditc.svg",
-    slideImage: "/timeline/farewell.JPG",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2020",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.DIVERGE,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Champion | International Tech Carnival, DRMC",
-    month: "Feb",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Fastest Line Follower Robot to finish tracks",
-    image: "/timeline/drmc.png",
-    slideImage: "/timeline/drmc.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Workshop Instructor | Digital Design",
-    month: "Jan",
-    size: ItemSize.SMALL,
-    subtitle: "Created exposure to topics like boolean algebra, logic gates, basic electronic circuits, ICs, registers, and counters",
-    image: "/timeline/nditc.svg",
-    slideImage: "/timeline/dl.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CONVERGE,
-  },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "Workshop Instructor | Drone Basics",
+  //   month: "Sep",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "Taught 400+ individuals about introductory robotics through drone technology",
+  //   image: "/timeline/teslalab.svg",
+  //   slideImage: "/timeline/teslalab.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "Starting as an Advisor, leaving the President position",
+  //   month: "Mar",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "During my presidency, I mentored 45 national team, took 14 workshops, 100+ robotics-oriented classes, to train up more than 150 students of Notre Dame College",
+  //   image: "/timeline/nditc.svg",
+  //   slideImage: "/timeline/farewell.JPG",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "2020",
+  //   size: ItemSize.LARGE,
+  //   shouldDrawLine: false,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.DIVERGE,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "Champion | International Tech Carnival, DRMC",
+  //   month: "Feb",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "Fastest Line Follower Robot to finish tracks",
+  //   image: "/timeline/drmc.png",
+  //   slideImage: "/timeline/drmc.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.RIGHT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "Workshop Instructor | Digital Design",
+  //   month: "Jan",
+  //   size: ItemSize.SMALL,
+  //   subtitle: "Created exposure to topics like boolean algebra, logic gates, basic electronic circuits, ICs, registers, and counters",
+  //   image: "/timeline/nditc.svg",
+  //   slideImage: "/timeline/dl.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CONVERGE,
+  // },
   {
     type: NodeTypes.CHECKPOINT,
     title: "2019",
@@ -448,9 +454,9 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     shouldDrawLine: false,
     alignment: Branch.LEFT,
   },
-  {
-    type: NodeTypes.DIVERGE,
-  },
+  // {
+  //   type: NodeTypes.DIVERGE,
+  // },
   {
     type: NodeTypes.CHECKPOINT,
     title: "Silver Medal | Bangladesh Robot Olympiad - 2019",
@@ -461,20 +467,20 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     image: "/timeline/bdro.svg",
     slideImage: "/timeline/bdro19.jpg",
     shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Co-ordinator (Robotics & Management) | NDITC Init 2.0",
-    month: "Aug",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Managed platinum sponsors; Introduced 12+ new robotics events at the school level along with 20 existing; led a team of 40 executives to organize the event of 700+ participants.",
-    image: "/timeline/nditc.svg",
-    slideImage: "/timeline/init2.jpg",
-    shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "Co-ordinator (Robotics & Management) | NDITC Init 2.0",
+  //   month: "Aug",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "Managed platinum sponsors; Introduced 12+ new robotics events at the school level along with 20 existing; led a team of 40 executives to organize the event of 700+ participants.",
+  //   image: "/timeline/nditc.svg",
+  //   slideImage: "/timeline/init2.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
   {
     type: NodeTypes.CHECKPOINT,
     title: "Unveiling Tinker | My first humanoid robot",
@@ -487,30 +493,30 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2nd Runner Up | Notre Dame National Science Festival",
-    month: "Jul",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Line Following Robot Competition",
-    image: "/timeline/ndsc.png",
-    slideImage: "/timeline/ndsc19.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.RIGHT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "EduKit | Made a Basic Electronics Educational Module",
-    month: "Feb",
-    size: ItemSize.SMALL,
-    subtitle:
-      "I was assigned by the ICT department of my college to design a teaching module to improve the understanding of electronics among Notre Dame College students.",
-    image: "/timeline/ndc.png",
-    slideImage: "/timeline/edukit.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "2nd Runner Up | Notre Dame National Science Festival",
+  //   month: "Jul",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "Line Following Robot Competition",
+  //   image: "/timeline/ndsc.png",
+  //   slideImage: "/timeline/ndsc19.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.RIGHT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "EduKit | Made a Basic Electronics Educational Module",
+  //   month: "Feb",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "I was assigned by the ICT department of my college to design a teaching module to improve the understanding of electronics among Notre Dame College students.",
+  //   image: "/timeline/ndc.png",
+  //   slideImage: "/timeline/edukit.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
   {
     type: NodeTypes.CHECKPOINT,
     title: "President | Robotics Department - NDITC",
@@ -523,95 +529,95 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
-  {
-    type: NodeTypes.CONVERGE,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2018",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "1st Runner Up | NDITC Init 1.0",
-    month: "Nov",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Line Following Robot Competition",
-    image: "/timeline/nditc.svg",
-    slideImage: "/timeline/init18.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Honorable Mention | NDITC Init 1.0",
-    month: "Nov",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Project Display",
-    image: "/timeline/nditc.svg",
-    slideImage: "/timeline/init182.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "1st Runner Up | Notre Dame National Science Festival",
-    month: "Sep",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Self Made Car Racing",
-    image: "/timeline/ndsc.png",
-    slideImage: "/timeline/ndsc18.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "1st Runner Up | Notre Dame National Science Festival",
-    month: "Sep",
-    size: ItemSize.SMALL,
-    subtitle:
-      "IT Project Display, Senior Group",
-    image: "/timeline/ndsc.png",
-    slideImage: "/timeline/ndsc182.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2017",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2nd Runner Up | Notre Dame National Science Festival",
-    month: "Nov",
-    size: ItemSize.SMALL,
-    subtitle:
-      "IT Project Display, Junior Group",
-    image: "/timeline/ndsc.png",
-    slideImage: "/timeline/ndsc17.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Champion | MGBS Science and Technology Fiesta",
-    month: "Oct",
-    size: ItemSize.SMALL,
-    subtitle:
-      "IT Project Display, Senior Group",
-    image: "/timeline/mgbs.png",
-    slideImage: "/timeline/mgbs.jpg",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
+  // {
+  //   type: NodeTypes.CONVERGE,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "2018",
+  //   size: ItemSize.LARGE,
+  //   shouldDrawLine: false,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "1st Runner Up | NDITC Init 1.0",
+  //   month: "Nov",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "Line Following Robot Competition",
+  //   image: "/timeline/nditc.svg",
+  //   slideImage: "/timeline/init18.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "Honorable Mention | NDITC Init 1.0",
+  //   month: "Nov",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "Project Display",
+  //   image: "/timeline/nditc.svg",
+  //   slideImage: "/timeline/init182.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "1st Runner Up | Notre Dame National Science Festival",
+  //   month: "Sep",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "Self Made Car Racing",
+  //   image: "/timeline/ndsc.png",
+  //   slideImage: "/timeline/ndsc18.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "1st Runner Up | Notre Dame National Science Festival",
+  //   month: "Sep",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "IT Project Display, Senior Group",
+  //   image: "/timeline/ndsc.png",
+  //   slideImage: "/timeline/ndsc182.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "2017",
+  //   size: ItemSize.LARGE,
+  //   shouldDrawLine: false,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "2nd Runner Up | Notre Dame National Science Festival",
+  //   month: "Nov",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "IT Project Display, Junior Group",
+  //   image: "/timeline/ndsc.png",
+  //   slideImage: "/timeline/ndsc17.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "Champion | MGBS Science and Technology Fiesta",
+  //   month: "Oct",
+  //   size: ItemSize.SMALL,
+  //   subtitle:
+  //     "IT Project Display, Senior Group",
+  //   image: "/timeline/mgbs.png",
+  //   slideImage: "/timeline/mgbs.jpg",
+  //   shouldDrawLine: true,
+  //   alignment: Branch.LEFT,
+  // },
 ];
 
 export type TimelineNodeV2 = CheckpointNode | BranchNode;
