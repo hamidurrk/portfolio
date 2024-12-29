@@ -24,7 +24,8 @@
 
 body {
   @apply bg-black text-white overflow-x-hidden;
-  cursor: none;
+  cursor: none !important;
+  // overflow-x: hidden;
 }
 
 html {
@@ -117,6 +118,7 @@ a {
   .hamburger {
     z-index: 1;
     backface-visibility: hidden;
+    cursor: none !important;
 
     > div {
       height: 0.125rem;

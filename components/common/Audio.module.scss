@@ -2,13 +2,19 @@ $secondary: #B19162;
 $tertiary: #573217;
 
 .audioContainer {
-  margin-top: 5px;
   width: 100%;
   aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #8DD1F1;
+  background-color: $tertiary;
+}
+
+@media (min-width: 1024px) {
+  .audioContainer {
+    margin-top: 5px;
+  }
+  
 }
 
 .playButton {
@@ -100,6 +106,13 @@ $tertiary: #573217;
     animation-play-state: running;
     animation: spin 4s linear infinite;
   }
+}
+
+@media (max-width: 1024px) {
+  .loader {
+    width: 7vw;
+  }
+  
 }
 
 @keyframes spin {

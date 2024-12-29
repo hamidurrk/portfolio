@@ -5,25 +5,26 @@ import Image from "next/image";
 import { gsap, Linear } from "gsap";
 import Button, { ButtonTypes } from "../common/button";
 import styles from "./Interested.module.scss";
+import TawkMessenger from "../common/tawk-messenger";
+
 
 const Interested = React.memo(() => {
-  const openChat = () => {
-    const targetElement = document.querySelector(
-      ".chaport-launcher-operator-photo"
-    );
+  const tawkMessengerRef = useRef(null);
 
-    if (targetElement) {
-      (targetElement as HTMLElement).click();
+  const openChat = () => {
+    if (tawkMessengerRef.current) {
+      tawkMessengerRef.current.maximize();
+      // console.log(tawkMessengerRef.current);
     }
   };
 
   const renderContent = (): React.ReactNode => (
     <div className={styles.contentContainer}>
       <h1>Interested in working together?</h1>
-      <p className="mt-2 md:text-xl">
-        I'd love to collaborate on research works and ambitious projects. 
+      <p className="mt-2 text-3xl md:text-xl">
+        I&apos;d love to collaborate on research works and ambitious projects. 
       </p>
-      <p className="mt-2 md:text-sm">
+      <p className="mt-2 text-[#B19162] text-xl md:text-sm">
         Feel free to reach out
       </p>
     </div>
@@ -59,10 +60,11 @@ const Interested = React.memo(() => {
   return (
     <div className={styles.interestedContainer}
     >
+      <TawkMessenger ref={tawkMessengerRef} />
       {renderContent()}
       {renderButtons()}
     </div>
   );
 });
-
+Interested.displayName = "Interested";
 export default Interested;

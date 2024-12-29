@@ -407,6 +407,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     let additionalConfig = {};
     
     // Slide as a trigger for Desktop
+    console.log(isDesktop, isSmallScreen());
     if (isDesktop && !isSmallScreen()) {
       // Animation for right side slides
       setSlidesAnimation(timeline);

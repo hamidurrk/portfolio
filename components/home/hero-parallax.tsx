@@ -1,18 +1,19 @@
 import { MENULINKS } from "../../constants";
 import styles from "./Styles.module.scss";
 import Picture1 from "../../public/hero-parallax/hero_img_5.png";
+import Picture2 from "../../public/hero-parallax/hero_img_6.png";
 import finland from "../../public/hero-parallax/finland.png";
 import PhysicsPage from "../common/physics";
 import Socials from "../common/socials";
 import Expertise from "../common/expertise";
 import AudioPlayer from "../common/Audio";
 import Interested from "../common/Interested";
-import Button, { ButtonTypes } from "../common/button";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef, useEffect, MutableRefObject, useState } from "react";
 import { gsap, Linear } from "gsap";
 import Lenis from "@studio-freight/lenis";
+import { IDesktop, isSmallScreen } from "pages";
 
 const HeroParallax = () => {
   const container = useRef(null);
@@ -25,6 +26,46 @@ const HeroParallax = () => {
     target: container,
     offset: ["start start", "end end"],
   });
+  const animDuration = 4;
+  const lenisRef = useRef<Lenis | null>(null);
+  const durationRef = useRef<number>(animDuration);
+  const handleClick = () => {
+    if (!lenisRef.current) {
+      const lenis = new Lenis({
+        duration: animDuration,
+        easing: (t) => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1),
+      });
+
+      lenisRef.current = lenis;
+
+      const raf = (time: number) => {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      };
+
+      requestAnimationFrame(raf);
+    }
+    const element = document.getElementById("skills");
+    if (element && lenisRef.current) {
+      lenisRef.current.scrollTo(element);
+
+      // Destroy Lenis instance after the animation duration
+      setTimeout(() => {
+        if (lenisRef.current) {
+          lenisRef.current.destroy();
+          lenisRef.current = null;
+        }
+      }, durationRef.current * 1000); // Convert duration to milliseconds
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (lenisRef.current) {
+        lenisRef.current.destroy();
+      }
+    };
+  }, [lenisRef.current]);
 
   const initRevealAnimation = (
     targetSection: MutableRefObject<HTMLDivElement>
@@ -61,16 +102,16 @@ const HeroParallax = () => {
     }
   }, [containerWidth, containerHeight]);
 
-  useEffect(() => {
-    const lenis = new Lenis();
+  // useEffect(() => {
+  //   const lenis = new Lenis();
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+  //   function raf(time: number) {
+  //     lenis.raf(time);
+  //     requestAnimationFrame(raf);
+  //   }
 
-    requestAnimationFrame(raf);
-  }, []);
+  //   requestAnimationFrame(raf);
+  // }, []);
   useEffect(() => {
     const svg = container.current.querySelector("svg");
     const paths = svg.querySelectorAll("path");
@@ -113,7 +154,7 @@ const HeroParallax = () => {
       // 1
       content: (
         <div className={`seq ${styles.imageContainer}`}>
-          <Image src={Picture1} layout="fill" alt="image" placeholder="blur" />
+          <Image src={isSmallScreen() ?Picture2 : Picture1} layout="fill" alt="image" placeholder="blur" />
         </div>
       ),
       scale: scale4,
@@ -127,7 +168,7 @@ const HeroParallax = () => {
                     Hamidur
                     </div> */}
             <div className={styles.text}>
-              I'm a developer based in Helsinki, Finland. Currently studying
+              I&apos;m a developer based in Helsinki, Finland. Currently studying
               Computational Engineering & Artificial Intelligence
             </div>
             <div className={styles.svg}>
@@ -188,7 +229,7 @@ const HeroParallax = () => {
         </div>
       ),
       scale: scale5,
-    },
+    }, // 3
     {
       content: (
         <div ref={textContainerRef} className={`seq ${styles.textContainer}`}>
@@ -210,9 +251,11 @@ const HeroParallax = () => {
             style={{ width: "150px", height: "75px" }}
           >
             <p>My stack</p>
-            <a href="#skills" className={`link ${styles.simLink} `}>
+            <div 
+            onClick={handleClick}
+            className={`link ${styles.simLink} `}>
               More about my skills
-            </a>
+            </div>
           </div>
         </div>
       ),
@@ -251,24 +294,39 @@ const HeroParallax = () => {
     },
   ];
 
+  const predefinedOrder = [0, 1, 5, 2]; 
+  const reorderedItems = predefinedOrder.map(index => items[index]);
+
   const { ref: heroSectionRef } = MENULINKS[0];
 
   return (
     <section id={heroSectionRef} ref={targetSection}>
       <div
         ref={container}
-        className={styles.container}
+        className={isSmallScreen() ? styles.containers : styles.container}
         style={{ pointerEvents: "auto" }}
       >
-        <div className={styles.sticky}>
-          {items.map(({ content, scale }, index) => {
-            return (
-              <motion.div key={index} style={{ scale }} className={styles.el}>
-                {content}
-              </motion.div>
-            );
-          })}
-        </div>
+        {isSmallScreen() ? (
+          <div className={styles.stickys}>
+            {reorderedItems.map(({ content }, index) => {
+              return (
+                <motion.div key={index} className={styles.els}>
+                  {content}
+                </motion.div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className={styles.sticky}>
+            {items.map(({ content, scale }, index) => {
+              return (
+                <motion.div key={index} style={{ scale }} className={styles.el}>
+                  {content}
+                </motion.div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   );

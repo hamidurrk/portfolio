@@ -1,6 +1,6 @@
 # Portfolio
 
-## Develpent Process
+## Development Process
 
 1. UI/UX is brainstormed using inspiration from winning portfolios from awwwards. High-fidelity mockup aggregating the ideas using Figma.
 2. This project uses React for simplicity to break down sections as components. Also uses next.js to achieve SSG. SVGs have been animated using CSS.

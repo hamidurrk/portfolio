@@ -38,7 +38,7 @@ const Socials = () => {
     },
     Discord: {
       title: "Discord",
-      content: "For virtual collabs.",
+      content: "For virtual collaboration.",
       link: "https://wa.me/8801646442575",
     },
   };

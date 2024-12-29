@@ -11,6 +11,8 @@
   "dependencies": {
     "@react-hook/resize-observer": "^2.0.2",
     "@studio-freight/lenis": "^1.0.42",
+    "@tawk.to/tawk-messenger-react": "^2.0.2",
+    "@types/styled-components": "^5.1.34",
     "framer-motion": "^11.5.4",
     "gsap": "3.8.0",
     "jsx-runtime": "^1.2.0",
@@ -27,6 +29,7 @@
     "sass": "^1.32.12",
     "smooth-scrollbar": "^8.8.4",
     "solid-spotify-embed": "^0.1.0",
+    "styled-components": "^6.1.13",
     "typed.js": "^2.0.12",
     "vanilla-tilt": "^1.7.0"
   },

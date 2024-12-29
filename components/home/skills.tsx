@@ -45,8 +45,8 @@ const SkillsSection = () => {
       <p className="section-title-sm seq">SKILLS</p>
       <h1 className="section-heading seq mt-2">My Skills</h1>
       <h2 className="text-2xl md:max-w-2xl w-full seq mt-2">
-        I like to take responsibility to craft aesthetic user experience using
-        modern frontend architecture.{" "}
+        For past 8 years, I have developed skills in various 
+        domains of technology through various projects.{" "}
       </h2>
     </div>
   );

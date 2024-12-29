@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './Expertise.module.scss'; 
 import Ball from "./ball";
+import { isSmallScreen } from 'pages';
 
 const Expertise = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -11,7 +12,7 @@ const Expertise = () => {
   const remainingTimeRef = useRef<number>(1400);
   const [animationKey, setAnimationKey] = useState(0);
   useEffect(() => {
-    console.log('hoveredItem:', hoveredItem);
+    // console.log('hoveredItem:', hoveredItem);
   }, [hoveredItem]);
 
   const handleMouseLeave = () => {
@@ -44,23 +45,23 @@ const Expertise = () => {
   const descriptions = {
     LinkedIn: {
       title: "Full-Stack Development",
-      content: "Let's get connected!",
+      content: "Doing contract based work for last 6 years. You give me the design, I'll give you the product.",
     },
     WhatsApp: {
       title: "Blockchain Tech",
-      content: "Contact here for emergency purposes.",
+      content: "Invented a new billing technology in 2021 & won an International Silver Medal for sustainable consumption (SDG 12).",
     },
     X: {
-      title: "Web Scraping & Data Analysis",
-      content: "I'm not that active here by the way.",
+      title: "Web Scraping",
+      content: "Started in 2019; scraped over 100 commercial sites. Currently doing remote research work under UniKassel, Germany.",
     },
     Email: {
-      title: "Software Development",
-      content: "You can mail me at: hamidurrk@gmail.com",
+      title: "Machine Learning & AI",
+      content: "Acted as the natioanal coach for the Bangladesh team in WRO-2023, focusing on AI & ML. Team won an International Bronze.",
     },
     Discord: {
-      title: "Embedded Systems",
-      content: "For virtual collabs.",
+      title: "Robotics & IoT",
+      content: "Have been working on Robots for the last 8 years. Got a Silver Medal in the National Robotics Olympiad in 2019.",
     },
   };
 
@@ -110,7 +111,7 @@ const Expertise = () => {
   }, [animDelay]);
 
   const handleHover = (item: keyof typeof descriptions) => {
-    console.log('handleHover called with item:', item);
+    // console.log('handleHover called with item:', item);
     setHoveredItem(item);
     setIsBouncing(false);
     if (intervalRef.current) {
@@ -120,6 +121,7 @@ const Expertise = () => {
 
   return (
     <div className={styles.container} key={animationKey}>
+      {isSmallScreen() && <h1 className={styles.title}>My Domains</h1>}
       <div className={styles.grid}>
         {Object.keys(descriptions).map((item) => (
           <div
@@ -129,7 +131,7 @@ const Expertise = () => {
             onMouseLeave={handleMouseLeave}
             style={{
               backgroundColor: hoveredItem === item ? colorMapping[item] : "black",
-              transform: hoveredItem === item ? `translate(0px, 0px) scale(1.05)` : "",
+              transform: hoveredItem === item ? `scale(1.4)` : "scale(1)",
               color: hoveredItem === item ? fontColor[item] : "white",
             }}
           >
@@ -142,7 +144,7 @@ const Expertise = () => {
           className={`${styles.description}`}
           style={{
             backgroundColor: hoveredItem ? colorMapping[hoveredItem] : "black",
-            transform: `translate(0px, 0px) scale(0.97)`,
+            transform: isSmallScreen() ? `translate(0px, 0px)` : `translate(0px, 0px) scale(0.97)`,
             color: hoveredItem ? colorMapping[hoveredItem] : "white",
           }}
           onMouseEnter={() => handleHover(hoveredItem as keyof typeof descriptions)}

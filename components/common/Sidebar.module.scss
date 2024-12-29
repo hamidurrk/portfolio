@@ -1,0 +1,59 @@
+.x {
+  background-color: #ffffff;
+}
+
+.github {
+  background-color: #0D1117;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.whatsapp {
+  color: white;
+  background-color: #25D366;
+}
+
+.email {
+  background-color: #E0181A;
+}
+
+.discord {
+  background-color: #5865F2;
+}
+
+.socials {
+  transition: max-height 0.2s ease-in-out;
+  overflow: hidden;
+  max-height: 0; /* Initially hidden */
+}
+
+.socials.expanded {
+  max-height: 500px; /* Adjust based on the number of items */
+}
+
+.spin {
+  animation: spin 0.2s linear;
+  transform-origin: center;
+}
+
+.circle {
+  width: 35px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+

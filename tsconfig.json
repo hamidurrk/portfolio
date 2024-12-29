@@ -28,6 +28,7 @@
   },
   "include": [
     "next-env.d.ts",
+    "tawk-messenger-react.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ],

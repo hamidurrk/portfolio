@@ -2,173 +2,311 @@ $primary: #FEF5E1;
 $secondary: #B19162;
 $tertiary: #573217;
 $fontSize: 1rem;
-// $secondary: #17507A;
-// $tertiary: #6ab9a8;
 
-.container{
-    height: 300vh;
-    position: relative;
-    .sticky{
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        overflow: hidden;
-        .el{
-            width: 100%;
-            height: 100%;
+@media (min-width: 0px) {
+    .container{
+        height: 300vh;
+        position: relative;
+        .sticky{
+            position: sticky;
             top: 0;
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .imageContainer{
-                position: relative;
-                width: 25vw;
-                height: 25vh;
-                img{
-                    object-fit: cover;
-                }
-            }
-            .textContainer {
-                position: relative;
-                font-size: 2rem;
-                color: $primary;
-                background-color: transparent;
-                // border-width: 1px;
-                border-color: #B19162;
-                padding: 20px;
-                // border-radius: 10px;
-                text-align: left;
-                z-index: 45;
-              }
-            &:nth-of-type(2){
-                .textContainer{
-                    top: -30vh;
-                    left: 5vw;
-                    width: 35vw;
-                    height: 30vh;
-                    border-width: 0px 0px 1px 0px;
-                    display: flex;
-                    align-items: flex-end;
-                    justify-content: flex-end;
-                    padding-bottom: 15px;
-                    .text{
-                        color: $secondary;
-                        font-size: 50%;
-                        opacity: 0.9;
+            height: 100vh;
+            overflow: hidden;
+            .el{
+                width: 100%;
+                height: 100%;
+                top: 0;
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .imageContainer{
+                    position: relative;
+                    width: 25vw;
+                    height: 25vh;
+                    img{
+                        object-fit: cover;
                     }
-                    .svg{
+                }
+                .textContainer {
+                    position: relative;
+                    font-size: 2rem;
+                    color: $primary;
+                    background-color: transparent;
+                    // border-width: 1px;
+                    border-color: #B19162;
+                    padding: 20px;
+                    // border-radius: 10px;
+                    text-align: left;
+                    z-index: 45;
+                }
+                &:nth-of-type(2){
+                    .textContainer{
+                        top: -30vh;
+                        left: 5vw;
+                        width: 35vw;
+                        height: 30vh;
+                        border-width: 0px 0px 1px 0px;
                         display: flex;
+                        align-items: flex-end;
                         justify-content: flex-end;
-                        padding: 1% 10%;
-                        opacity: 0.8;
-                        pointer-events: none;
-                    }
-                }
-            }
-            &:nth-of-type(3){
-                .textContainer{
-                    top: -10vh;
-                    left: -25vw;
-                    width: 20vw;
-                    height: 45vh;
-                    // background-color: $primary;
-                    // color: $secondary;
-                    border-width: 0px 1px 0px 0px;
-                    padding: 0;
-                    .sim{
-                        position: absolute;
-                        // border-top: 1px solid $secondary;
-                        border-left: 1px solid $secondary;
-                        &:before {
-                            content: '';
-                            position: absolute;
-                            top: -2vh;
-                            right: -18vw;
-                            width: 40vw;
-                            height: 2px;
-                            border-top: 1px solid $secondary;
-                          }
-                    }
-                    .simText{
-                        position: absolute;
-                        // background-color: yellow;
-                        // opacity: 0.2;
-                        top: 100%;
-                        translate: 0px -78px;
-                        font-size: 24px;
-                        padding: 10px 20px;
-                        .simLink {
-                            position: relative;
-                            font-size: 11px;
-                            top: -15px;
-                            border-bottom: 1px solid $tertiary;
+                        padding-bottom: 15px;
+                        .text{
+                            color: $secondary;
+                            font-size: 50%;
+                            opacity: 0.9;
+                        }
+                        .svg{
+                            display: flex;
+                            justify-content: flex-end;
+                            padding: 1% 10%;
+                            opacity: 0.8;
+                            pointer-events: none;
                         }
                     }
                 }
-            }
-            &:nth-of-type(4){
-                .textContainer{
-                    left: 27.5vw;
-                    width: 25vw;
-                    height: 25vh;
-                    border-width: 0px 0px 0px 1px;
-                    padding: 0px;
-                    &:before {
-                        content: '';
-                        position: absolute;
-                        top: -12.5vh;
-                        right: 0px;
-                        width: 2px;
-                        height: 50vh;
-                        border-right: 1px solid $secondary;
-                    }
-                    // &:after {
-                    //     content: '';
-                    //     position: absolute;
-                    //     top: 0px;
-                    //     right: -2.5vw;
-                    //     width: 20vw;
-                    //     height: 25vh;
-                    //     border-top: 1px solid $secondary;
-                    //     border-bottom: 1px solid $secondary;
-                    // }
-                }
-            }
-            &:nth-of-type(5){
-                .textContainer{
-                    top: 27.5vh;
-                    left: 11vw;
-                    width: 8vw;
-                    height: 25vh;
-                    border-width: 1px 0px 0px 0px;
-                    padding: 0px;
-                }
-            }
-            &:nth-of-type(6){
-                .textContainer{
-                    top: 24vh;
-                    left: -16.5vw;
-                    width: 43vw;
-                    height: 18vh;
-                    border-width: 1px 1px 0px 0px;
-                    padding: 0px;
-                    .text{
-                        font-size: 10rem;
+                &:nth-of-type(3){
+                    .textContainer{
+                        top: -10vh;
+                        left: -25vw;
+                        width: 20vw;
+                        height: 45vh;
+                        // background-color: $primary;
+                        // color: $secondary;
+                        border-width: 0px 1px 0px 0px;
+                        padding: 0;
+                        .sim{
+                            position: absolute;
+                            // border-top: 1px solid $secondary;
+                            border-left: 1px solid $secondary;
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                top: -2vh;
+                                right: -18vw;
+                                width: 40vw;
+                                height: 2px;
+                                border-top: 1px solid $secondary;
+                            }
+                        }
+                        .simText{
+                            position: absolute;
+                            // background-color: yellow;
+                            // opacity: 0.2;
+                            top: 100%;
+                            translate: 0px -78px;
+                            font-size: 24px;
+                            padding: 10px 20px;
+                            .simLink {
+                                position: relative;
+                                font-size: 11px;
+                                // top: -15px;
+                                border-bottom: 1px solid $tertiary;
+                            }
+                        }
                     }
                 }
-            }
-            &:nth-of-type(7){
-                .textContainer{
-                    top: 25vh;
-                    left: 24.5vw;
-                    width: 15vw;
-                    height: 20vh;
-                    border-width: 1px 0px 0px 1px;
-                    padding: 0px;
+                &:nth-of-type(4){
+                    .textContainer{
+                        left: 27.5vw;
+                        width: 25vw;
+                        height: 25vh;
+                        border-width: 0px 0px 0px 1px;
+                        padding: 0px;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: -12.5vh;
+                            right: 0px;
+                            width: 2px;
+                            height: 50vh;
+                            border-right: 1px solid $secondary;
+                        }
+                        // &:after {
+                        //     content: '';
+                        //     position: absolute;
+                        //     top: 0px;
+                        //     right: -2.5vw;
+                        //     width: 20vw;
+                        //     height: 25vh;
+                        //     border-top: 1px solid $secondary;
+                        //     border-bottom: 1px solid $secondary;
+                        // }
+                    }
+                }
+                &:nth-of-type(5){
+                    .textContainer{
+                        top: 27.5vh;
+                        left: 11vw;
+                        width: 8vw;
+                        height: 25vh;
+                        border-width: 1px 0px 0px 0px;
+                        padding: 0px;
+                    }
+                }
+                &:nth-of-type(6){
+                    .textContainer{
+                        top: 24vh;
+                        left: -16.5vw;
+                        width: 43vw;
+                        height: 18vh;
+                        border-width: 1px 1px 0px 0px;
+                        padding: 0px;
+                        .text{
+                            font-size: 10rem;
+                        }
+                    }
+                }
+                &:nth-of-type(7){
+                    .textContainer{
+                        top: 25vh;
+                        left: 24.5vw;
+                        width: 15vw;
+                        height: 20vh;
+                        border-width: 1px 0px 0px 1px;
+                        padding: 0px;
+                    }
                 }
             }
         }
     }
 }
-
+/* Media query for screens smaller than 1024px */
+@media (max-width: 1024px) {
+    .containers {
+        height: auto; /* Adjust height to fit content */
+        .stickys {
+            position: relative;
+            height: auto;
+            .els{
+                width: 100vw; /* Full viewport width */
+                height: auto; /* Adjust height to fit content */
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 20px 0px;
+                .imageContainer{
+                    position: relative;
+                    width: 100vw;
+                    height: 100vh;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(to top, black, transparent 60%);
+                        pointer-events: none; // Ensure the gradient does not interfere with interactions
+                      }
+                    img{
+                        object-fit: cover;
+                    }
+                }
+                .textContainer {
+                    position: relative;
+                    font-size: 2rem;
+                    color: $primary;
+                    background-color: transparent;
+                    // border-width: 1px;
+                    border-color: $secondary;
+                    padding: 20px;
+                    // border-radius: 10px;
+                    text-align: left;
+                    z-index: 45;
+                  }
+                &:nth-of-type(1){
+                    padding: 0px;
+                }
+                &:nth-of-type(2){
+                    .textContainer{
+                        position: absolute;
+                        top: -35vh;
+                        width: 80vw;
+                        height: 30vh;
+                        border-width: 0px 0px 1px 0px;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: flex-end;
+                        padding-bottom: 15px;
+                        .text{
+                            color: $secondary;
+                            font-size: 50%;
+                            opacity: 0.9;
+                        }
+                        .svg{
+                            display: flex;
+                            justify-content: flex-end;
+                            padding: 1% 10%;
+                            opacity: 0.8;
+                            pointer-events: none;
+                        }
+                    }
+                }
+                &:nth-of-type(4){
+                    .textContainer{
+                        width: 90vw;
+                        height: 60vh;
+                        padding: 0px;
+                        .sim{
+                            position: absolute;
+                            border-width: 1px;
+                            border-color: $secondary;
+                        }
+                        .simText{
+                            position: absolute;
+                            // background-color: yellow;
+                            // opacity: 0.2;
+                            top: 100%;
+                            translate: 0px -78px;
+                            font-size: 24px;
+                            padding: 10px 20px;
+                            .simLink {
+                                position: relative;
+                                font-size: 11px;
+                                // top: -15px;
+                                border-bottom: 1px solid $tertiary;
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(6){
+                    .textContainer{
+                        width: 80vw;
+                        height: 25vh;
+                        padding: 0px;
+                    }
+                }
+                &:nth-of-type(5){
+                    .textContainer{
+                        width: 8vw;
+                        height: 25vh;
+                        border-width: 1px 0px 0px 0px;
+                        padding: 0px;
+                    }
+                }
+                &:nth-of-type(3){
+                    .textContainer{
+                        width: 90vw;
+                        height: 350px;
+                        border-width: 0px 0px 0px 0px;
+                        padding: 0px;
+                        .text{
+                            font-size: 10rem;
+                        }
+                    }
+                }
+                &:nth-of-type(7){
+                    .textContainer{
+                        width: 80vw;
+                        height: 20vh;
+                        border-width: 1px 0px 0px 1px;
+                        padding: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IDesktop, NO_MOTION_PREFERENCE_QUERY } from "pages";
 import Button, { ButtonTypes } from "../common/button";
+import Lenis from "@studio-freight/lenis";
 
 const PROJECT_STYLES = {
   SECTION:
@@ -16,20 +17,44 @@ const PROJECT_STYLES = {
 const ProjectsSection = ({ isDesktop }: IDesktop) => {
   const targetSectionRef: MutableRefObject<HTMLDivElement> = useRef(null);
   const sectionTitleElementRef: MutableRefObject<HTMLDivElement> = useRef(null);
-  const handleClick = () => {
-    // Find the "Skills" section by its ID
-    const skillsSection = document.getElementById('skills');
+  
+  const animDuration = 4;
+  const lenisRef = useRef<Lenis | null>(null);
+  const durationRef = useRef<number>(animDuration);
 
-    // Check if the section exists
-    if (skillsSection) {
-      // Scroll to the "Skills" section
-      skillsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
   const [willChange, setwillChange] = useState(false);
   const [horizontalAnimationEnabled, sethorizontalAnimationEnabled] =
     useState(false);
 
+  const handleClick = () => {
+    if (!lenisRef.current) {
+          const lenis = new Lenis({
+            duration: animDuration,
+            easing: (t) => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1),
+          });
+    
+          lenisRef.current = lenis;
+    
+          const raf = (time: number) => {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          };
+    
+          requestAnimationFrame(raf);
+        }
+        const element = document.getElementById("skills");
+        if (element && lenisRef.current) {
+          lenisRef.current.scrollTo(element);
+    
+          // Destroy Lenis instance after the animation duration
+          setTimeout(() => {
+            if (lenisRef.current) {
+              lenisRef.current.destroy();
+              lenisRef.current = null;
+            }
+          }, durationRef.current * 1000); // Convert duration to milliseconds
+        }
+      };
   const initRevealAnimation = (
     targetSectionRef: MutableRefObject<HTMLDivElement>
   ): [GSAPTimeline, ScrollTrigger] => {
@@ -64,7 +89,7 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       targetSectionRef.current.querySelector(".project-wrapper").clientWidth;
     targetSectionRef.current.style.width = `${elementWidth}px`;
     const width = window.innerWidth - elementWidth;
-    const duration = `${(elementWidth / window.innerHeight) * 100}%`;
+    const duration = `${(elementWidth / window.innerHeight) * 30}%`;
     timeline
       .to(targetSectionRef.current, { x: width })
       .to(sectionTitleElementRef.current, { x: -width }, "<");
@@ -82,6 +107,27 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
 
     return [timeline, scrollTrigger];
   };
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      // duration: 2,
+      // easing: (t) =>
+      //   t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+    });
+
+    lenisRef.current = lenis;
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     let projectsScrollTrigger: ScrollTrigger | undefined;
@@ -136,22 +182,23 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       <div className="flex justify-between w-[90vw] md:w-auto">
         <h1 className="section-heading seq mt-2">My Work Highlights</h1>
         <div className="flex seq items-center">
-        <Button
-          onClick={handleClick}
-          classes="link"
-          type={ButtonTypes.OUTLINE}
-          name="Skip"
-          otherProps={{
-            target: "_blank",
-            rel: "noreferrer",
-          }}
-        ></Button>
+          <Button
+            onClick={handleClick}
+            classes="link"
+            type={ButtonTypes.OUTLINE}
+            name="Skip"
+            otherProps={{
+              target: "_blank",
+              rel: "noreferrer",
+            }}
+          ></Button>
         </div>
-    </div>
-    <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
-          I have contributed in projects ranging from Frontend and Backend
-          development, Embedded Systems & Automation, Robotics, Machine Learning, and Blockchain
-        </h2>
+      </div>
+      <h2 className="text-2xl md:max-w-3xl w-full seq max-w-sm mt-2">
+        I have contributed in projects ranging from Frontend and Backend
+        development, Embedded Systems & Automation, Robotics, Machine Learning,
+        and Blockchain
+      </h2>
     </div>
   );
 

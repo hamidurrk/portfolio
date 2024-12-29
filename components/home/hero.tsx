@@ -18,19 +18,24 @@ const HERO_STYLES = {
 };
 
 const HeroSection = React.memo(() => {
-  const typedSpanElement: MutableRefObject<HTMLSpanElement> = useRef(null);
-  const targetSection: MutableRefObject<HTMLDivElement> = useRef(null);
+  const typedSpanElement: MutableRefObject<HTMLSpanElement | null> = useRef(null);
+  const targetSection: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
   const initTypeAnimation = (
     typedSpanElement: MutableRefObject<HTMLSpanElement>
-  ): Typed => {
-    return new Typed(typedSpanElement.current, {
-      strings: TYPED_STRINGS,
-      typeSpeed: 15,
-      backSpeed: 10,
-      backDelay: 1300,
-      loop: true,
-    });
+  ): () => void => {
+    if (typedSpanElement.current) {
+      const typed = new Typed(typedSpanElement.current, {
+        strings: TYPED_STRINGS,
+        typeSpeed: 15,
+        backSpeed: 10,
+        backDelay: 1300,
+      });
+
+      return () => {
+        typed.destroy();
+      };
+    }
   };
 
   const initRevealAnimation = (
@@ -52,7 +57,6 @@ const HeroSection = React.memo(() => {
     const typed = initTypeAnimation(typedSpanElement);
     initRevealAnimation(targetSection);
 
-    return typed.destroy;
   }, [typedSpanElement, targetSection]);
 
   const renderBackgroundImage = (): React.ReactNode => (

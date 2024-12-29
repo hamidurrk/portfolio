@@ -62,7 +62,7 @@ const Cursor = ({ isDesktop }: IDesktop) => {
   };
 
   useEffect(() => {
-    if (isDesktop && !isSmallScreen()) {
+    if (isDesktop) {
       initCursorAnimation();
     }
   }, [cursor, follower, isDesktop]);
