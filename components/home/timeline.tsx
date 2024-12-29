@@ -14,8 +14,14 @@ import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IDesktop, isSmallScreen } from "pages";
 
+
+// $primary: #FEF5E1;
+// $secondary: #B19162;
+// $tertiary: #995e33;
+
 const svgColor = "#9CA3AF";
-const animColor = "#17507A";
+const animColor = "#573217";
+const monthColor = "#B19162";
 const separation = 450;
 const strokeWidth = 2;
 const leftBranchX = 13;
@@ -115,7 +121,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
     let monthSvg = '';
     if (month !== undefined) {
         monthSvg = `<rect width="40" height="25" fill="#000" x=${x - 20} y=${y + 28}></rect>
-        <text x=${x - 10} y=${y + 43} font-size="12" fill="#6cd3ec">${month}</text>`;
+        <text x=${x - 10} y=${y + 43} font-size="12" fill=${monthColor}>${month}</text>`;
     }
     return `${monthSvg}
     <rect class='dot' width=${dotSize} height=${dotSize} fill='#111827' x=${

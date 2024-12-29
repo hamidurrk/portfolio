@@ -13,4 +13,6 @@ const TawkMessenger = forwardRef((props, ref: React.Ref<TawkMessengerReact>) => 
   );
 });
 
+TawkMessenger.displayName = "TawkMessenger";
+
 export default TawkMessenger;
