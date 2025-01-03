@@ -90,7 +90,7 @@ const HeroParallax = () => {
     if (textContainerRef.current) {
       const width = textContainerRef.current.offsetWidth;
       const height = textContainerRef.current.offsetHeight;
-      console.log(`Width: ${width}px, Height: ${height}px`);
+      // console.log(`Width: ${width}px, Height: ${height}px`);
       setContainerWidth(width);
       setContainerHeight(height);
     }

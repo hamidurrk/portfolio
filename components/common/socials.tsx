@@ -8,7 +8,7 @@ const Socials = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
 
   useEffect(() => {
-    console.log('hoveredItem:', hoveredItem);
+    // console.log('hoveredItem:', hoveredItem);
   }, [hoveredItem]);
   const descriptions = {
     LinkedIn: {
@@ -44,7 +44,7 @@ const Socials = () => {
   };
 
   const handleHover = (item: keyof typeof descriptions) => {
-    console.log('handleHover called with item:', item);
+    // console.log('handleHover called with item:', item);
     setHoveredItem(descriptions[item]);
   };
 

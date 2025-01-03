@@ -112,7 +112,7 @@ export default function Home() {
   if (isDesktop === null) {
     return null; // or a loading spinner, etc.
   } else {
-    console.log("Desktop not null: ", isDesktop);
+    // console.log("Desktop not null: ", isDesktop);
     if (!isDesktop) {
       document.documentElement.style.overflowX = 'hidden';
     }
