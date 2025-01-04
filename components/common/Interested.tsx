@@ -48,10 +48,6 @@ const Interested = React.memo(() => {
           type={ButtonTypes.SECONDARY}
           name="Let's Talk"
           onClick={openChat}
-          otherProps={{
-            target: "_blank",
-            rel: "noreferrer",
-          }}
         ></Button>
       </div>
     </div>

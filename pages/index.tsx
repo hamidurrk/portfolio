@@ -139,7 +139,7 @@ export default function Home() {
           <ProjectsSection isDesktop={true} />
           { isSmallScreen() ? <Interested /> : null }
           <SkillsSection />
-          <CollaborationSection />
+          {/* <CollaborationSection /> */}
           <TimelineSection isDesktop={isDesktop} />
           {isDesktop ? null : renderGap()}
           <AboutSection />

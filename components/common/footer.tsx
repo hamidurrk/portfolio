@@ -91,10 +91,6 @@ const Footer = () => {
           classes="mr-3"
           type={ButtonTypes.OUTLINE}
           name="Resume"
-          otherProps={{
-            target: "_blank",
-            rel: "noreferrer",
-          }}
           href="/Hamidur_Resume.pdf"
         ></Button>
         <Button

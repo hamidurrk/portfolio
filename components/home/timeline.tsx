@@ -13,6 +13,7 @@ import Image from "next/image";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IDesktop, isSmallScreen } from "pages";
+import CollaborationSection from "@/components/home/collaboration";
 
 
 // $primary: #FEF5E1;
@@ -541,6 +542,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
       className="w-full relative select-none min-h-screen section-container py-8 flex flex-col justify-center"
       id={MENULINKS[3].ref}
     >
+      <CollaborationSection />
       {renderSectionTitle()}
       <div className="grid grid-cols-12 gap-4 mt-20">
         <div className="col-span-12 md:col-span-6 line-svg" ref={svgContainer}>
