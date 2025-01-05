@@ -163,6 +163,7 @@ const ProjectTile = ({
           src={image}
           alt="Project"
           layout="fill"
+          loading="lazy"
           className="absolute w-full h-full top-0 left-0 opacity-40"
         />
         {/* {renderProjectImage(image, blurImage, name)} */}
