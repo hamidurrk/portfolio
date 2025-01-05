@@ -1,15 +1,11 @@
 import styles from "./Socials.module.scss"
-import { EMAIL, MENULINKS, SOCIAL_LINKS } from "../../constants";
 import Image from "next/image";
-import Button, { ButtonTypes } from "./button";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Socials = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [copied, setCopied] = useState(false);
 
-  useEffect(() => {
-    // console.log('hoveredItem:', hoveredItem);
-  }, [hoveredItem]);
   const descriptions = {
     LinkedIn: {
       title: "LinkedIn",
@@ -33,8 +29,8 @@ const Socials = () => {
     },
     Email: {
       title: "Gmail",
-      content: "You can mail me at: hamidurrk@gmail.com",
-      link: "mailto:hamidurrk@gmail.com",
+      content: "You can mail me at: hamidurrk@gmail.com Click to copy",
+      link: "hamidurrk@gmail.com",
     },
     Discord: {
       title: "Discord",
@@ -44,7 +40,6 @@ const Socials = () => {
   };
 
   const handleHover = (item: keyof typeof descriptions) => {
-    // console.log('handleHover called with item:', item);
     setHoveredItem(descriptions[item]);
   };
 
@@ -52,25 +47,37 @@ const Socials = () => {
     setHoveredItem(null);
   };
 
+  const handleClick = (item: keyof typeof descriptions) => {
+    if (item.toLowerCase() === 'email') {
+      navigator.clipboard.writeText(descriptions[item as keyof typeof descriptions].link);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1000);
+    } else {
+      window.open(descriptions[item as keyof typeof descriptions].link, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.grid}>
         {Object.keys(descriptions).map((item : any) => (
-          <a
+          <div
             key={item}
             className={`link ${styles.tab} ${styles[item.toLowerCase()]}`}
             onMouseEnter={() => handleHover(item as keyof typeof descriptions)}
             onMouseLeave={handleMouseLeave}
-            href={descriptions[item as keyof typeof descriptions].link} 
-            rel="noreferrer" 
-            target="_blank">
+            onClick={() => handleClick(item)}
+          >
             <Image
               src={`/social/${item.toLowerCase()}.svg`}
               alt={`${item} Icon`}
               width={30}
               height={30}
             />
-            </a>
+            {copied && item.toLowerCase() === 'email' && hoveredItem && (
+              <div className={styles.copiedNotification}>Copied!</div>
+            )}
+          </div>
         ))}
       </div>
       {hoveredItem && (

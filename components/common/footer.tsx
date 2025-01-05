@@ -7,8 +7,10 @@ import { isSmallScreen } from "pages";
 import TawkMessenger from "../common/tawk-messenger";
 
 const Footer = () => {
+  const [copied, setCopied] = useState(false);
   const tawkMessengerRef = useRef(null);
   const [imageWidth, setImageWidth] = useState(1440);
+
   const descriptions = {
     LinkedIn: {
       title: "LinkedIn",
@@ -33,7 +35,7 @@ const Footer = () => {
     Email: {
       title: "Gmail",
       content: "You can mail me at: hamidurrk@gmail.com",
-      link: "mailto:hamidurrk@gmail.com",
+      link: "hamidurrk@gmail.com",
     },
     Discord: {
       title: "Discord",
@@ -47,29 +49,40 @@ const Footer = () => {
       setImageWidth(window.innerWidth);
     };
 
-    updateWidth(); // Set initial width
+    updateWidth(); 
     window.addEventListener('resize', updateWidth);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('resize', updateWidth);
     };
   }, []);
+
+  const handleClick = (item: keyof typeof descriptions) => {
+    if (item.toLowerCase() === 'email') {
+      navigator.clipboard.writeText(descriptions[item as keyof typeof descriptions].link);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1000);
+    } else {
+      window.open(descriptions[item as keyof typeof descriptions].link, '_blank', 'noopener,noreferrer');
+    }
+  }; 
+
   const renderSocialIcons = (): React.ReactNode => {
     return Object.keys(descriptions).map((item : any) => (
-      <a
+      <div
         key={item}
         className={`link mx-1 ${styles[item.toLowerCase()]} ${styles.circle} ${styles.outline}`}
-        href={descriptions[item as keyof typeof descriptions].link} 
-        rel="noreferrer" 
-        target="_blank">
+        onClick={() => handleClick(item)}>
         <Image
           src={`/social/${item.toLowerCase()}.svg`}
           alt={`${item} Icon`}
-          width={25}
-          height={25}
+          width={item.toLowerCase() === "x" ? 20 : 25}
+          height={item.toLowerCase() === "x" ? 20 : 25}
         />
-        </a>
+        {copied && item.toLowerCase() === 'email' &&  (
+          <div className={styles.copiedNotification}>Copied!</div>
+        )}
+        </div>
     ))
   };
 

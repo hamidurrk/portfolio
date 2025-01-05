@@ -6,6 +6,7 @@ import styles from "./Sidebar.module.scss";
 const Sidebar = () => {
   const [expanded, setExpanded] = useState(false);
   const [spinning, setSpinning] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,31 +69,43 @@ const Sidebar = () => {
     Email: {
       title: "Gmail",
       content: "You can mail me at: hamidurrk@gmail.com",
-      link: "mailto:hamidurrk@gmail.com",
+      link: "hamidurrk@gmail.com",
     },
     Discord: {
       title: "Discord",
       content: "For virtual collaboration.",
       link: "https://wa.me/8801646442575",
     },
-  };    
+  };  
+  
+  const handleClick = (item: keyof typeof descriptions) => {
+    if (item.toLowerCase() === 'email') {
+      navigator.clipboard.writeText(descriptions[item as keyof typeof descriptions].link);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1000);
+    } else {
+      window.open(descriptions[item as keyof typeof descriptions].link, '_blank', 'noopener,noreferrer');
+    }
+  };  
   return (
     <div className="fixed right-0 bottom-0 p-5 mb-12 z-50 flex flex-col items-center">
       <div className={`${styles.socials} ${expanded ? styles.expanded : ""}`}>
         {Object.keys(descriptions).map((item : any) => (
-          <a
+          <div
             key={item}
             className={`link my-2 ${styles[item.toLowerCase()]} ${styles.circle}`}
-            href={descriptions[item as keyof typeof descriptions].link} 
-            rel="noreferrer" 
-            target="_blank">
+            onClick={() => handleClick(item)}
+            >
             <Image
               src={`/social/${item.toLowerCase()}.svg`}
               alt={`${item} Icon`}
-              width={25}
-              height={25}
+              width={item.toLowerCase() === "x" ? 20 : 25}
+              height={item.toLowerCase() === "x" ? 20 : 25}
             />
-            </a>
+            {copied && item.toLowerCase() === 'email' &&  (
+              <div className={styles.copiedNotification}>Copied!</div>
+            )}
+            </div>
         ))}
       </div>
       <div className="socialButton flex justify-center items-center w-10 h-10 my-2">

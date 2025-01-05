@@ -119,10 +119,22 @@ const SkillsSection = () => {
                 SKILLS.frontend
               )}
             </div>
-            <div className=" seq">
+            <div className="mr-6 seq">
               {renderSkillColumn(
                 "Backend Development", 
                 SKILLS.backend
+                )}
+            </div>
+            <div className="mr-6 mb-6">
+              {renderSkillColumn(
+                "Web Scraping",
+                SKILLS.webscraping
+              )}
+            </div>
+            <div>
+              {renderSkillColumn(
+                "Blockchain Technology", 
+                SKILLS.blockchain
                 )}
             </div>
           </div>
@@ -134,20 +146,14 @@ const SkillsSection = () => {
                 SKILLS.roboticsIotEmbedded
               )}
             </div>
-            <div>
-              {renderSkillColumn(
-                "Blockchain Technology", 
-                SKILLS.blockchain
-                )}
-            </div>
-
-          <div className="flex flex-wrap mt-10">
             <div className="mr-6 mb-6">
               {renderSkillColumn(
-                "Web Scraping",
-                SKILLS.webscraping
+                "Machine Learning & Statistics",
+                SKILLS.statistics
               )}
             </div>
+          </div>
+          <div className="flex flex-wrap mt-10">
             <div className="mr-6">
               {renderSkillColumn(
                 "Database Experiences", 
@@ -160,15 +166,6 @@ const SkillsSection = () => {
                 SKILLS.hosting
                 )}
             </div> */}
-          </div>
-
-          <div className="flex flex-wrap mt-10">
-            <div className="mr-6 mb-6">
-              {renderSkillColumn(
-                "Statistics",
-                SKILLS.statistics
-              )}
-            </div>
             <div className="mr-6">
               {renderSkillColumn(
                 "Desktop App Development", 
@@ -180,6 +177,15 @@ const SkillsSection = () => {
                 "Graphics Designing, Video Editing", 
                 SKILLS.gfxdesign
                 )}
+            </div>
+          </div>
+
+          {/* <div className="flex flex-wrap mt-10">
+            <div className="mr-6 mb-6">
+              {renderSkillColumn(
+                "Machine Learning & Statistics",
+                SKILLS.statistics
+              )}
             </div>
           </div>
 
@@ -196,11 +202,10 @@ const SkillsSection = () => {
                 SKILLS.other
                 )}
             </div>
-          </div>
+          </div> */}
           
         </div>
         </div>
-      </div>
     </section>
   );
 };
