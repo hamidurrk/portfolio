@@ -45,15 +45,15 @@ const Expertise = () => {
   const descriptions = {
     LinkedIn: {
       title: "Full-Stack Development",
-      content: "Doing contract based work for last 6 years. You give me the design, I'll give you the product.",
+      content: "Doing contract based work for last 6 years. I specialize in modern frameworks, web animations, and SEO optimized UI/UX.",
     },
     WhatsApp: {
       title: "Blockchain Tech",
-      content: "Invented a new billing technology in 2021 & won an International Silver Medal for sustainable consumption (SDG 12).",
+      content: "Invented a new billing technology in 2022 & won an International Silver Medal for sustainable consumption (SDG 12).",
     },
     X: {
       title: "Web Scraping",
-      content: "Started in 2019; scraped over 100 commercial sites. Currently doing remote research work under UniKassel, Germany.",
+      content: "Scraped over 100 commercial sites. Currently writing a paper with researchers from UniKassel & TU Dortmund, Germany.",
     },
     Email: {
       title: "Machine Learning & AI",

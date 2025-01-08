@@ -283,7 +283,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "National Coach (Bangladesh) | World Robot Olympiad",
     size: ItemSize.SMALL,
     subtitle:
-      "Led teams in the Future Innovator segment through the nationals; 2 teams to internationals, 1 got honored",
+      "Acted as the natioanal coach for the Bangladesh team, focusing on ML, Computer Vision, and Robotics. Team won an International Silver in WRO-23 Panama.",
     image: "/timeline/wro.svg",
     slideImage: "/timeline/wro.jpg",
     shouldDrawLine: true,
@@ -295,7 +295,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "Web Developer | Give Bangladesh Foundation",
     size: ItemSize.SMALL,
     subtitle:
-      "Joined as a Volunteer Web Developer. My first project was an international collaboration with Awake Youth Initiative in Nairobi, Kenya",
+      "Collaborated internationally as a web developer with Awake Youth Initiative to develop a fundraising website that supports the African underserved slum communities in Nairobi, Kenya.",
     image: "/timeline/gbf_logo.png",
     slideImage: "/timeline/gbf.jpg",
     shouldDrawLine: true,
@@ -326,7 +326,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     month: "Oct",
     size: ItemSize.SMALL,
     subtitle:
-      "2nd Place in SDG 12 among teams from 44 countries for the invention of Block Meter",
+      "Won the medal in SDG 12 among teams from 44 countries for ensuring responsible consumption and production through the invention of Block Meter",
     image: "/timeline/ibcol.svg",
     slideImage: "/timeline/ibcol.jpg",
     shouldDrawLine: true,
@@ -368,13 +368,13 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   //   shouldDrawLine: true,
   //   alignment: Branch.LEFT,
   // },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2021",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
+  // {
+  //   type: NodeTypes.CHECKPOINT,
+  //   title: "2021",
+  //   size: ItemSize.LARGE,
+  //   shouldDrawLine: false,
+  //   alignment: Branch.LEFT,
+  // },
   {
     type: NodeTypes.CHECKPOINT,
     title: "Invented Blockchain based Billing System",
@@ -411,28 +411,28 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   //   shouldDrawLine: true,
   //   alignment: Branch.LEFT,
   // },
-  // {
-  //   type: NodeTypes.CHECKPOINT,
-  //   title: "2020",
-  //   size: ItemSize.LARGE,
-  //   shouldDrawLine: false,
-  //   alignment: Branch.LEFT,
-  // },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "2020",
+    size: ItemSize.LARGE,
+    shouldDrawLine: false,
+    alignment: Branch.LEFT,
+  },
   // {
   //   type: NodeTypes.DIVERGE,
   // },
-  // {
-  //   type: NodeTypes.CHECKPOINT,
-  //   title: "Champion | International Tech Carnival, DRMC",
-  //   month: "Feb",
-  //   size: ItemSize.SMALL,
-  //   subtitle:
-  //     "Fastest Line Follower Robot to finish tracks",
-  //   image: "/timeline/drmc.png",
-  //   slideImage: "/timeline/drmc.jpg",
-  //   shouldDrawLine: true,
-  //   alignment: Branch.RIGHT,
-  // },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Champion | International Tech Carnival, DRMC",
+    month: "Feb",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Fastest Line Follower Robot to finish tracks while avoiding obstacles, running though maze, and inverted lines.",
+    image: "/timeline/drmc.png",
+    slideImage: "/timeline/drmc.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
   // {
   //   type: NodeTypes.CHECKPOINT,
   //   title: "Workshop Instructor | Digital Design",

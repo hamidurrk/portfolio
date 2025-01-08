@@ -135,10 +135,10 @@ export default function Home() {
           { isSmallScreen() ? <Sidebar /> : null }
           {/* <HeroParallax /> */}
           {/* <HeroSection /> */}
-          <QuoteSection />
           <ProjectsSection isDesktop={true} />
           { isSmallScreen() ? <Interested /> : null }
           <SkillsSection />
+          <QuoteSection />
           {/* <CollaborationSection /> */}
           <TimelineSection isDesktop={isDesktop} />
           {isDesktop ? null : renderGap()}

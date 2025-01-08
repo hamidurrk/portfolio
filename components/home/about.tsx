@@ -63,16 +63,14 @@ const AboutSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-      Robotics, Web Engineering, Electronics are just my excuses to give 
-      life to the inanimates. {" "}
+      I am up for any kind of challenges to expand my domain. {" "}
       </span>
       <span
         className={`about-2 leading-tight ${
           willChange ? "will-change-opacity" : ""
         }`}
       >
-      I am a multimodal Developer who bridges the gap between development
-      and design.
+      If you're interested, let's work together.
       </span>
     </h1>
   );

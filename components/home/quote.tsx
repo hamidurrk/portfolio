@@ -49,13 +49,14 @@ const QuoteSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-        A student of
-        <span className="text-3xl md:text-4xl"><br />Computational Engineering & Artificial Intelligence</span>
+        As a student of Computational Engineering & AI, <br />
         {" "}
-        <span className="text-strong font-bold"><br />intelligent robots</span>,{" "}
-        <span className="text-strong font-bold"><br />machine learning</span>,{" "}
-        <span className="text-strong font-bold">blockchain</span>, and{" "}
-        <span className="text-strong font-bold"><br />dynamic web solutions</span>.
+        I am currently expanding my knowledge in
+        {" "}
+        <span className="text-strong font-bold"><br />Machine Learning Models</span>,{" "}
+        <span className="text-strong font-bold"><br />Convolutional Neural Network</span>, {" "}
+        <span className="text-strong font-bold"><br />Natural Language Processing</span>, and{" "}
+        <span className="text-strong font-bold"><br />Large Language Models</span>.
       </h1>
     </div>
   );

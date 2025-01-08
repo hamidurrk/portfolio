@@ -92,7 +92,7 @@ const CollaborationSection = () => {
         willChange ? "will-change-opacity" : ""
       }`}
     >
-      A quick recap of <span className="text-strong font-bold">Proud Moments</span>
+      A quick recap of <span className="text-strong font-bold">Notable Moments</span>
     </h1>
   );
 
