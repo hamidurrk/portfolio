@@ -168,8 +168,8 @@ const HeroParallax = () => {
                     Hamidur
                     </div> */}
             <div className={styles.text}>
-              I&apos;m a developer based in Helsinki, Finland. Currently studying
-              Computational Engineering & Artificial Intelligence
+              I&apos;m a programmer based in Finland. Currently studying
+              Computational Engineering & Artificial Intelligence.
             </div>
             <div className={styles.svg}>
               <svg

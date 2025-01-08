@@ -53,7 +53,7 @@ const Expertise = () => {
     },
     X: {
       title: "Web Scraping",
-      content: "Scraped over 100 commercial sites. Currently writing a paper with researchers from UniKassel & TU Dortmund, Germany.",
+      content: "Scraping commercial sites for 4 years. Using my tool for research with researchers from UniKassel & TU Dortmund, Germany.",
     },
     Email: {
       title: "Machine Learning & AI",
@@ -61,7 +61,7 @@ const Expertise = () => {
     },
     Discord: {
       title: "Robotics & IoT",
-      content: "Have been working on Robots for the last 8 years. Got a Silver Medal in the National Robotics Olympiad in 2019.",
+      content: "Over the past 8 years, I have been involved in robotics. Won a Silver Medal in the National Robotics Olympiad in 2019.",
     },
   };
 

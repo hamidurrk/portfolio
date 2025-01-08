@@ -288,7 +288,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "Started B.Sc. in Computational Engineering and Artificial Intelligence",
     size: ItemSize.SMALL,
     subtitle:
-      "Currently studying the vast field of Machine Learning at LUT University in Finland",
+      "Currently studying at LUT University in Finland. While my major focuses on Machine Learning Models and Natural Language Processing, my minor, software engineering, covers the development of software systems.",
     image: "/timeline/lut_logo.png",
     slideImage: "/timeline/lut.jpg",
     shouldDrawLine: true,

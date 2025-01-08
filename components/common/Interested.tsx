@@ -22,7 +22,7 @@ const Interested = React.memo(() => {
     <div className={styles.contentContainer}>
       <h1>Interested in working together?</h1>
       <p className="mt-2 text-3xl md:text-xl">
-        I&apos;d love to collaborate on research works and ambitious projects. 
+        I&apos;d love to collaborate on research works and projects. 
       </p>
       <p className="mt-2 text-[#B19162] text-xl md:text-sm">
         Feel free to reach out
