@@ -19,7 +19,7 @@ const Socials = () => {
     },
     WhatsApp: {
       title: "WhatsApp",
-      content: "Contact here for emergrcy purposes.",
+      content: "You can directly call me here.",
       link: "https://wa.me/8801646442575",
     },
     X: {
@@ -34,8 +34,8 @@ const Socials = () => {
     },
     Discord: {
       title: "Discord",
-      content: "For virtual collaboration.",
-      link: "https://wa.me/8801646442575",
+      content: "For casual meetings and collaborations.",
+      link: "https://discord.com/users/416172992637173780",
     },
   };
 
