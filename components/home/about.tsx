@@ -63,14 +63,14 @@ const AboutSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-      I am up for any kind of challenges to expand my domain. {" "}
+      I'm up for overcoming any challenges to widen my horizons. {" "}
       </span>
       <span
         className={`about-2 leading-tight ${
           willChange ? "will-change-opacity" : ""
         }`}
       >
-      If you're interested, let's work together.
+      If you're interested, let's collaborate!
       </span>
     </h1>
   );
