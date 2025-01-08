@@ -41,7 +41,7 @@ const Interested = React.memo(() => {
             target: "_blank",
             rel: "noreferrer",
           }}
-          href="/Hamidur_Resume.pdf"
+          href="/resume.pdf"
         ></Button>
         <Button
           classes="ml-3 z-50 py-0 px-4 text-base md:text-sm"

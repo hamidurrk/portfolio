@@ -104,7 +104,7 @@ const Footer = () => {
           classes="mr-3"
           type={ButtonTypes.OUTLINE}
           name="Resume"
-          href="/Hamidur_Resume.pdf"
+          href="/resume.pdf"
         ></Button>
         <Button
           classes="ml-3"
