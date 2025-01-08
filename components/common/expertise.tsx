@@ -57,7 +57,7 @@ const Expertise = () => {
     },
     Email: {
       title: "Machine Learning & AI",
-      content: "Acted as the natioanal coach for the Bangladesh team in WRO-2023, focusing on AI & ML. Team won an International Bronze.",
+      content: "Acted as the natioanal coach for the Bangladesh team in WRO-2023, focusing on AI & ML. Team won an International Silver.",
     },
     Discord: {
       title: "Robotics & IoT",
