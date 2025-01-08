@@ -26,6 +26,10 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
   const [horizontalAnimationEnabled, sethorizontalAnimationEnabled] =
     useState(false);
 
+    const handleClickLink = () => {
+      window.open('https://github.com/hamidurrk', '_blank', 'noreferrer');
+    };
+
   const handleClick = () => {
     if (!lenisRef.current) {
           const lenis = new Lenis({
@@ -179,14 +183,14 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       ref={sectionTitleElementRef}
     >
       <p className="section-title-sm seq">PROJECTS</p>
-      <div className="flex justify-between w-[90vw] md:w-auto">
-        <h1 className="section-heading seq mt-2">My Work Highlights</h1>
+      <div className="flex justify-between h-full w-[90vw] md:w-auto">
+        <h1 className="section-heading seq mt-2 pb-2">My Work Highlights</h1>
         <div className="flex seq items-center">
           <Button
-            onClick={handleClick}
+            onClick={handleClickLink}
             classes="link"
             type={ButtonTypes.OUTLINE}
-            name="Skip"
+            name="More on GitHub"
             otherProps={{
               target: "_blank",
               rel: "noreferrer",

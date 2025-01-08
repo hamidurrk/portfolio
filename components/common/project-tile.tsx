@@ -46,10 +46,11 @@ const ProjectTile = ({
     `}
     >
       <div className="flex flex-col pb-8">
-        {techStack.map((tech, i) => (
+        {techStack.slice(0, 5).map((tech, i) => (
           <div className={`${i % 2 === 0 && "ml-16"} -mb-2 sm:mb-4`} key={tech}>
             <Image
-              src={`/projects/tech/${tech}.svg`}
+              // src={`/projects/tech/${tech}.svg`}
+              src={`/skills/${tech}.svg`}
               alt={tech}
               height={isSmallScreen ? 40 : 45}
               objectFit="contain"
@@ -66,7 +67,8 @@ const ProjectTile = ({
         {techStack.map((tech, i) => (
           <div className="mr-4" key={tech}>
             <Image
-              src={`/projects/tech/${tech}.svg`}
+              // src={`/projects/tech/${tech}.svg`}
+              src={`/skills/${tech}.svg`}
               alt={tech}
               height={40}
               objectFit="contain"
