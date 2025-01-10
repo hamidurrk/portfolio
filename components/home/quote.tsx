@@ -49,7 +49,7 @@ const QuoteSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-        As a student of Computational Engineering & AI, <br />
+        As a student of Computational Engineering & AI, 
         {" "}
         I am currently expanding my knowledge in
         {" "}
