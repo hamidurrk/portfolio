@@ -2,7 +2,7 @@ export const METADATA = {
   title: "Portfolio | Md Hamidur Rahman Khan",
   description:
     "Pushing the boundaries of innovation with intelligent robots, machine learning, blockchain, and dynamic web solutions.",
-  siteUrl: "https://portfolio-hamidur.vercel.app/",
+  siteUrl: "https://www.hamidurrk.com/",
   imgUrl: "https://i.ibb.co/drmYKsc/og-image.jpg"
 };
 
@@ -12,7 +12,7 @@ export const MENULINKS = [
     ref: "home",
   },
   {
-    name: "Works",
+    name: "Projects",
     ref: "works",
   },
   {
@@ -67,7 +67,7 @@ export interface IProject {
   tech?: string[];
 }
 
-export const PROJECTS: IProject[] = [
+export const HIGHLIGHTS: IProject[] = [
   {
     name: "Tethr",
     image: "/projects/tethr.jpg",
@@ -140,6 +140,117 @@ export const PROJECTS: IProject[] = [
   //   embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/940021036?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Dynamic Quizzer Demo"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
   //   tech: ["react", "figma", "firebase", "css"],
   // },
+  {
+    name: "Spectre Bot & Operating System",
+    image: "/projects/haunt.png",
+    blurImage: "/projects/blur/myokr-blur.jpg",
+    description: "Custom line follower robot programmed for competitive national tournaments",
+    details: "Spectre OS is a specialized operating system designed to provide advanced control and debugging capabilities for the Spectre bot. It enables the robot to tweak settings, adjust parameters, and reprogram functionalities on-the-run without connecting to an external computer, which is advantageous in a competitive field. ",
+    gradient: ["#153BB9", "#0E2C8B"],
+    url: "",
+    github: "https://github.com/hamidurrk/haunt-os",
+    embed: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/939581502?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="HauntOS LFR Demo Run"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["cpp", "arduino", "esp32"],
+  },
+  {
+    name: "Assistive Device for Visually Impaired People",
+    image: "/projects/nasa.jpg",
+    blurImage: "/projects/blur/dlt-website-blur.jpg",
+    description: "A hand-glove-like device to assist visually impaired people in reading text from any digital platform",
+    details: "The hand-glove-like device converts characters into a 3x2 dot matrix braille cell and provides tactile feedback using 6 vibration motors embedded into the fabric of the index and middle fingers of the hand glove. The device is designed to receive strings via Bluetooth, process the data using a microcontroller (ESP32), and deliver haptic feedback to the user.",
+    gradient: ["#245B57", "#004741"],
+    url: "",
+    github: "https://github.com/hamidurrk/Assistive-Device-for-Visually-Impaired-People",
+    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/939592174?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nasa"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["cpp", "python", "arduino", "esp32"],
+  },
+  {
+    name: "EduKit",
+    image: "/projects/edukit.jpg",
+    blurImage: "/projects/blur/dlt-website-blur.jpg",
+    description: "An Educational Module to teach intermediate Electronics",
+    details: "Designed a teaching module for the ICT department of my school to improve the understanding of electronics among Notre Dame College students: a combined demonstration of clock pulse generators, flip flops, registers, binary counters, and a 7-segment display on a breadboard.",
+    gradient: ["#245B57", "#004741"],
+    url: "",
+    github: "",
+    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/940094146?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="EduKit - Electronics Teaching Module"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: [""],
+  },
+];
+
+export const PROJECTS: IProject[] = [
+  {
+    name: "Tethr",
+    image: "/projects/tethr.jpg",
+    blurImage: "/projects/blur/figgen-blur.jpg",
+    description: "Network Tower Location Estimation Using Mean Shift Clustering",
+    details: "This project aims to estimate network tower locations using the Mean Shift clustering algorithm based on signal strength measurements collected by a robot at various locations. The software provides visualization tools to analyze signal strength data and identify areas with poor network coverage.",
+    gradient: ["#1F6582", "#1ABCFE"],
+    url: "https://vimeo.com/938780239?share=copy",
+    github: "https://github.com/hamidurrk/ground-station",
+    embed: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/938780239?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Network Tower Location Estimation Using Mean Shift Clustering"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["python", "sklearn", "yolo", "opencv", "ros", "pandas", "ctk"],
+  },
+  {
+    name: "Block Meter",
+    image: "/projects/ibcol_paper.jpg",
+    blurImage: "/projects/blur/dl-unify-blur.jpg",
+    description: "An Immutable Electricity Billing System to Eliminate Non-Technical Loss Using Blockchain",
+    details: "Invented an electricity billing system that eliminated non-technical losses by 100% and ensures transparency and immutability.Won a Silver Medal in SDG 12 national teams from 44 countries at the International Blockchain Olympiad 2022 (Hong Kong). Secured Bronze Medal as the youngest developer to secure top national position in the Bangladesh Blockchain Olympiad 2022.",
+    gradient: ["#003052", "#167187"],
+    url: "",
+    github: "https://github.com/hamidurrk/PyWebIDE",
+    embed:'<div style="padding:54.27% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1044933067?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Block Meter - Prototype Demonstration"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["python", "solidity", "etherium", "ipfs", "ESP32", "cpp", "php", "javascript", "thingspeak"],
+  },
+  {
+    name: "Awake Website",
+    image: "/projects/awake.jpg",
+    blurImage: "/projects/blur/myokr-blur.jpg",
+    description: "A platform for social change for Awake in Kenya",
+    details: "A platform for social change and youth empowerment. Features include Responsive design, Dynamic content, Custom pages for blog, shop, cart, resources, testimonials, team, and more, Integration with PayPal and Venmo for online payments",
+    gradient: ["#153BB9", "#0E2C8B"],
+    url: "https://awakeyi.org/",
+    github: "https://github.com/hamidurrk/awake_website",
+    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/939540129?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Awake Youth Initiative - Official Website"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["html", "css", "javascript", "sass", "figma"],
+  },
+  {
+    name: "Social Media Scraper",
+    image: "/projects/scraper.jpg",
+    blurImage: "/projects/blur/myokr-blur.jpg",
+    description: "Scrapes post data from Facebook for research purposes",
+    details: "Currently writing a paper with researchers at University of Kassel and Technical University of Dortmund on Political Propaganda Cycle using the data collected by the bot from the political parties on the social media platforms.",
+    gradient: ["#153BB9", "#0E2C8B"],
+    url: "",
+    github: "https://github.com/hamidurrk/awake_website",
+    embed:'<div style="padding:59.62% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1044935287?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Scraping Facebook posts from May 2010 to Nov 2024 - Social Media Scraper"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["python", "selenium", "bs4", "opencv", "ctk", "matplotlib", "sqlite"],
+  },
+  {
+    name: "PyWebIDE",
+    image: "/projects/pywebide.png",
+    blurImage: "/projects/blur/dl-unify-blur.jpg",
+    description: "A web browser IDE for Python programming",
+    details: "PyWebIDE is a full-stack web application built with React, Firebase, CSS, and javascript. It serves as an integrated development environment (IDE) for Python programming, providing users with a seamless coding experience right in their web browser.",
+    gradient: ["#003052", "#167187"],
+    url: "",
+    github: "https://github.com/hamidurrk/PyWebIDE",
+    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/939622522?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="PyWebIDE Demo"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["react", "figma", "firebase", "css"],
+  },
+  {
+    name: "Dynamic Quizzer",
+    image: "/projects/quiz.png",
+    blurImage: "/projects/blur/dl-unify-blur.jpg",
+    description: "A dynamic quiz application built with React and Firebase for authentication.",
+    details: "Dynamic Quizzer offers an engaging quiz experience with a series of 10 dynamic questions. At the end of the quiz, your score out of 10 will be displayed, providing instant feedback on your performance. Plus, with Firebase Authentication integration, you can easily log in using your existing Firebase credentials or sign up.",
+    gradient: ["#003052", "#167187"],
+    url: "",
+    github: "https://github.com/hamidurrk/Dynamic-Quizzer",
+    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/940021036?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Dynamic Quizzer Demo"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["react", "figma", "firebase", "css"],
+  },
   {
     name: "Spectre Bot & Operating System",
     image: "/projects/haunt.png",

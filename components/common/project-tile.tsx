@@ -45,9 +45,9 @@ const ProjectTile = ({
       ${styles.techIcons} w-1/2 h-full absolute left-24 top-0 flex items-center 
     `}
     >
-      <div className="flex flex-col pb-8">
+      <div className="flex flex-col pb-14">
         {techStack.slice(0, 5).map((tech, i) => (
-          <div className={`${i % 2 === 0 && "ml-16"} -mb-2 sm:mb-4`} key={tech}>
+          <div className={`${i % 2 === 0 && "ml-14"} -mb-4 sm:mb-4`} key={tech}>
             <Image
               // src={`/projects/tech/${tech}.svg`}
               src={`/skills/${tech}.svg`}
@@ -81,7 +81,9 @@ const ProjectTile = ({
 
   const renderDescription = (description: string): React.ReactNode => (
     <h2
-      className="text-lg z-10 tracking-wide font-medium"
+      className={`z-10 tracking-wide font-medium ${
+        description.length > 85 ? 'text-md md:text-lg' : 'text-lg'
+      }`}
       style={{ transform: "translateZ(0.8rem)" }}
     >
       {description}

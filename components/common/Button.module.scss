@@ -1,7 +1,10 @@
 $primary: #FEF5E1;
 $secondary: #B19162;
 $tertiary: #573217;
-
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
 .primary {
   @apply text-gray-900;
 
@@ -31,6 +34,40 @@ $tertiary: #573217;
 
   &:hover {
     @apply bg-[#FEF5E1] text-gray-900 opacity-90;
+  }
+}
+
+.filter {
+  $btn-color: #FEF5E1;
+  $btn-color-dark: #BF1E2E;
+  color: tint($btn-color);
+  position: relative;
+  overflow: hidden;
+  @apply border-[#2424249d] border-2 text-white;
+
+  span {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: $btn-color-dark;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  &:hover {
+    color: tint($btn-color, 75%);
+
+    span {
+      width: 225%;
+      height: 400%;
+    }
+  }
+
+  &:active {
+    background-color: $btn-color;
   }
 }
 

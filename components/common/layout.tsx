@@ -22,7 +22,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <meta property="og:image" content={METADATA.imgUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta name="keywords" content="UI/UX design, Python bots, web solutions, robots, robotics, innovation, blockchain, awards, Notre Dame College, Olympiads, portfolio" />
+        <meta name="keywords" content="UI/UX design, Machine Learning, Artificial Intelligence, AI, ML, Python bots, web solutions, robots, robotics, innovation, blockchain, awards, Notre Dame College, Olympiads, portfolio" />
         <meta name="author" content="Md Hamidur Rahman Khan" />
         <meta name="twitter:title" content={METADATA.title} />
         <meta name="twitter:description" content={METADATA.description} />

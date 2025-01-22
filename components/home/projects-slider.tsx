@@ -1,5 +1,5 @@
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
-import { MENULINKS, PROJECTS } from "../../constants";
+import { MENULINKS, HIGHLIGHTS } from "../../constants";
 import ProjectTile from "../common/project-tile";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -182,19 +182,16 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       }`}
       ref={sectionTitleElementRef}
     >
-      <p className="section-title-sm seq">PROJECTS</p>
-      <div className="flex justify-between h-full w-[90vw] md:w-auto">
-        <h1 className="section-heading seq mt-2 pb-2">My Work Highlights</h1>
+      <p className="section-title-sm seq">HIGHLIGHTS</p>
+      <div className="flex justify-between h-full w-[90vw] 2xl:w-auto">
+        <h1 className="section-heading seq mt-2 pb-2">Work Highlights</h1>
         <div className="flex seq items-center">
           <Button
-            onClick={handleClickLink}
-            classes="link"
+            // onClick={handleClickLink}
+            classes="link min-w-max"
             type={ButtonTypes.OUTLINE}
-            name="More on GitHub"
-            otherProps={{
-              target: "_blank",
-              rel: "noreferrer",
-            }}
+            name="All Projects"
+            href="/projects"
           ></Button>
         </div>
       </div>
@@ -207,7 +204,7 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
   );
 
   const renderProjectTiles = (): React.ReactNode =>
-    PROJECTS.map((project) => (
+    HIGHLIGHTS.map((project) => (
       <ProjectTile
         project={project}
         key={project.name}

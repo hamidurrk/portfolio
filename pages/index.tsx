@@ -11,7 +11,7 @@ import ProgressIndicator from "@/components/common/progress-indicator";
 import Cursor from "@/components/common/cursor";
 import HeroParallax from "@/components/home/hero-parallax";
 import HeroSection from "@/components/home/hero";
-import ProjectsSection from "@/components/home/projects";
+import ProjectsSection from "@/components/home/projects-slider";
 import QuoteSection from "@/components/home/quote";
 import Interested from "@/components/common/Interested";
 import SkillsSection from "@/components/home/skills";

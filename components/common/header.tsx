@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { useState, useRef } from "react";
+import { useRouter } from 'next/router';
 import Menu from "@/components/common/menu";
 import Lenis from "@studio-freight/lenis";
 
 const Header = () => {
+  const router = useRouter();
   const [menuVisible, setmenuVisible] = useState(false);
     const animDuration = 4;
     const lenisRef = useRef<Lenis | null>(null);
@@ -28,25 +30,29 @@ const Header = () => {
       if (element && lenisRef.current) {
         lenisRef.current.scrollTo(element);
   
-        // Destroy Lenis instance after the animation duration
         setTimeout(() => {
           if (lenisRef.current) {
             lenisRef.current.destroy();
             lenisRef.current = null;
           }
-        }, durationRef.current * 1000); // Convert duration to milliseconds
+        }, durationRef.current * 1000); 
+      }
+    };
+
+    const handleLogoClick = () => {
+      if (router.pathname === '/projects') {
+        router.push('/');
+      } else {
+        handleClick();
       }
     };
   return (
     <header className="w-full fixed top-0 py-8 select-none z-50 ">
-      {/* <div className="fixed width-20 right-0 bottom-0">
-        <AudioPlayer />
-      </div> */}
       <div className="w-full fixed top-0 py-20 lg:py-4 select-none z-49 bg-gradient-to-b from-black to-transparent"></div>
       <div className="flex justify-between section-container">
         <div
         className="link" 
-        onClick={handleClick}>
+        onClick={handleLogoClick}>
           <Image
             src="/logo.svg"
             alt="Logo - Hamidur"
