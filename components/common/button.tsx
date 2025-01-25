@@ -19,7 +19,7 @@ const Button = ({
   otherProps,
 }: {
   type: ButtonTypes;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
   name: string;
   href?: string;
   classes?: string;
@@ -29,7 +29,7 @@ const Button = ({
     "py-2 px-7 font-medium rounded text-base md:text-xl tracking-wide link duration-300 flex items-center";
   const [spanStyle, setSpanStyle] = useState<{ top: string; left: string }>({ top: '0px', left: '0px' });
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     const target = e.currentTarget;
     const rect = target.getBoundingClientRect();
     const relX = e.pageX - rect.left;
@@ -37,7 +37,7 @@ const Button = ({
     setSpanStyle({ top: `${relY}px`, left: `${relX}px` });
   };
 
-  const handleMouseOut = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleMouseOut = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     const target = e.currentTarget;
     const rect = target.getBoundingClientRect();
     const relX = e.pageX - rect.left;
@@ -45,19 +45,28 @@ const Button = ({
     setSpanStyle({ top: `${relY}px`, left: `${relX}px` });
   };
 
-  return (
-    <a
+  return type === ButtonTypes.FILTER ? (
+    <button
       {...otherProps}
       onClick={onClick}
-      href={href}
       className={`${getButtonTypeStyles(type)} ${buttonClasses} ${classes}`}
-      onMouseEnter={type === ButtonTypes.FILTER ? handleMouseEnter : undefined}
-      onMouseOut={type === ButtonTypes.FILTER ? handleMouseOut : undefined}
+      onMouseEnter={handleMouseEnter}
+      onMouseOut={handleMouseOut}
     >
       {name}
-      {type === ButtonTypes.FILTER && <span style={spanStyle}></span>}
+      <span style={spanStyle}></span>
+    </button>
+  ) : (
+    <a
+      {...otherProps}
+      onClick={(e) => onClick && onClick(e as React.MouseEvent<HTMLAnchorElement>)}
+      href={href}
+      className={`${getButtonTypeStyles(type)} ${buttonClasses} ${classes}`}
+    >
+      {name}
     </a>
   );
+};
 
   function getButtonTypeStyles(type: ButtonTypes) {
     return type === ButtonTypes.PRIMARY
@@ -72,7 +81,7 @@ const Button = ({
       ? styles.filter
       : styles.outline;
   }
-};
+;
 
 Button.propTypes = {
   type: PropTypes.string.isRequired,

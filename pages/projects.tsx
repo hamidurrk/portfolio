@@ -29,18 +29,20 @@ export interface IDesktop {
 
 export default function ProjectsPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>(["All"]);
+  const [ctrlPressed, setCtrlPressed] = useState<boolean>(false);
 
   const categoryProjects = {
     "All": PROJECTS.map((project) => project.name),
-    "UI/UX": ["Awake Website", "PyWebIDE", "Dynamic Quizzer"],
+    "UI/UX": ["Awake Website", "PyWebIDE", "Portfolio Website", "Dynamic Quizzer"],
     "Machine Learning": ["Tethr"],
-    "Robotics": ["Spectre Bot & Operating System"],
+    "Robotics": ["Spectre Bot & Operating System", "3D Simulation of Dijkstra's Algorithm"],
     "Blockchain": ["Block Meter"],
-    "Electronics": ["EduKit", "Spectre Bot & Operating System", "Block Meter"],
-    "IoT": ["Block Meter", "Assistive Device for Visually Impaired People"],
-    "Web Scraping": ["Social Media Scraper"],
+    "Frontend": ["Awake Website", "PyWebIDE", "Portfolio Website", "Dynamic Quizzer"],
     "Backend": ["Block Meter", "Awake Website", "Tethr"],
-    "Frontend": ["Awake Website", "PyWebIDE", "Dynamic Quizzer"],
+    "Web Scraping": ["Social Media Scraper", "E-paper Scraper"],
+    "IoT": ["Block Meter", "Assistive Device for Visually Impaired People"],
+    "Electronics": ["EduKit", "Spectre Bot & Operating System", "Block Meter"],
+    "Simulation & Game": ["3D Simulation of Dijkstra's Algorithm", "2D Pong Game"],
   };
 
   gsap.registerPlugin(ScrollTrigger);
@@ -127,34 +129,39 @@ export default function ProjectsPage() {
     //       ></ProjectTile>
     //     ));
 
-    const handleCategoryToggle = (category: string) => {
-        if (category === 'All') {
-            setSelectedCategories(['All']);
-          } else {
-            setSelectedCategories((prevCategories) => {
-              if (prevCategories.includes(category)) {
-                const newCategories = prevCategories.filter((cat) => cat !== category);
-                return newCategories.length === 0 ? ['All'] : newCategories;
+    const handleCategoryToggle = (category: string, event: React.MouseEvent) => {
+      if (category === 'All') {
+          setSelectedCategories(['All']);
+      } else {
+          setSelectedCategories((prevCategories) => {
+              if (event.ctrlKey) {
+                  setCtrlPressed(true);
+                  if (prevCategories.includes(category)) {
+                      const newCategories = prevCategories.filter((cat) => cat !== category);
+                      return newCategories.length === 0 ? ['All'] : newCategories;
+                  } else {
+                      return prevCategories.filter((cat) => cat !== 'All').concat(category);
+                  }
               } else {
-                return prevCategories.filter((cat) => cat !== 'All').concat(category);
+                  return [category];
               }
-            });
-          }
-        };
+          });
+      }
+  };
 
-    const filteredProjectNames =
-      selectedCategories.length === 0
-        ? PROJECTS.map((project) => project.name)
-        : Object.keys(categoryProjects)
-            .filter((category) => selectedCategories.includes(category))
-            .reduce((acc, category) => {
-              acc.push(...(categoryProjects as any)[category]);
-              return acc;
-            }, [] as string[]);
+  const filteredProjectNames =
+    selectedCategories.length === 0
+      ? PROJECTS.map((project) => project.name)
+      : Object.keys(categoryProjects)
+          .filter((category) => selectedCategories.includes(category))
+          .reduce((acc, category) => {
+            acc.push(...(categoryProjects as any)[category]);
+            return acc;
+          }, [] as string[]);
 
-    const filteredProjects = PROJECTS.filter((project) =>
-      filteredProjectNames.includes(project.name)
-    );
+  const filteredProjects = PROJECTS.filter((project) =>
+    filteredProjectNames.includes(project.name)
+  );
     const renderProjectTiles = (): React.ReactNode =>
       filteredProjects.map((project) => (
         <ProjectTile
@@ -195,10 +202,18 @@ export default function ProjectsPage() {
                             ? "bg-[#BF1E2E]"
                             : ""
                         }`}
-                        onClick={() => handleCategoryToggle(category)}
+                        onClick={(e) => handleCategoryToggle(category, e)}
                         ></Button>
                     ))}
                     </div>
+                    {isDesktop && <p 
+                      className="text-lg text-[#BF1E2E] text-center tracking-wide"
+                      style={{ display: ctrlPressed ? 'none' : 'block',
+                                transform: 'translateY(-10px)'
+                       }}
+                      >
+                        Hold CTRL to select multiple categories
+                    </p>}
                 </div>
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 project-wrapper w-full">
                   {renderProjectTiles()}
