@@ -74,7 +74,7 @@ const Sidebar = () => {
     Discord: {
       title: "Discord",
       content: "For virtual collaboration.",
-      link: "https://wa.me/8801646442575",
+      link: "https://discord.com/users/416172992637173780",
     },
   };  
   

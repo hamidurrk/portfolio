@@ -155,6 +155,7 @@ const HeroParallax = () => {
       content: (
         <div className={`seq ${styles.imageContainer}`}>
           <Image src={isSmallScreen() ?Picture2 : Picture1} layout="fill" alt="image" placeholder="blur" />
+      <div className="w-full fixed top-0 py-20 lg:py-4 z-49 bg-gradient-to-b from-black to-transparent"></div>
         </div>
       ),
       scale: scale4,

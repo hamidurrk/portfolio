@@ -48,7 +48,7 @@ const Header = () => {
     };
   return (
     <header className="w-full fixed top-0 py-8 select-none z-50 ">
-      <div className="w-full fixed top-0 py-20 lg:py-4 select-none z-49 bg-gradient-to-b from-black to-transparent"></div>
+      {/* <div className="w-full fixed top-0 py-20 lg:py-4 z-49 bg-gradient-to-b from-black to-transparent"></div> */}
       <div className="flex justify-between section-container">
         <div
         className="link" 

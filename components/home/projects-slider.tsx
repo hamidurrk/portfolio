@@ -3,7 +3,7 @@ import { MENULINKS, HIGHLIGHTS } from "../../constants";
 import ProjectTile from "../common/project-tile";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { IDesktop, NO_MOTION_PREFERENCE_QUERY } from "pages";
+import { IDesktop, isSmallScreen, NO_MOTION_PREFERENCE_QUERY } from "pages";
 import Button, { ButtonTypes } from "../common/button";
 import Lenis from "@studio-freight/lenis";
 
@@ -141,7 +141,7 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
 
     sethorizontalAnimationEnabled(isDesktop && matches);
 
-    if (isDesktop && matches) {
+    if (!isSmallScreen() && matches) {
       [projectsTimeline, projectsScrollTrigger] = initProjectsAnimation(
         targetSectionRef,
         sectionTitleElementRef
@@ -209,7 +209,7 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
         project={project}
         key={project.name}
         // animationEnabled={horizontalAnimationEnabled}
-        animationEnabled={true}
+        animationEnabled={false}
       ></ProjectTile>
     ));
 
