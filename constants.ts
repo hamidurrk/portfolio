@@ -447,7 +447,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "Started B.Sc. in Computational Engineering and Artificial Intelligence",
     size: ItemSize.SMALL,
     subtitle:
-      "Currently studying at LUT University in Finland. While my major focuses on Machine Learning Models and Natural Language Processing, my minor, software engineering, covers the development of software systems.",
+      "Currently studying at LUT University in Finland. While my major focuses on ML Models and Natural Language Processing, my minor, software and systems engineering, covers the development of software systems.",
     image: "/timeline/lut_logo.png",
     slideImage: "/timeline/lut.jpg",
     shouldDrawLine: true,
@@ -570,18 +570,18 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     shouldDrawLine: true,
     alignment: Branch.LEFT,
   },
-  // {
-  //   type: NodeTypes.CHECKPOINT,
-  //   title: "Workshop Instructor | Drone Basics",
-  //   month: "Sep",
-  //   size: ItemSize.SMALL,
-  //   subtitle:
-  //     "Taught 400+ individuals about introductory robotics through drone technology",
-  //   image: "/timeline/teslalab.svg",
-  //   slideImage: "/timeline/teslalab.jpg",
-  //   shouldDrawLine: true,
-  //   alignment: Branch.LEFT,
-  // },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "Workshop Instructor | Drone Basics",
+    month: "Sep",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Started a new journey at TESLA Lab. On the first day, I taught 400+ individuals about introductory robotics through drone technology",
+    image: "/timeline/teslalab.svg",
+    slideImage: "/timeline/teslalab.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
   // {
   //   type: NodeTypes.CHECKPOINT,
   //   title: "Starting as an Advisor, leaving the President position",
@@ -688,18 +688,18 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   //   shouldDrawLine: true,
   //   alignment: Branch.RIGHT,
   // },
-  // {
-  //   type: NodeTypes.CHECKPOINT,
-  //   title: "EduKit | Made a Basic Electronics Educational Module",
-  //   month: "Feb",
-  //   size: ItemSize.SMALL,
-  //   subtitle:
-  //     "I was assigned by the ICT department of my college to design a teaching module to improve the understanding of electronics among Notre Dame College students.",
-  //   image: "/timeline/ndc.png",
-  //   slideImage: "/timeline/edukit.jpg",
-  //   shouldDrawLine: true,
-  //   alignment: Branch.LEFT,
-  // },
+  {
+    type: NodeTypes.CHECKPOINT,
+    title: "EduKit | Made a Basic Electronics Educational Module",
+    month: "Feb",
+    size: ItemSize.SMALL,
+    subtitle:
+      "I was assigned by the ICT department of my college to design a teaching module to improve the understanding of electronics among Notre Dame College students.",
+    image: "/timeline/ndc.png",
+    slideImage: "/timeline/edukit.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
   {
     type: NodeTypes.CHECKPOINT,
     title: "President | Robotics Department - NDITC",
