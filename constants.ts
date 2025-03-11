@@ -335,6 +335,18 @@ export const PROJECTS: IProject[] = [
     embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/940094146?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="EduKit - Electronics Teaching Module"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
     tech: [""],
   },
+  {
+    name: "Friend Finder Bot - Facebook",
+    image: "/projects/friend_finder.png",
+    blurImage: "/projects/blur/dlt-website-blur.jpg",
+    description: "Surfs through profile lists and sends friend request on Facebook",
+    details: "The bot is written in python and uses pyautogui to imitate mouse clicks and keyboard inputs. It can read the content on the screen using pytesseract OCR and make decisions based on the data. If the number of mutual friends is greater than 50, it sends a friend request to the user. ",
+    gradient: ["#245B57", "#004741"],
+    url: "",
+    github: "https://github.com/hamidurrk/Ajaira_bot/blob/master/main.py",
+    embed:'<div style="padding:56.51% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1064681756?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Friend Finder Bot - Facebook"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    tech: ["python"],
+  },
 ];
 
 export const SKILLS = {
@@ -345,13 +357,13 @@ export const SKILLS = {
     "cpp",
     "c",
     "java",
+    "sql",
     "php",
     "solidity",
     "r",
     "html",
     "css",
     "markdown",
-    "sql"
   ],
   frontend: [
     "next",
@@ -385,9 +397,9 @@ export const SKILLS = {
     "bs4"
   ],
   database: [
-    "firebase",
     "mongo",
     "postgres",
+    "firebase",
     "sqlite",
     "mysql"
   ],

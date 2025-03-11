@@ -39,7 +39,7 @@ export default function ProjectsPage() {
     "Blockchain": ["Block Meter"],
     "Frontend": ["Awake Website", "PyWebIDE", "Portfolio Website", "Dynamic Quizzer"],
     "Backend": ["Block Meter", "Awake Website", "Tethr"],
-    "Web Scraping": ["Social Media Scraper", "E-paper Scraper"],
+    "Web Scraping": ["Social Media Scraper", "E-paper Scraper", "Friend Finder Bot - Facebook"],
     "IoT": ["Block Meter", "Assistive Device for Visually Impaired People"],
     "Electronics": ["EduKit", "Spectre Bot & Operating System", "Block Meter"],
     "Simulation & Game": ["3D Simulation of Dijkstra's Algorithm", "2D Pong Game"],
