@@ -20,11 +20,11 @@ const Interested = React.memo(() => {
 
   const renderContent = (): React.ReactNode => (
     <div className={styles.contentContainer}>
-      <h1>Interested in working together?</h1>
-      <p className="mt-2 text-3xl md:text-xl">
+      {/* <h1>Interested in working together?</h1> */}
+      <p>
         I&apos;d love to collaborate on research works and projects. 
       </p>
-      <p className="mt-2 text-[#B19162] text-xl md:text-sm">
+      <p>
         Feel free to reach out
       </p>
     </div>
@@ -46,8 +46,9 @@ const Interested = React.memo(() => {
         <Button
           classes="ml-3 z-50 py-0 px-4 text-base md:text-sm"
           type={ButtonTypes.SECONDARY}
-          name="Let's Talk"
-          onClick={openChat}
+          name="Projects"
+          // onClick={openChat}
+          href="/projects"
         ></Button>
       </div>
     </div>

@@ -174,10 +174,9 @@ const HeroParallax = () => {
             </div>
             <div className={styles.svg}>
               <svg
-                width="207.68"
-                height="68.64"
                 viewBox="0 0 207.68 68.64"
                 xmlns="http://www.w3.org/2000/svg"
+                className={styles.responsiveSvg}
               >
                 <g
                   id="svgGroup"

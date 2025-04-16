@@ -10,18 +10,22 @@ $secondary: #B19162;
     width: 100%;
     font-family: "Tomorrow", sans-serif;
     font-weight: 500;
+    position: relative; // Added to establish positioning context
 
   .grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 5px;
     width: 40%;
-    height: 100%;
+    height: 100%; // This will make it take full height of container
     max-width: 600px;
     padding: 5px;
     list-style: none;
     margin: 0;
-    overflow: hidden;
+    overflow-y: visible;
+    overflow-x: hidden;
+    position: relative;
 
     .tab {
       display: flex;
@@ -29,11 +33,20 @@ $secondary: #B19162;
       align-items: center;
       width: 100%;
       height: 100%;
-      transition: transform 0.01s ease-in-out;
-
+      min-height: 0; // Remove min-height constraint
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      z-index: 1;
+      padding: 0 10px;
+      
       h1 {
-        font-size: 45%;
+        font-size: clamp(0.6rem, 1.8vmin, 0.9rem); // Slightly reduced font size
         margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%; // Added to ensure text-overflow works
+        text-align: center; // Center the text
       }
 
       &:hover {
@@ -62,19 +75,15 @@ $secondary: #B19162;
     padding: 20px;
     background-color: $secondary;
     transform: scale(1);
-    // border: 1px solid #b19162;
-    // opacity: 0;
-    // transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    overflow: hidden;
+    overflow: auto; // Change to auto to allow scrolling if needed
     display: flex;
-    // z-index: 20;
 
     p {
       color: #573217;
-      // margin: 0 0 10px;
-      font-size: 50%;
+      font-size: clamp(0.8rem, 2vmin, 1rem); // Responsive font size
       width: 80%;
       padding-right: 20px;
+      margin: 0; // Remove margin to prevent overflow
     }
     .ballContainer {
       display: flex;
@@ -184,3 +193,7 @@ $secondary: #B19162;
   }
   }
 }
+
+
+
+

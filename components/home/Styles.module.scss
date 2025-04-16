@@ -310,3 +310,23 @@ $fontSize: 1rem;
         }
     }
 }
+
+.svg {
+  width: 100%;
+  height: auto;
+  max-width: 600px; // Adjust this value as needed
+  min-width: 200px; // Adjust this value as needed
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.responsiveSvg {
+  width: calc(30vh *0.6);
+//   height: calc(30vh *0.4);
+  display: block;
+  margin-top: calc(30vh * 0.02);
+  aspect-ratio: 207.68 / 68.64; 
+  transition: all 0.3s ease-in-out;
+}
+

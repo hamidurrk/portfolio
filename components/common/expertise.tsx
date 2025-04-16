@@ -131,7 +131,7 @@ const Expertise = () => {
             onMouseLeave={handleMouseLeave}
             style={{
               backgroundColor: hoveredItem === item ? colorMapping[item] : "black",
-              transform: hoveredItem === item ? `scale(1.4)` : "scale(1)",
+              transform: hoveredItem === item ? `scale(1.2)` : "scale(1)",
               color: hoveredItem === item ? fontColor[item] : "white",
             }}
           >
