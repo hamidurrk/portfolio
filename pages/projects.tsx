@@ -14,6 +14,7 @@ import ProjectTile from "@/components/common/project-tile";
 import Footer from "@/components/common/footer";
 import TawkMessenger from "@/components/common/tawk-messenger";
 import Sidebar from "@/components/common/sidebar";
+import Loader from "@/components/common/Loader";
 import Lenis from "@studio-freight/lenis";
 import Button, { ButtonTypes } from "@/components/common/button";
 
@@ -49,6 +50,7 @@ export default function ProjectsPage() {
   gsap.config({ nullTargetWarn: false });
 
   const [isDesktop, setIsDesktop] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const lenisRef = useRef<Lenis | null>(null);
 
@@ -70,6 +72,26 @@ export default function ProjectsPage() {
       lenis.destroy();
     };
   }, []);
+
+  // Refresh ScrollTrigger after loader completes
+  useEffect(() => {
+    if (!isLoading) {
+      // Delay to ensure DOM is fully rendered and painted
+      const timeoutId = setTimeout(() => {
+        // Refresh all ScrollTrigger instances
+        ScrollTrigger.refresh();
+        // Dispatch resize event to trigger any size-dependent calculations
+        window.dispatchEvent(new Event('resize'));
+        // Force a small scroll and back to ensure scroll-based animations initialize
+        window.scrollTo(0, 1);
+        requestAnimationFrame(() => {
+          window.scrollTo(0, 0);
+        });
+      }, 200);
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, [isLoading]);
 
   let timer: NodeJS.Timeout = null;
 
@@ -97,6 +119,12 @@ export default function ProjectsPage() {
   const renderBackdrop = (): React.ReactNode => (
     <div className="fixed top-0 left-0 h-screen w-screen bg-black -z-1"></div>
   );
+
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+    // Force scroll to top when loader completes
+    window.scrollTo(0, 0);
+  };
 
   if (isDesktop === null) {
     return null;
@@ -180,8 +208,8 @@ export default function ProjectsPage() {
             url(&apos;https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap&apos;);
           </style>
         </Head>
-        {
-          <Layout>
+        {isLoading && <Loader onLoadComplete={handleLoadComplete} />}
+        {!isLoading && <Layout>
             <Header />
             <ProgressIndicator />
             <Cursor isDesktop={isDesktop} />
@@ -223,8 +251,7 @@ export default function ProjectsPage() {
               {/* <Footer /> */}
             </main>
             <TawkMessenger />
-          </Layout>
-        }
+          </Layout>}
       </>
     );
   }

@@ -21,6 +21,7 @@ import TimelineSection from "@/components/home/timeline";
 import TawkMessenger from "@/components/common/tawk-messenger";
 import Sidebar from "@/components/common/sidebar";
 import AboutSection from "@/components/home/about";
+import Loader from "@/components/common/Loader";
 import Lenis from "@studio-freight/lenis";
 
 const DEBOUNCE_TIME = 100;
@@ -38,6 +39,7 @@ export default function Home() {
   gsap.config({ nullTargetWarn: false });
 
   const [isDesktop, setIsDesktop] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const lenisRef = useRef<Lenis | null>(null);
   
@@ -59,6 +61,26 @@ export default function Home() {
       lenis.destroy();
     };
   }, []);
+
+  // Refresh ScrollTrigger after loader completes
+  useEffect(() => {
+    if (!isLoading) {
+      // Delay to ensure DOM is fully rendered and painted
+      const timeoutId = setTimeout(() => {
+        // Refresh all ScrollTrigger instances
+        ScrollTrigger.refresh();
+        // Dispatch resize event to trigger any size-dependent calculations
+        window.dispatchEvent(new Event('resize'));
+        // Force a small scroll and back to ensure scroll-based animations initialize
+        window.scrollTo(0, 1);
+        requestAnimationFrame(() => {
+          window.scrollTo(0, 0);
+        });
+      }, 200);
+      
+      return () => clearTimeout(timeoutId);
+    }
+  }, [isLoading]);
   
   let timer: NodeJS.Timeout = null;
   
@@ -109,6 +131,13 @@ export default function Home() {
     }
     return <HeroParallax />;
   };
+
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+    // Force scroll to top when loader completes
+    window.scrollTo(0, 0);
+  };
+
   if (isDesktop === null) {
     return null; // or a loading spinner, etc.
   } else {
@@ -125,7 +154,8 @@ export default function Home() {
         @import url(&apos;https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap&apos;);
         </style>
       </Head>
-      {<Layout>
+      {isLoading && <Loader onLoadComplete={handleLoadComplete} />}
+      {!isLoading && <Layout>
         <Header />
         <ProgressIndicator />
         <Cursor isDesktop={isDesktop} />
@@ -149,5 +179,5 @@ export default function Home() {
       </Layout>}
     </>
   );
-}
+  }
 }

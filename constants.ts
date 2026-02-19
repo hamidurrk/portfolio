@@ -459,7 +459,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "Started B.Sc. in Computational Engineering and Artificial Intelligence",
     size: ItemSize.SMALL,
     subtitle:
-      "Currently studying at LUT University in Finland. While my major focuses on Machine Learning Models and AI, my minor, software and systems engineering, covers the development of software systems.",
+      "Currently studying at LUT University in Finland. While my major focuses on Machine Learning Models and AI, my minor, Software and Systems Engineering, covers the development of software systems.",
     image: "/timeline/lut_logo.png",
     slideImage: "/timeline/lut.jpg",
     shouldDrawLine: true,
@@ -572,11 +572,11 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   // },
   {
     type: NodeTypes.CHECKPOINT,
-    title: "Invented Blockchain based Billing System",
+    title: "Proposed Blockchain based Billing System in Bangladesh",
     month: "Nov",
     size: ItemSize.SMALL,
     subtitle:
-      "The invention aimed at eliminating non-technical losses in electricity billing systems using blockchain technology. The Bangladesh ICT division's EDGE project assisted me in filing a patent application for the system architecture.",
+      "The proposal aimed at eliminating non-technical losses in electricity billing systems using blockchain technology. The Bangladesh ICT division's EDGE project assisted me in filing a patent application for the system architecture.",
     image: "/timeline/bcolbd.svg",
     slideImage: "/timeline/block.jpg",
     shouldDrawLine: true,

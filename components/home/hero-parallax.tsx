@@ -8,6 +8,7 @@ import Socials from "../common/socials";
 import Expertise from "../common/expertise";
 import AudioPlayer from "../common/Audio";
 import Interested from "../common/Interested";
+import ProjectEntry from "./project-entry";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef, useEffect, MutableRefObject, useState } from "react";
@@ -265,7 +266,7 @@ const HeroParallax = () => {
       // 4
       content: (
         <div className={`seq ${styles.textContainer}`}>
-          <Interested />
+          <ProjectEntry />
         </div>
       ),
       scale: scale5,

@@ -63,7 +63,11 @@ const Socials = () => {
         {Object.keys(descriptions).map((item : any) => (
           <div
             key={item}
-            className={`link ${styles.tab} ${styles[item.toLowerCase()]}`}
+            className={`link ${styles.tab} ${styles[item.toLowerCase()]} ${
+              hoveredItem?.title === descriptions[item as keyof typeof descriptions].title 
+                ? styles.active 
+                : ''
+            }`}
             onMouseEnter={() => handleHover(item as keyof typeof descriptions)}
             onMouseLeave={handleMouseLeave}
             onClick={() => handleClick(item)}

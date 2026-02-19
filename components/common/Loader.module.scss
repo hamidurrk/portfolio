@@ -1,0 +1,172 @@
+$primary: #FEF5E1;
+$secondary: #B19162;
+$tertiary: #995e33;
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  &.exit {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+.loaderContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.animationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 180px;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    width: 140px;
+    height: 140px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.morphShape {
+  width: 100%;
+  height: 100%;
+}
+
+.shapePath {
+  fill: none;
+  stroke: $secondary;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 15px rgba($secondary, 0.6));
+  animation: morphAnimation 3s ease-in-out infinite,
+             rotateShape 6s linear infinite;
+  
+  @media (max-width: 768px) {
+    stroke-width: 2.5;
+  }
+  
+  @media (max-width: 480px) {
+    stroke-width: 2;
+  }
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 300px;
+  animation: fadeIn 1s ease-out 0.4s forwards;
+  opacity: 0;
+
+  @media (max-width: 768px) {
+    width: 250px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 200px;
+  }
+}
+
+.progressBar {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba($secondary, 0.3);
+  
+  @media (max-width: 480px) {
+    height: 2px;
+  }
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, $secondary, $tertiary, $secondary);
+  background-size: 200% 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease-out;
+  animation: shimmer 2s linear infinite;
+  box-shadow: 0 0 20px rgba($secondary, 0.6);
+}
+
+.progressText {
+  font-family: 'Tomorrow', 'Google Sans', sans-serif;
+  font-size: 0.875rem;
+  color: $primary;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+  }
+}
+
+@keyframes morphAnimation {
+  0%, 100% {
+    d: path("M100,50 L150,100 L100,150 L50,100 Z");
+    stroke: $secondary;
+  }
+  25% {
+    d: path("M100,30 A70,70 0 1,0 100,170 A70,70 0 1,0 100,30 Z");
+    stroke: $tertiary;
+  }
+  50% {
+    d: path("M60,60 L140,60 L140,140 L60,140 Z");
+    stroke: $primary;
+  }
+  75% {
+    d: path("M100,40 L160,140 L40,140 Z");
+    stroke: $secondary;
+  }
+}
+
+@keyframes rotateShape {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
