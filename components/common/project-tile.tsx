@@ -223,7 +223,7 @@ const ProjectTile = ({
             </div>
           </div>
           <div className="w-full lg:w-1/2 mt-8">
-            { embed && <div 
+            { embed && <div className="w-full h-full"
               dangerouslySetInnerHTML={{ __html: embed }}>
               </div>
             }
