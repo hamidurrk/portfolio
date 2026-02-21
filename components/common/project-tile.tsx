@@ -10,14 +10,21 @@ import { isSmallScreen } from "pages";
 const ProjectTile = ({
   project,
   animationEnabled,
+  activeSlug,
+  onOpenModal,
+  onCloseModal,
 }: {
   project: IProject;
   animationEnabled: boolean;
+  activeSlug?: string;
+  onOpenModal?: (slug: string) => void;
+  onCloseModal?: () => void;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const projectCard: MutableRefObject<HTMLDivElement> = useRef(null);
   const {
     name,
+    slug,
     tech,
     image,
     blurImage,
@@ -38,6 +45,20 @@ const ProjectTile = ({
       gyroscope: false,
     });
   }, [projectCard]);
+
+  // Set app element for react-modal accessibility
+  useEffect(() => {
+    Modal.setAppElement('body');
+  }, []);
+
+  // Open modal if activeSlug matches this project's slug
+  useEffect(() => {
+    if (activeSlug === slug && !isModalOpen) {
+      setIsModalOpen(true);
+    } else if (activeSlug && activeSlug !== slug && isModalOpen) {
+      setIsModalOpen(false);
+    }
+  }, [activeSlug, slug, isModalOpen]);
 
   const renderTechIcons = (techStack: string[]): React.ReactNode => (
     <div
@@ -133,10 +154,12 @@ const ProjectTile = ({
 
   const openModal = () => {
     setIsModalOpen(true);
+    onOpenModal?.(slug);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    onCloseModal?.();
   };
 
   return (
@@ -223,7 +246,7 @@ const ProjectTile = ({
             </div>
           </div>
           <div className="w-full lg:w-1/2 mt-8">
-            { embed && <div className="w-full h-full"
+            { embed && <div className="w-full aspect-video"
               dangerouslySetInnerHTML={{ __html: embed }}>
               </div>
             }

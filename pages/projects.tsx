@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { PROJECTS } from "../constants";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useRouter } from "next/router";
 
 import Layout from "@/components/common/layout";
 import Header from "@/components/common/header";
@@ -29,6 +30,7 @@ export interface IDesktop {
 }
 
 export default function ProjectsPage() {
+  const router = useRouter();
   const [selectedCategories, setSelectedCategories] = useState<string[]>(["All"]);
   const [ctrlPressed, setCtrlPressed] = useState<boolean>(false);
 
@@ -196,6 +198,13 @@ export default function ProjectsPage() {
           project={project}
           key={project.name}
           animationEnabled={true}
+          activeSlug={router.query.project as string}
+          onOpenModal={(slug: string) => {
+            router.push(`/projects?project=${slug}`, undefined, { shallow: true });
+          }}
+          onCloseModal={() => {
+            router.push('/projects', undefined, { shallow: true });
+          }}
         ></ProjectTile>
       ));
 

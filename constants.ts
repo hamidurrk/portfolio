@@ -56,6 +56,7 @@ export const SOCIAL_LINKS = {
 
 export interface IProject {
   name: string;
+  slug: string;
   image: string;
   blurImage: string;
   description: string;
@@ -70,6 +71,7 @@ export interface IProject {
 export const HIGHLIGHTS: IProject[] = [
   {
     name: "Tethr",
+    slug: "tethr",
     image: "/projects/tethr.jpg",
     blurImage: "/projects/blur/figgen-blur.jpg",
     description: "Network Tower Location Estimation Using Mean Shift Clustering",
@@ -82,6 +84,7 @@ export const HIGHLIGHTS: IProject[] = [
   },
   {
     name: "Block Meter",
+    slug: "block-meter",
     image: "/projects/ibcol_paper.jpg",
     blurImage: "/projects/blur/dl-unify-blur.jpg",
     description: "An Immutable Electricity Billing System to Eliminate Non-Technical Loss Using Blockchain",
@@ -94,6 +97,7 @@ export const HIGHLIGHTS: IProject[] = [
   },
   {
     name: "Awake Website",
+    slug: "awake-website",
     image: "/projects/awake.jpg",
     blurImage: "/projects/blur/myokr-blur.jpg",
     description: "A platform for social change for Awake in Kenya",
@@ -106,6 +110,7 @@ export const HIGHLIGHTS: IProject[] = [
   },
   {
     name: "Social Media Scraper",
+    slug: "social-media-scraper",
     image: "/projects/scraper.jpg",
     blurImage: "/projects/blur/myokr-blur.jpg",
     description: "Scrapes post data from Facebook for research purposes",
@@ -142,6 +147,7 @@ export const HIGHLIGHTS: IProject[] = [
   // },
   {
     name: "Spectre Bot & Operating System",
+    slug: "spectre-bot-os",
     image: "/projects/haunt.png",
     blurImage: "/projects/blur/myokr-blur.jpg",
     description: "Custom line follower robot programmed for competitive national tournaments",
@@ -154,6 +160,7 @@ export const HIGHLIGHTS: IProject[] = [
   },
   {
     name: "Assistive Device for Visually Impaired People",
+    slug: "assistive-device-visually-impaired",
     image: "/projects/nasa.jpg",
     blurImage: "/projects/blur/dlt-website-blur.jpg",
     description: "A hand-glove-like device to assist visually impaired people in reading text from any digital platform",
@@ -166,6 +173,7 @@ export const HIGHLIGHTS: IProject[] = [
   },
   {
     name: "EduKit",
+    slug: "edukit",
     image: "/projects/edukit.jpg",
     blurImage: "/projects/blur/dlt-website-blur.jpg",
     description: "An Educational Module to teach intermediate Electronics",
@@ -181,6 +189,7 @@ export const HIGHLIGHTS: IProject[] = [
 export const PROJECTS: IProject[] = [
   {
     name: "Tethr",
+    slug: "tethr",
     image: "/projects/tethr.jpg",
     blurImage: "/projects/blur/figgen-blur.jpg",
     description: "Network Tower Location Estimation Using Mean Shift Clustering",
@@ -193,6 +202,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "Block Meter",
+    slug: "block-meter",
     image: "/projects/ibcol_paper.jpg",
     blurImage: "/projects/blur/dl-unify-blur.jpg",
     description: "An Immutable Electricity Billing System to Eliminate Non-Technical Loss Using Blockchain",
@@ -205,6 +215,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "Awake Website",
+    slug: "awake-website",
     image: "/projects/awake.jpg",
     blurImage: "/projects/blur/myokr-blur.jpg",
     description: "A platform for social change for Awake in Kenya",
@@ -217,6 +228,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "Social Media Scraper",
+    slug: "social-media-scraper",
     image: "/projects/scraper.jpg",
     blurImage: "/projects/blur/myokr-blur.jpg",
     description: "Scrapes post data from Facebook for research purposes",
@@ -229,6 +241,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "E-paper Scraper",
+    slug: "epaper-scraper",
     image: "/projects/epaper.png",
     blurImage: "/projects/blur/myokr-blur.jpg",
     description: "Python-based web scraper for extracting img/text data from online newspapers",
@@ -240,43 +253,8 @@ export const PROJECTS: IProject[] = [
     tech: ["python", "selenium", "bs4", "opencv", "ctk", "sqlite"],
   },
   {
-    name: "PyWebIDE",
-    image: "/projects/pywebide.png",
-    blurImage: "/projects/blur/dl-unify-blur.jpg",
-    description: "A web browser IDE for Python programming",
-    details: "PyWebIDE is a full-stack web application built with React, Firebase, CSS, and javascript. It serves as an integrated development environment (IDE) for Python programming, providing users with a seamless coding experience right in their web browser.",
-    gradient: ["#003052", "#167187"],
-    url: "",
-    github: "https://github.com/hamidurrk/PyWebIDE",
-    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/snB4pi5BI-U?si=3FhDgdnkJqVR_Ytb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-    tech: ["react", "figma", "firebase", "css"],
-  },
-  {
-    name: "Portfolio Website - Client Project",
-    image: "/projects/sdportfolio.jpg",
-    blurImage: "/projects/blur/dl-unify-blur.jpg",
-    description: "Academic portfolio website for a client",
-    details: "This portfolio website is designed to highlight the professional journey of Sourav Das, a Research Associate at the University of Kassel. The website includes sections such as Hero, About, Resume, and Contact, providing a comprehensive overview of his work and achievements.",
-    gradient: ["#003052", "#167187"],
-    url: "https://www.sourav-das.com/",
-    github: "https://github.com/hamidurrk/portfolio-souravdas",
-    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/79vSrmCrPoY?si=E6Xdn1HsIbrne1QH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-    tech: ["javascript", "figma", "html", "css"],
-  },
-  {
-    name: "Dynamic Quizzer",
-    image: "/projects/quiz.png",
-    blurImage: "/projects/blur/dl-unify-blur.jpg",
-    description: "A dynamic quiz application built with React and Firebase for authentication.",
-    details: "Dynamic Quizzer offers an engaging quiz experience with a series of 10 dynamic questions. At the end of the quiz, your score out of 10 will be displayed, providing instant feedback on your performance. Plus, with Firebase Authentication integration, you can easily log in using your existing Firebase credentials or sign up.",
-    gradient: ["#003052", "#167187"],
-    url: "",
-    github: "https://github.com/hamidurrk/Dynamic-Quizzer",
-    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_q2xACjE0dU?si=uDaoPO_Dtcvut22i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
-    tech: ["react", "figma", "firebase", "css"],
-  },
-  {
     name: "Spectre Bot & Operating System",
+    slug: "spectre-bot-os",
     image: "/projects/haunt.png",
     blurImage: "/projects/blur/myokr-blur.jpg",
     description: "Custom line follower robot programmed for competitive national tournaments",
@@ -289,6 +267,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "Assistive Device for Visually Impaired People",
+    slug: "assistive-device-visually-impaired",
     image: "/projects/nasa.jpg",
     blurImage: "/projects/blur/dlt-website-blur.jpg",
     description: "A hand-glove-like device to assist visually impaired people in reading text from any digital platform",
@@ -301,6 +280,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "3D Simulation of Dijkstra's Algorithm",
+    slug: "dijkstra-simulation-3d",
     image: "/projects/kibo.png",
     blurImage: "/projects/blur/dlt-website-blur.jpg",
     description: "Testing the shortest path algorithm in a 3D environment",
@@ -313,6 +293,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "2D Pong Game",
+    slug: "2d-pong-game",
     image: "/projects/pong.png",
     blurImage: "/projects/blur/dlt-website-blur.jpg",
     description: "Simple 2D pong game in Java",
@@ -325,6 +306,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "EduKit",
+    slug: "edukit",
     image: "/projects/edukit.jpg",
     blurImage: "/projects/blur/dlt-website-blur.jpg",
     description: "An Educational Module to teach intermediate Electronics",
@@ -337,6 +319,7 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: "Friend Finder Bot - Facebook",
+    slug: "friend-finder-bot-facebook",
     image: "/projects/friend_finder.png",
     blurImage: "/projects/blur/dlt-website-blur.jpg",
     description: "Surfs through profile lists and sends friend request on Facebook",
@@ -347,6 +330,45 @@ export const PROJECTS: IProject[] = [
     embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ErpNq3VqUyM?si=UfRJKk6kL8F7c2Y0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["python"],
   },
+  {
+    name: "PyWebIDE",
+    slug: "pywebide",
+    image: "/projects/pywebide.png",
+    blurImage: "/projects/blur/dl-unify-blur.jpg",
+    description: "A web browser IDE for Python programming",
+    details: "PyWebIDE is a full-stack web application built with React, Firebase, CSS, and javascript. It serves as an integrated development environment (IDE) for Python programming, providing users with a seamless coding experience right in their web browser.",
+    gradient: ["#003052", "#167187"],
+    url: "",
+    github: "https://github.com/hamidurrk/PyWebIDE",
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/snB4pi5BI-U?si=3FhDgdnkJqVR_Ytb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+    tech: ["react", "figma", "firebase", "css"],
+  },
+  {
+    name: "Portfolio Website - Client Project",
+    slug: "portfolio-client-project",
+    image: "/projects/sdportfolio.jpg",
+    blurImage: "/projects/blur/dl-unify-blur.jpg",
+    description: "Academic portfolio website for a client",
+    details: "This portfolio website is designed to highlight the professional journey of Sourav Das, a Research Associate at the University of Kassel. The website includes sections such as Hero, About, Resume, and Contact, providing a comprehensive overview of his work and achievements.",
+    gradient: ["#003052", "#167187"],
+    url: "https://www.sourav-das.com/",
+    github: "https://github.com/hamidurrk/portfolio-souravdas",
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/79vSrmCrPoY?si=E6Xdn1HsIbrne1QH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+    tech: ["javascript", "figma", "html", "css"],
+  },
+  {
+    name: "Dynamic Quizzer",
+    slug: "dynamic-quizzer",
+    image: "/projects/quiz.png",
+    blurImage: "/projects/blur/dl-unify-blur.jpg",
+    description: "A dynamic quiz application built with React and Firebase for authentication.",
+    details: "Dynamic Quizzer offers an engaging quiz experience with a series of 10 dynamic questions. At the end of the quiz, your score out of 10 will be displayed, providing instant feedback on your performance. Plus, with Firebase Authentication integration, you can easily log in using your existing Firebase credentials or sign up.",
+    gradient: ["#003052", "#167187"],
+    url: "",
+    github: "https://github.com/hamidurrk/Dynamic-Quizzer",
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_q2xACjE0dU?si=uDaoPO_Dtcvut22i" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+    tech: ["react", "figma", "firebase", "css"],
+  }
 ];
 
 export const SKILLS = {
