@@ -77,7 +77,7 @@ export const HIGHLIGHTS: IProject[] = [
     gradient: ["#1F6582", "#1ABCFE"],
     url: "https://vimeo.com/938780239?share=copy",
     github: "https://github.com/hamidurrk/ground-station",
-    embed: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/938780239?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Network Tower Location Estimation Using Mean Shift Clustering"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/rho0ssSEc7s?si=tbkcgQwZC38e48o2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["python", "sklearn", "yolo", "opencv", "ros", "pandas", "ctk"],
   },
   {
@@ -89,7 +89,7 @@ export const HIGHLIGHTS: IProject[] = [
     gradient: ["#003052", "#167187"],
     url: "",
     github: "https://github.com/hamidurrk/PyWebIDE",
-    embed:'<div style="padding:54.27% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1044933067?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Block Meter - Prototype Demonstration"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YftsPNbBj10?si=pl4asKvK8psBcsf6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["python", "solidity", "etherium", "ipfs", "ESP32", "cpp", "php", "javascript", "thingspeak"],
   },
   {
@@ -101,7 +101,7 @@ export const HIGHLIGHTS: IProject[] = [
     gradient: ["#153BB9", "#0E2C8B"],
     url: "https://awakeyi.org/",
     github: "https://github.com/hamidurrk/awake_website",
-    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/939540129?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Awake Youth Initiative - Official Website"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/2AE2HT1M1bs?si=d2ZoB8DC-It3KhJR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["html", "css", "javascript", "sass", "figma"],
   },
   {
@@ -113,7 +113,7 @@ export const HIGHLIGHTS: IProject[] = [
     gradient: ["#153BB9", "#0E2C8B"],
     url: "",
     github: "https://github.com/hamidurrk/awake_website",
-    embed:'<div style="padding:59.62% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1044935287?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Scraping Facebook posts from May 2010 to Nov 2024 - Social Media Scraper"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/c8BVQTdsboE?si=25p6YFLBi_0EaRJb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["python", "selenium", "bs4", "opencv", "ctk", "matplotlib", "sqlite"],
   },
   // {
@@ -149,7 +149,7 @@ export const HIGHLIGHTS: IProject[] = [
     gradient: ["#153BB9", "#0E2C8B"],
     url: "",
     github: "https://github.com/hamidurrk/haunt-os",
-    embed: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/939581502?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="HauntOS LFR Demo Run"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/pRV1xqzwm3g?si=LQSuy9PhZqpOYnyM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["cpp", "arduino", "esp32"],
   },
   {
@@ -161,7 +161,7 @@ export const HIGHLIGHTS: IProject[] = [
     gradient: ["#245B57", "#004741"],
     url: "",
     github: "https://github.com/hamidurrk/Assistive-Device-for-Visually-Impaired-People",
-    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/939592174?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="nasa"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/tgz7zx57lec?si=vmqorhk_KcaoqnKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["cpp", "python", "arduino", "esp32"],
   },
   {
@@ -173,7 +173,7 @@ export const HIGHLIGHTS: IProject[] = [
     gradient: ["#245B57", "#004741"],
     url: "",
     github: "",
-    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/940094146?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="EduKit - Electronics Teaching Module"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/TVmz9rPVxS8?si=bIMu5HnuOdTfyo9h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: [""],
   },
 ];
@@ -212,7 +212,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#153BB9", "#0E2C8B"],
     url: "https://awakeyi.org/",
     github: "https://github.com/hamidurrk/awake_website",
-    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/939540129?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Awake Youth Initiative - Official Website"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/2AE2HT1M1bs?si=d2ZoB8DC-It3KhJR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["javascript", "figma", "html", "sass", "css"],
   },
   {
@@ -224,7 +224,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#153BB9", "#0E2C8B"],
     url: "",
     github: "https://github.com/hamidurrk/awake_website",
-    embed:'<div style="padding:59.62% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1044935287?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Scraping Facebook posts from May 2010 to Nov 2024 - Social Media Scraper"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/c8BVQTdsboE?si=25p6YFLBi_0EaRJb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["python", "selenium", "sqlite", "opencv", "matplotlib", "bs4"],
   },
   {
@@ -252,7 +252,7 @@ export const PROJECTS: IProject[] = [
     tech: ["react", "figma", "firebase", "css"],
   },
   {
-    name: "Portfolio Website",
+    name: "Portfolio Website - Client Project",
     image: "/projects/sdportfolio.jpg",
     blurImage: "/projects/blur/dl-unify-blur.jpg",
     description: "Academic portfolio website for a client",
@@ -260,7 +260,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#003052", "#167187"],
     url: "https://www.sourav-das.com/",
     github: "https://github.com/hamidurrk/portfolio-souravdas",
-    embed:'<div style="padding:54.61% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1049934056?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Portfolio Website for a client"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/79vSrmCrPoY?si=E6Xdn1HsIbrne1QH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["javascript", "figma", "html", "css"],
   },
   {
@@ -308,7 +308,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#245B57", "#004741"],
     url: "",
     github: "https://github.com/hamidurrk/Kibo-RPC-Python",
-    embed:'<div style="padding:54.06% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1050323205?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="3D Simulation of Shortest Path Algorithm"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/gLVxCboAmGw?si=obIPor7iT2mORZm3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["python"],
   },
   {
@@ -320,7 +320,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#245B57", "#004741"],
     url: "",
     github: "https://github.com/hamidurrk/Pong_Game",
-    embed:'<div style="padding:54.17% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1050324361?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Java Pong Game"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/YVj2jeGbSl8?si=o3CO1loiG5bK6-W6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["java"],
   },
   {
@@ -332,7 +332,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#245B57", "#004741"],
     url: "",
     github: "",
-    embed:'<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/940094146?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="EduKit - Electronics Teaching Module"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/TVmz9rPVxS8?si=bIMu5HnuOdTfyo9h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: [""],
   },
   {
@@ -344,7 +344,7 @@ export const PROJECTS: IProject[] = [
     gradient: ["#245B57", "#004741"],
     url: "",
     github: "https://github.com/hamidurrk/Ajaira_bot/blob/master/main.py",
-    embed:'<div style="padding:56.51% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1064681756?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Friend Finder Bot - Facebook"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>',
+    embed:'<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ErpNq3VqUyM?si=UfRJKk6kL8F7c2Y0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
     tech: ["python"],
   },
 ];
