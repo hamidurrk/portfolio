@@ -167,7 +167,7 @@ export default function Home() {
           {/* <HeroParallax /> */}
           {/* <HeroSection /> */}
           <ProjectsSection isDesktop={true} />
-          { isSmallScreen() ? <Interested /> : null }
+          {/* { isSmallScreen() ? <Interested /> : null } */}
           <SkillsSection />
           <QuoteSection />
           {/* <CollaborationSection /> */}

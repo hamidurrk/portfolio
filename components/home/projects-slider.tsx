@@ -5,7 +5,6 @@ import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IDesktop, isSmallScreen, NO_MOTION_PREFERENCE_QUERY } from "pages";
 import Button, { ButtonTypes } from "../common/button";
-import Lenis from "@studio-freight/lenis";
 
 const PROJECT_STYLES = {
   SECTION:
@@ -17,10 +16,6 @@ const PROJECT_STYLES = {
 const ProjectsSection = ({ isDesktop }: IDesktop) => {
   const targetSectionRef: MutableRefObject<HTMLDivElement> = useRef(null);
   const sectionTitleElementRef: MutableRefObject<HTMLDivElement> = useRef(null);
-  
-  const animDuration = 4;
-  const lenisRef = useRef<Lenis | null>(null);
-  const durationRef = useRef<number>(animDuration);
 
   const [willChange, setwillChange] = useState(false);
   const [horizontalAnimationEnabled, sethorizontalAnimationEnabled] =
@@ -30,35 +25,6 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       window.open('https://github.com/hamidurrk', '_blank', 'noreferrer');
     };
 
-  const handleClick = () => {
-    if (!lenisRef.current) {
-          const lenis = new Lenis({
-            duration: animDuration,
-            easing: (t) => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1),
-          });
-    
-          lenisRef.current = lenis;
-    
-          const raf = (time: number) => {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-          };
-    
-          requestAnimationFrame(raf);
-        }
-        const element = document.getElementById("skills");
-        if (element && lenisRef.current) {
-          lenisRef.current.scrollTo(element);
-    
-          // Destroy Lenis instance after the animation duration
-          setTimeout(() => {
-            if (lenisRef.current) {
-              lenisRef.current.destroy();
-              lenisRef.current = null;
-            }
-          }, durationRef.current * 1000); // Convert duration to milliseconds
-        }
-      };
   const initRevealAnimation = (
     targetSectionRef: MutableRefObject<HTMLDivElement>
   ): [GSAPTimeline, ScrollTrigger] => {
@@ -102,36 +68,17 @@ const ProjectsSection = ({ isDesktop }: IDesktop) => {
       trigger: targetSectionRef.current,
       start: "top top",
       end: duration,
-      scrub: 0,
+      scrub: 0.35,
       pin: true,
       animation: timeline,
       pinSpacing: "margin",
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
       onToggle: (self) => setwillChange(self.isActive),
     });
 
     return [timeline, scrollTrigger];
   };
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      // duration: 2,
-      // easing: (t) =>
-      //   t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
-    });
-
-    lenisRef.current = lenis;
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
 
   useEffect(() => {
     let projectsScrollTrigger: ScrollTrigger | undefined;
