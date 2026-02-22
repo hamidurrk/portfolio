@@ -1,5 +1,5 @@
 export const METADATA = {
-  title: "Portfolio | Md Hamidur Rahman Khan",
+  title: "Portfolio | Hamidur Khan",
   description:
     "Pushing the boundaries of innovation with intelligent robots, machine learning, blockchain, and dynamic web solutions.",
   siteUrl: "https://www.hamidurrk.com/",
@@ -570,7 +570,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     title: "Started B.Sc. in Computational Engineering and Artificial Intelligence",
     size: ItemSize.SMALL,
     subtitle:
-      "Currently studying at LUT University in Finland. While my major focuses on Machine Learning Models and AI, my minor, Software and Systems Engineering, covers the development of software systems.",
+      "Studying at LUT University in Finland. My major focuses on Machine Learning Models and AI, while my minor, Software and Systems Engineering, covers development of software systems.",
     image: "/timeline/lut_logo.png",
     slideImage: "/timeline/lut.jpg",
     shouldDrawLine: true,
