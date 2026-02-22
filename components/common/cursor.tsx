@@ -65,6 +65,7 @@ const Cursor = ({ isDesktop }: IDesktop) => {
     if (isDesktop) {
       initCursorAnimation();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cursor, follower, isDesktop]);
 
   return (

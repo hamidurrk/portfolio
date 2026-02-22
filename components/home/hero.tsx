@@ -100,7 +100,7 @@ const HeroSection = React.memo(() => {
       <a href={`mailto:${EMAIL}`} className={`${styles.emailBox}`} 
         rel="noreferrer"
         target="_blank">
-        <Image className={`${styles.emailSvg} link`} src={`/social/email.svg`} width={40} height={40} />
+        <Image className={`${styles.emailSvg} link`} src={`/social/email.svg`} alt="Email" width={40} height={40} />
         <div className={styles.content}>
           hamidurrk@gmail.com
         </div>

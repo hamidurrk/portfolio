@@ -108,6 +108,7 @@ const Expertise = () => {
         clearInterval(intervalRef.current);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [animDelay]);
 
   const handleHover = (item: keyof typeof descriptions) => {

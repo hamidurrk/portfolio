@@ -103,12 +103,6 @@ $tertiary: #995e33;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   position: relative;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 }
 
 @keyframes zoomOut {

@@ -66,7 +66,8 @@ const HeroParallax = () => {
         lenisRef.current.destroy();
       }
     };
-  }, [lenisRef.current]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const initRevealAnimation = (
     targetSection: MutableRefObject<HTMLDivElement>

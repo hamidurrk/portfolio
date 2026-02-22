@@ -476,6 +476,7 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
 
     // Animation for Timeline SVG
     animateTimeline(timeline, duration);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     timelineSvg,
     svgContainer,

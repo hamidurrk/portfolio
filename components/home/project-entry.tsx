@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import { PROJECTS } from "../../constants";
 import styles from "./ProjectEntry.module.scss";
 
@@ -87,9 +88,12 @@ const ProjectEntry: React.FC = () => {
               onMouseLeave={handleMouseLeave}
             >
               <div className={styles.projectImage}>
-                <img 
+                <Image 
                   src={project.image} 
                   alt={project.name}
+                  width={640}
+                  height={360}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
                   loading="lazy"
                 />
               </div>

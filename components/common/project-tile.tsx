@@ -51,14 +51,16 @@ const ProjectTile = ({
     Modal.setAppElement('body');
   }, []);
 
-  // Open modal if activeSlug matches this project's slug
+  // Open modal if activeSlug matches this project's slug (only when URL handling is enabled)
   useEffect(() => {
-    if (activeSlug === slug && !isModalOpen) {
-      setIsModalOpen(true);
-    } else if (activeSlug && activeSlug !== slug && isModalOpen) {
-      setIsModalOpen(false);
+    if (onOpenModal && onCloseModal) {
+      // URL-based modal control
+      const shouldBeOpen = activeSlug === slug;
+      if (shouldBeOpen !== isModalOpen) {
+        setIsModalOpen(shouldBeOpen);
+      }
     }
-  }, [activeSlug, slug, isModalOpen]);
+  }, [activeSlug, slug, isModalOpen, onOpenModal, onCloseModal]);
 
   const renderTechIcons = (techStack: string[]): React.ReactNode => (
     <div
@@ -153,13 +155,23 @@ const ProjectTile = ({
   );
 
   const openModal = () => {
-    setIsModalOpen(true);
-    onOpenModal?.(slug);
+    if (onOpenModal) {
+      // URL-based modal: only update URL, let useEffect handle state
+      onOpenModal(slug);
+    } else {
+      // Direct modal: update state directly
+      setIsModalOpen(true);
+    }
   };
 
   const closeModal = () => {
-    setIsModalOpen(false);
-    onCloseModal?.();
+    if (onCloseModal) {
+      // URL-based modal: only update URL, let useEffect handle state
+      onCloseModal();
+    } else {
+      // Direct modal: update state directly
+      setIsModalOpen(false);
+    }
   };
 
   return (

@@ -193,6 +193,7 @@ const PhysicsPage = ({ worldWidth, worldHeight }) => {
 
     Example.timescale();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

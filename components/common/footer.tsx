@@ -55,6 +55,7 @@ const Footer = () => {
     return () => {
       window.removeEventListener('resize', updateWidth);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClick = (item: keyof typeof descriptions) => {
@@ -130,6 +131,7 @@ const Footer = () => {
       className="w-full relative select-none bg-cover flex flex-col items-stretch"
       id={footerRef}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/footer-curve.svg"
         alt="Footer"

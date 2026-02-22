@@ -115,7 +115,8 @@ export default function Home() {
     window.addEventListener("resize", debouncedDimensionCalculator);
     return () =>
       window.removeEventListener("resize", debouncedDimensionCalculator);
-  }, [timer]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const renderBackdrop = (): React.ReactNode => (
     <div className="fixed top-0 left-0 h-screen w-screen bg-black -z-1"></div>
