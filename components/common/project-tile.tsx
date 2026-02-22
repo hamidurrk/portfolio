@@ -46,15 +46,12 @@ const ProjectTile = ({
     });
   }, [projectCard]);
 
-  // Set app element for react-modal accessibility
   useEffect(() => {
     Modal.setAppElement('body');
   }, []);
 
-  // Open modal if activeSlug matches this project's slug (only when URL handling is enabled)
   useEffect(() => {
     if (onOpenModal && onCloseModal) {
-      // URL-based modal control
       const shouldBeOpen = activeSlug === slug;
       if (shouldBeOpen !== isModalOpen) {
         setIsModalOpen(shouldBeOpen);
@@ -156,20 +153,16 @@ const ProjectTile = ({
 
   const openModal = () => {
     if (onOpenModal) {
-      // URL-based modal: only update URL, let useEffect handle state
       onOpenModal(slug);
     } else {
-      // Direct modal: update state directly
       setIsModalOpen(true);
     }
   };
 
   const closeModal = () => {
     if (onCloseModal) {
-      // URL-based modal: only update URL, let useEffect handle state
       onCloseModal();
     } else {
-      // Direct modal: update state directly
       setIsModalOpen(false);
     }
   };
@@ -258,7 +251,7 @@ const ProjectTile = ({
             </div>
           </div>
           <div className="w-full lg:w-1/2 mt-8">
-            { embed && <div className="w-full aspect-video"
+            { embed && isModalOpen && <div className="w-full aspect-video"
               dangerouslySetInnerHTML={{ __html: embed }}>
               </div>
             }
