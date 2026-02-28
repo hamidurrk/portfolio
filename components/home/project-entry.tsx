@@ -6,7 +6,6 @@ import styles from "./ProjectEntry.module.scss";
 
 const ProjectEntry: React.FC = () => {
   const router = useRouter();
-  const [isZooming, setIsZooming] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const scrollPositionRef = useRef<number>(0); // Persist scroll position
@@ -46,12 +45,7 @@ const ProjectEntry: React.FC = () => {
   }, [isPaused]);
 
   const handleClick = () => {
-    setIsZooming(true);
-    
-    // Wait for zoom animation to start, then navigate
-    setTimeout(() => {
-      router.push("/projects");
-    }, 300);
+    router.push("/projects");
   };
 
   const handleMouseEnter = () => {
@@ -64,7 +58,7 @@ const ProjectEntry: React.FC = () => {
 
   return (
     <div 
-      className={`${styles.projectEntry} ${isZooming ? styles.zooming : ''}`}
+      className={styles.projectEntry}
       onClick={handleClick}
     >
       <div className={styles.header}>
