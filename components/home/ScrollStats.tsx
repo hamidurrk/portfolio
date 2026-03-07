@@ -71,11 +71,16 @@ const ScrollStats: React.FC<ScrollStatsProps> = ({ scrollYProgress }) => {
   return (
     <motion.div 
       className={styles.scrollStatsContainer}
-      style={{ opacity, y: yPosition }}
+      style={{ opacity, y: yPosition, scale: 0.25, transformOrigin: 'top left' }}
       initial={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* Scroll Progress Indicator */}
+      {/* Inner wrapper rendered at 4× CSS size so the GPU cache is always
+          high-resolution. The outer scale(0.25) shrinks it back to 1× at
+          scroll-start; as the parent container (scale4: 1→4) zooms in, the
+          net visual factor reaches 1× of this large render → no upscaling. */}
+      <div style={{ transform: 'scale(4)', transformOrigin: 'top left' }}>
+        <div className={styles.scrollStatsInner}>
       <div className={styles.progressIndicator}>
         <div className={styles.progressTrack}>
           <motion.div 
@@ -102,6 +107,8 @@ const ScrollStats: React.FC<ScrollStatsProps> = ({ scrollYProgress }) => {
           <div className={styles.statNumber}>∞</div>
           <div className={styles.statLabel}>Cups of Coffee</div>
           {/* <div className={styles.statSubtext}>({coffeeCount}+)</div> */}
+        </div>
+      </div>
         </div>
       </div>
     </motion.div>
