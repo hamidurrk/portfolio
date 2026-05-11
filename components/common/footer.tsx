@@ -101,12 +101,12 @@ const Footer = () => {
       </h1>
       <div className="flex mt-8">{!isSmallScreen() && renderSocialIcons()}</div>
       <div className="flex mt-8">
-        <Button
+        {/* <Button
           classes="mr-3"
           type={ButtonTypes.OUTLINE}
           name="Resume"
           href="/resume.pdf"
-        ></Button>
+        ></Button> */}
         <Button
           classes="ml-3"
           type={ButtonTypes.WHITE}
