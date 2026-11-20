@@ -1,43 +1,13 @@
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useRouter } from 'next/router';
 import Menu from "@/components/common/menu";
-import Lenis from "@studio-freight/lenis";
+import { scrollToId } from "../../utils/scroll";
 
 const Header = () => {
   const router = useRouter();
   const [menuVisible, setmenuVisible] = useState(false);
-    const animDuration = 4;
-    const lenisRef = useRef<Lenis | null>(null);
-    const durationRef = useRef<number>(animDuration);
-    const handleClick = () => {
-      if (!lenisRef.current) {
-        const lenis = new Lenis({
-          duration: animDuration,
-          easing: (t) => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1),
-        });
-  
-        lenisRef.current = lenis;
-  
-        const raf = (time: number) => {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        };
-  
-        requestAnimationFrame(raf);
-      }
-      const element = document.getElementById("home");
-      if (element && lenisRef.current) {
-        lenisRef.current.scrollTo(element);
-  
-        setTimeout(() => {
-          if (lenisRef.current) {
-            lenisRef.current.destroy();
-            lenisRef.current = null;
-          }
-        }, durationRef.current * 1000); 
-      }
-    };
+    const handleClick = () => scrollToId("home");
 
     const handleLogoClick = () => {
       if (router.pathname === '/projects') {

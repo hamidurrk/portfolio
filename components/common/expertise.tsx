@@ -43,25 +43,45 @@ const Expertise = () => {
   }, [isBouncing]);
 
   const descriptions = {
-    LinkedIn: {
-      title: "Full-Stack Development",
-      content: "Doing contract based work for last 6 years. I specialize in modern frameworks, web animations, and SEO optimized UI/UX.",
+    // LinkedIn: {
+    //   title: "Full-Stack Development",
+    //   content: "Doing contract based work for last 6 years. I specialize in modern frameworks, web animations, and SEO optimized UI/UX.",
+    // },
+    // WhatsApp: {
+    //   title: "Blockchain Tech",
+    //   content: "Invented a new billing technology in 2022 & won an International Silver Medal for sustainable consumption (SDG 12).",
+    // },
+    // X: {
+    //   title: "Web Scraping",
+    //   content: "Scraping commercial sites for 4 years. Using my tool for research with researchers from UniKassel & TU Dortmund, Germany.",
+    // },
+    // Email: {
+    //   title: "Machine Learning & AI",
+    //   content: "Acted as the natioanal coach for the Bangladesh team in WRO-2023, focusing on AI & ML. Team won an International Silver.",
+    // },
+    // Discord: {
+    //   title: "Robotics & IoT",
+    //   content: "Over the past 8 years, I have been involved in robotics. Won a Silver Medal in the National Robotics Olympiad in 2019.",
+    // },
+        LinkedIn: {
+      title: "AI & ML Research",
+      content: "Junior Research Assistant at LUT, building data-driven AI systems and data-protected AI solutions with Finnish companies.",
     },
     WhatsApp: {
-      title: "Blockchain Tech",
-      content: "Invented a new billing technology in 2022 & won an International Silver Medal for sustainable consumption (SDG 12).",
+      title: "Data Engineering & Analysis",
+      content: "Built a unified census and survey data processing pipeline for Bangladesh Government's Statistics Bureau.",
     },
     X: {
-      title: "Web Scraping",
-      content: "Scraping commercial sites for 4 years. Using my tool for research with researchers from UniKassel & TU Dortmund, Germany.",
+      title: "Robotics & Embedded",
+      content: "Involved in robotics for 8+ years. National coach for Bangladesh at WRO 2023, won an International Silver among 451 teams.",
     },
     Email: {
-      title: "Machine Learning & AI",
-      content: "Acted as the natioanal coach for the Bangladesh team in WRO-2023, focusing on AI & ML. Team won an International Silver.",
+      title: "Blockchain Tech",
+      content: "Won Silver at the International Blockchain Olympiad among 44 countries for building blockchain-based billing system.",
     },
     Discord: {
-      title: "Robotics & IoT",
-      content: "Over the past 8 years, I have been involved in robotics. Won a Silver Medal in the National Robotics Olympiad in 2019.",
+      title: "Software Development",
+      content: "Building tools in Python, C++ and Java. Developed IDLE-Mod, a cross-platform Python editor used by 650+ students at LUT.",
     },
   };
 

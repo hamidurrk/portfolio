@@ -40,12 +40,14 @@ const Cursor = ({ isDesktop }: IDesktop) => {
       y: e.clientY,
       duration: 0.1,
       ease: Linear.easeNone,
+      overwrite: true,
     });
     gsap.to(follower.current, {
       x: e.clientX,
       y: e.clientY,
       duration: 0.3,
       ease: Linear.easeNone,
+      overwrite: true,
     });
   };
 

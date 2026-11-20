@@ -5,18 +5,12 @@ import Image from "next/image";
 import { gsap, Linear } from "gsap";
 import Button, { ButtonTypes } from "../common/button";
 import styles from "./Interested.module.scss";
-import TawkMessenger from "../common/tawk-messenger";
+import { openChat as openTawkChat } from "../common/tawk-messenger";
 
 
 const Interested = React.memo(() => {
-  const tawkMessengerRef = useRef(null);
 
-  const openChat = () => {
-    if (tawkMessengerRef.current) {
-      tawkMessengerRef.current.maximize();
-      // console.log(tawkMessengerRef.current);
-    }
-  };
+  const openChat = () => openTawkChat();
 
   const renderContent = (): React.ReactNode => (
     <div className={styles.contentContainer}>
@@ -57,7 +51,6 @@ const Interested = React.memo(() => {
   return (
     <div className={styles.interestedContainer}
     >
-      <TawkMessenger ref={tawkMessengerRef} />
       {renderContent()}
       {renderButtons()}
     </div>

@@ -527,6 +527,42 @@ export const TIMELINE: Array<TimelineNodeV2> = [
     shouldDrawLine: false,
     alignment: Branch.LEFT,
   },
+    {
+    type: NodeTypes.CHECKPOINT,
+    month: "Sept",
+    title: "Teaching Assistant | Fundamentals of Programming (Python)",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Selected again to assist the course at LUT University. Built and maintained IDLE-Mod, a cross-platform Python editor for 650+ students, to support fair assessment.",
+    image: "/timeline/lut_logo.png",
+    slideImage: "/timeline/idle-mod.png",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    month: "Aug",
+    title: "Junior Research Assistant | Sustainable Robotics",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Working at LUT University with Finnish companies on AI integration and task automation. Developing a data-driven AI system for automatic scaffolding generation for Layher Oy.",
+    image: "/timeline/lut_logo.png",
+    slideImage: "/timeline/lut.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
+  {
+    type: NodeTypes.CHECKPOINT,
+    month: "May",
+    title: "Junior Research Assistant | Software Engineering",
+    size: ItemSize.SMALL,
+    subtitle:
+      "Developed material for the bachelor's-level C++ course at LUT University. Responsibilities included recording lecture videos, designing weekly exercises, CodeGrade tests, and the course project.",
+    image: "/timeline/lut_logo.png",
+    slideImage: "/timeline/jra-cpp.jpg",
+    shouldDrawLine: true,
+    alignment: Branch.LEFT,
+  },
   {
     type: NodeTypes.CHECKPOINT,
     month: "Jan",

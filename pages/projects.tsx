@@ -1,6 +1,6 @@
 import { METADATA } from "../constants";
 import Head from "next/head";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { PROJECTS } from "../constants";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -13,11 +13,12 @@ import Cursor from "@/components/common/cursor";
 import ProjectsSection from "@/components/home/projects-slider";
 import ProjectTile from "@/components/common/project-tile";
 import Footer from "@/components/common/footer";
-import TawkMessenger from "@/components/common/tawk-messenger";
+import dynamic from "next/dynamic";
 import Sidebar from "@/components/common/sidebar";
 import Loader from "@/components/common/Loader";
-import Lenis from "@studio-freight/lenis";
 import Button, { ButtonTypes } from "@/components/common/button";
+
+const TawkMessenger = dynamic(() => import("@/components/common/tawk-messenger"), { ssr: false });
 
 const DEBOUNCE_TIME = 100;
 
@@ -53,27 +54,6 @@ export default function ProjectsPage() {
 
   const [isDesktop, setIsDesktop] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-
-  const lenisRef = useRef<Lenis | null>(null);
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      // duration: 2,
-      // easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
-    });
-    lenisRef.current = lenis;
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    requestAnimationFrame(raf);
-
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
 
   // Refresh ScrollTrigger after loader completes
   useEffect(() => {
@@ -123,11 +103,11 @@ export default function ProjectsPage() {
     <div className="fixed top-0 left-0 h-screen w-screen bg-black -z-1"></div>
   );
 
-  const handleLoadComplete = () => {
+  const handleLoadComplete = useCallback(() => {
     setIsLoading(false);
     // Force scroll to top when loader completes
     window.scrollTo(0, 0);
-  };
+  }, []);
 
   if (isDesktop === null) {
     return null;
@@ -213,13 +193,9 @@ export default function ProjectsPage() {
       <>
         <Head>
           <title>{METADATA.title}</title>
-          <style>
-            @import
-            url(&apos;https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap&apos;);
-          </style>
         </Head>
         {isLoading && <Loader onLoadComplete={handleLoadComplete} />}
-        {!isLoading && <Layout>
+        <Layout>
             <Header />
             <ProgressIndicator />
             <Cursor isDesktop={isDesktop} />
@@ -261,7 +237,7 @@ export default function ProjectsPage() {
               {/* <Footer /> */}
             </main>
             <TawkMessenger />
-          </Layout>}
+          </Layout>
       </>
     );
   }

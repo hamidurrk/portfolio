@@ -1,45 +1,13 @@
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { MENULINKS } from "../../constants";
-import Lenis from "@studio-freight/lenis";
+import { scrollToId } from "../../utils/scroll";
 
 const Menu = ({
   setmenuVisible,
 }: {
   setmenuVisible: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const animDuration = 4;
-  const lenisRef = useRef<Lenis | null>(null);
-  const durationRef = useRef<number>(animDuration);
-  
-  const handleMenuClick = (id: string) => {
-    if (!lenisRef.current) {
-      const lenis = new Lenis({
-        duration: animDuration,
-        easing: (t) => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1),
-      });
-
-      lenisRef.current = lenis;
-
-      const raf = (time: number) => {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      };
-
-      requestAnimationFrame(raf);
-    }
-    const element = document.getElementById(id);
-    if (element && lenisRef.current) {
-      lenisRef.current.scrollTo(element);
-
-      // Destroy Lenis instance after the animation duration
-      setTimeout(() => {
-        if (lenisRef.current) {
-          lenisRef.current.destroy();
-          lenisRef.current = null;
-        }
-      }, durationRef.current * 1000); // Convert duration to milliseconds
-    }
-  };
+  const handleMenuClick = (id: string) => scrollToId(id);
   
   return (
     <section

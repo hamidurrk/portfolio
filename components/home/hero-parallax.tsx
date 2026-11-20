@@ -2,20 +2,21 @@ import { MENULINKS } from "../../constants";
 import styles from "./Styles.module.scss";
 import Picture1 from "../../public/hero-parallax/hero_img_5.png";
 import Picture2 from "../../public/hero-parallax/hero_img_6.png";
-import finland from "../../public/hero-parallax/finland.png";
-import PhysicsPage from "../common/physics";
 import Socials from "../common/socials";
 import Expertise from "../common/expertise";
 import AudioPlayer from "../common/Audio";
-import Interested from "../common/Interested";
 import ProjectEntry from "./project-entry";
 import ScrollStats from "./ScrollStats";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef, useEffect, MutableRefObject, useState } from "react";
 import { gsap, Linear } from "gsap";
-import Lenis from "@studio-freight/lenis";
-import { IDesktop, isSmallScreen } from "pages";
+import { scrollToId } from "../../utils/scroll";
+import { isSmallScreen } from "pages";
+
+// matter-js is ~80 kB; load it in its own chunk on the client only.
+const PhysicsPage = dynamic(() => import("../common/physics"), { ssr: false });
 
 const HeroParallax = () => {
   const container = useRef(null);
@@ -28,47 +29,7 @@ const HeroParallax = () => {
     target: container,
     offset: ["start start", "end end"],
   });
-  const animDuration = 4;
-  const lenisRef = useRef<Lenis | null>(null);
-  const durationRef = useRef<number>(animDuration);
-  const handleClick = () => {
-    if (!lenisRef.current) {
-      const lenis = new Lenis({
-        duration: animDuration,
-        easing: (t) => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1),
-      });
-
-      lenisRef.current = lenis;
-
-      const raf = (time: number) => {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      };
-
-      requestAnimationFrame(raf);
-    }
-    const element = document.getElementById("skills");
-    if (element && lenisRef.current) {
-      lenisRef.current.scrollTo(element);
-
-      // Destroy Lenis instance after the animation duration
-      setTimeout(() => {
-        if (lenisRef.current) {
-          lenisRef.current.destroy();
-          lenisRef.current = null;
-        }
-      }, durationRef.current * 1000); // Convert duration to milliseconds
-    }
-  };
-
-  useEffect(() => {
-    return () => {
-      if (lenisRef.current) {
-        lenisRef.current.destroy();
-      }
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const handleClick = () => scrollToId("skills");
 
   const initRevealAnimation = (
     targetSection: MutableRefObject<HTMLDivElement>
@@ -105,16 +66,6 @@ const HeroParallax = () => {
     }
   }, [containerWidth, containerHeight]);
 
-  // useEffect(() => {
-  //   const lenis = new Lenis();
-
-  //   function raf(time: number) {
-  //     lenis.raf(time);
-  //     requestAnimationFrame(raf);
-  //   }
-
-  //   requestAnimationFrame(raf);
-  // }, []);
   useEffect(() => {
     const svg = container.current.querySelector("svg");
     const paths = svg.querySelectorAll("path");
@@ -157,7 +108,7 @@ const HeroParallax = () => {
       // 1
       content: (
         <div className={`seq ${styles.imageContainer}`}>
-          <Image src={isSmallScreen() ?Picture2 : Picture1} layout="fill" alt="image" placeholder="blur" />
+          <Image src={isSmallScreen() ?Picture2 : Picture1} layout="fill" alt="image" placeholder="blur" priority />
           <div className="w-full fixed top-0 py-20 lg:py-4 z-49 bg-gradient-to-b from-black to-transparent"></div>
           <ScrollStats scrollYProgress={scrollYProgress} />
         </div>

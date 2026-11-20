@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { PROJECTS } from "../../constants";
+import { PROJECT_THUMBS } from "./project-thumbs";
 import styles from "./ProjectEntry.module.scss";
 
 const ProjectEntry: React.FC = () => {
@@ -71,28 +71,34 @@ const ProjectEntry: React.FC = () => {
         className={styles.scrollContainer}
       >
         <div className={styles.projectGrid}>
-          {duplicatedProjects.map((project, index) => (
-            <div 
-              key={`${project.name}-${index}`}
-              className={styles.projectCard}
-              style={{
-                background: `linear-gradient(135deg, ${project.gradient[0]}, ${project.gradient[1]})`,
-              }}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className={styles.projectImage}>
-                <Image 
-                  src={project.image} 
-                  alt={project.name}
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="center"
-                  loading="lazy"
-                />
+          {duplicatedProjects.map((project, index) => {
+            // Tiny pre-generated WebP (see scripts/make-project-thumbs.js),
+            // served directly (no optimizer round-trip) over an inline blur.
+            const thumb = PROJECT_THUMBS[project.image];
+            return (
+              <div
+                key={`${project.name}-${index}`}
+                className={styles.projectCard}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div
+                  className={styles.projectImage}
+                  style={thumb ? { backgroundImage: `url(${thumb.blur})` } : undefined}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={thumb ? thumb.src : project.image}
+                    alt={project.name}
+                    width={480}
+                    height={270}
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

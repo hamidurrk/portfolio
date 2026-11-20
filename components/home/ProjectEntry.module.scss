@@ -84,6 +84,7 @@ $tertiary: #995e33;
 
 .projectCard {
   position: relative;
+  background: #111;
   border-radius: 12px;
   overflow: hidden;
   transition: opacity 0.3s ease;
@@ -99,4 +100,16 @@ $tertiary: #995e33;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   position: relative;
+  background-color: #111;
+  background-size: cover;
+  background-position: center;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 }

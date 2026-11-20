@@ -20,6 +20,9 @@ const PhysicsPage = ({ worldWidth, worldHeight }) => {
   ]
   const sceneRef = useRef(null);
   useEffect(() => {
+    let cancelled = false;
+    let instance = null;
+    let observer = null;
     const loadImage = (src) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
@@ -34,6 +37,7 @@ const PhysicsPage = ({ worldWidth, worldHeight }) => {
     };
   
     loadLogos().then(loadedLogos => {
+    if (cancelled) return;
     const Example = {};
 
     Example.timescale = function() {
@@ -191,8 +195,34 @@ const PhysicsPage = ({ worldWidth, worldHeight }) => {
     Example.timescale.title = 'Time Scaling';
     Example.timescale.for = '>=0.14.2';
 
-    Example.timescale();
+    instance = Example.timescale();
+
+    // Only simulate/render while the scene is on screen.
+    let running = true;
+    observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !running) {
+        Matter.Render.run(instance.render);
+        Matter.Runner.run(instance.runner, instance.engine);
+        running = true;
+      } else if (!entry.isIntersecting && running) {
+        instance.stop();
+        running = false;
+      }
     });
+    observer.observe(sceneRef.current);
+    });
+
+    return () => {
+      cancelled = true;
+      if (observer) observer.disconnect();
+      if (instance) {
+        instance.stop();
+        Matter.Engine.clear(instance.engine);
+        if (instance.canvas && instance.canvas.parentNode) {
+          instance.canvas.parentNode.removeChild(instance.canvas);
+        }
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

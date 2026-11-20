@@ -1,7 +1,6 @@
 import styles from "./ProjectTile.module.scss";
 import Image from "next/image";
 import React, { MutableRefObject, useEffect, useRef, useState } from "react";
-import VanillaTilt from "vanilla-tilt";
 import Modal from 'react-modal';
 import { IProject } from "../../constants";
 import Button, { ButtonTypes } from "../common/button";
@@ -35,16 +34,6 @@ const ProjectTile = ({
     embed,
     gradient: [stop1, stop2],
   } = project;
-
-  useEffect(() => {
-    VanillaTilt.init(projectCard.current, {
-      max: 5,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.2,
-      gyroscope: false,
-    });
-  }, [projectCard]);
 
   useEffect(() => {
     Modal.setAppElement('body');
@@ -147,6 +136,7 @@ const ProjectTile = ({
       src={image}
       alt={name}
       layout="fill"
+      sizes="(min-width: 640px) 608px, 100vw"
       className={`${styles.ProjectImg} z-0`}
     />
   );
@@ -195,6 +185,7 @@ const ProjectTile = ({
           src={image}
           alt="Project"
           layout="fill"
+          sizes="(min-width: 640px) 608px, 100vw"
           loading="lazy"
           className="absolute w-full h-full top-0 left-0 opacity-40"
         />

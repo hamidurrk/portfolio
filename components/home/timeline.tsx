@@ -504,13 +504,15 @@ const TimelineSection = ({ isDesktop }: IDesktop) => {
         <div className="absolute h-full w-full">
           {svgCheckpointItems.map((item, index) => (
             <Image
-              className={`link w-full absolute top-0 object-cover slide-${
+              className={`link w-full absolute top-0 object-contain bg-black slide-${
                 index + 1
               }`}
               src={(item as CheckpointNode).slideImage || ""}
               key={`${(item as CheckpointNode).title}-${index}`}
               alt="Timeline"
               layout="fill"
+              objectFit="contain"
+              sizes="(min-width: 768px) 644px, 100vw"
             />
           ))}
         </div>

@@ -1,14 +1,13 @@
 import { MENULINKS } from "../../constants";
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 import styles from "./Footer.module.scss";
 import Button, { ButtonTypes } from "./button";
 import { isSmallScreen } from "pages";
-import TawkMessenger from "../common/tawk-messenger";
+import { openChat as openTawkChat } from "../common/tawk-messenger";
 
 const Footer = () => {
   const [copied, setCopied] = useState(false);
-  const tawkMessengerRef = useRef(null);
   const [imageWidth, setImageWidth] = useState(1440);
 
   const descriptions = {
@@ -87,12 +86,7 @@ const Footer = () => {
     ))
   };
 
-  const openChat = () => {
-    if (tawkMessengerRef.current) {
-      tawkMessengerRef.current.maximize();
-      // console.log(tawkMessengerRef.current);
-    }
-  };
+  const openChat = () => openTawkChat();
 
   const renderFooterContent = (): React.ReactNode => (
     <>
@@ -141,7 +135,6 @@ const Footer = () => {
         role="presentation"
         width={imageWidth}
       />
-      <TawkMessenger ref={tawkMessengerRef} />
       <div className="h-full w-full">
         <div className="section-container flex-col flex h-full justify-end z-10 items-center py-12">
           {renderFooterContent()}

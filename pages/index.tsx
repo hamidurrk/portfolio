@@ -1,6 +1,7 @@
 import { METADATA } from "../constants";
 import Head from "next/head";
-import React, { useEffect, useState, useRef } from "react";
+import dynamic from "next/dynamic";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -10,19 +11,20 @@ import Header from "@/components/common/header";
 import ProgressIndicator from "@/components/common/progress-indicator";
 import Cursor from "@/components/common/cursor";
 import HeroParallax from "@/components/home/hero-parallax";
-import HeroSection from "@/components/home/hero";
 import ProjectsSection from "@/components/home/projects-slider";
-import QuoteSection from "@/components/home/quote";
-import Interested from "@/components/common/Interested";
 import SkillsSection from "@/components/home/skills";
-import CollaborationSection from "@/components/home/collaboration";
-import Footer from "@/components/common/footer";
-import TimelineSection from "@/components/home/timeline";
-import TawkMessenger from "@/components/common/tawk-messenger";
+import QuoteSection from "@/components/home/quote";
 import Sidebar from "@/components/common/sidebar";
-import AboutSection from "@/components/home/about";
 import Loader from "@/components/common/Loader";
-import Lenis from "@studio-freight/lenis";
+
+import TimelineSection from "@/components/home/timeline";
+import AboutSection from "@/components/home/about";
+import Footer from "@/components/common/footer";
+
+// Third-party chat widget: own chunk, mounted when the browser is idle.
+const TawkMessenger = dynamic(() => import("@/components/common/tawk-messenger"), {
+  ssr: false,
+});
 
 const DEBOUNCE_TIME = 100;
 
@@ -34,88 +36,66 @@ export interface IDesktop {
   isDesktop: boolean;
 }
 
-export default function Home() {
+if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
   gsap.config({ nullTargetWarn: false });
+}
 
-  const [isDesktop, setIsDesktop] = useState(null);
+const detectDesktop = (): boolean =>
+  typeof window.orientation === "undefined" &&
+  navigator.userAgent.indexOf("IEMobile") === -1;
+
+export default function Home() {
+  const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const lenisRef = useRef<Lenis | null>(null);
-  
+  // Detect device on the client; content mounts right away (behind the loader)
+  // so its images start downloading while the loader is visible.
   useEffect(() => {
-    const lenis = new Lenis({
-      // duration: 2, 
-      // easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1, 
-    });
-    lenisRef.current = lenis;
-    
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    window.history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+    setIsDesktop(detectDesktop());
+
+    let timer: ReturnType<typeof setTimeout>;
+    const onResize = () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => setIsDesktop(detectDesktop()), DEBOUNCE_TIME);
     };
-    
-    requestAnimationFrame(raf);
-    
+    window.addEventListener("resize", onResize);
     return () => {
-      lenis.destroy();
+      clearTimeout(timer);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
-  // Refresh ScrollTrigger after loader completes
   useEffect(() => {
-    if (!isLoading) {
-      // Delay to ensure DOM is fully rendered and painted
-      const timeoutId = setTimeout(() => {
-        // Refresh all ScrollTrigger instances
-        ScrollTrigger.refresh();
-        // Dispatch resize event to trigger any size-dependent calculations
-        window.dispatchEvent(new Event('resize'));
-        // Force a small scroll and back to ensure scroll-based animations initialize
-        window.scrollTo(0, 1);
-        requestAnimationFrame(() => {
-          window.scrollTo(0, 0);
-        });
-      }, 200);
-      
-      return () => clearTimeout(timeoutId);
+    if (isDesktop === false) {
+      document.documentElement.style.overflowX = "hidden";
     }
-  }, [isLoading]);
-  
-  let timer: NodeJS.Timeout = null;
-  
-  // const debouncedDimensionCalculator = () => {
-  //   if (timer) {
-  //     clearTimeout(timer);
-  //   }
-  //   timer = setTimeout(() => {
-  //     const isDesktopResult = (window.innerWidth / window.innerHeight) > 1.4699;
-  //     window.history.scrollRestoration = "manual";
-  //     setIsDesktop(isDesktopResult);
-      
-  //   }, DEBOUNCE_TIME);
-  // };
+  }, [isDesktop]);
 
-  const debouncedDimensionCalculator = () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      const isDesktopResult =
-        typeof window.orientation === "undefined" &&
-        navigator.userAgent.indexOf("IEMobile") === -1;
-
-      window.history.scrollRestoration = "manual";
-
-      setIsDesktop(isDesktopResult);
-    }, DEBOUNCE_TIME);
-  };
-  
+  // Lock scrolling while the loader covers the page.
   useEffect(() => {
-    debouncedDimensionCalculator();
+    document.body.style.overflow = isLoading ? "hidden" : "";
+  }, [isLoading]);
 
-    window.addEventListener("resize", debouncedDimensionCalculator);
-    return () =>
-      window.removeEventListener("resize", debouncedDimensionCalculator);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  // Recalculate scroll-driven animations once the loader is gone.
+  useEffect(() => {
+    if (isLoading) return;
+    const timeoutId = setTimeout(() => {
+      ScrollTrigger.refresh();
+      // Some sections size themselves on resize; nudge scroll so
+      // scroll-driven animations initialise.
+      window.dispatchEvent(new Event("resize"));
+      window.scrollTo(0, 1);
+      requestAnimationFrame(() => window.scrollTo(0, 0));
+    }, 50);
+    return () => clearTimeout(timeoutId);
+  }, [isLoading]);
+
+  const handleLoadComplete = useCallback(() => {
+    setIsLoading(false);
+    window.scrollTo(0, 0);
   }, []);
 
   const renderBackdrop = (): React.ReactNode => (
@@ -125,60 +105,37 @@ export default function Home() {
   const renderGap = (): React.ReactNode => (
     <div style={{ height: "35vh" }}></div>
   );
-  
-  const renderHero = (): React.ReactNode => {
-    if (!isDesktop) {
-      // return <HeroSection />;
-    }
-    return <HeroParallax />;
-  };
 
-  const handleLoadComplete = () => {
-    setIsLoading(false);
-    // Force scroll to top when loader completes
-    window.scrollTo(0, 0);
-  };
-
-  if (isDesktop === null) {
-    return null; // or a loading spinner, etc.
-  } else {
-    // console.log("Desktop not null: ", isDesktop);
-    if (!isDesktop) {
-      document.documentElement.style.overflowX = 'hidden';
-    }
+  const ready = isDesktop !== null;
 
   return (
     <>
       <Head>
         <title>{METADATA.title}</title>
-        <style>
-        @import url(&apos;https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap&apos;);
-        </style>
       </Head>
-      {isLoading && <Loader onLoadComplete={handleLoadComplete} />}
-      {!isLoading && <Layout>
-        <Header />
-        <ProgressIndicator />
-        <Cursor isDesktop={isDesktop} />
-        <main className="flex-col flex">
-          {renderBackdrop()}
-          {renderHero()}
-          { isSmallScreen() ? <Sidebar /> : null }
-          {/* <HeroParallax /> */}
-          {/* <HeroSection /> */}
-          <ProjectsSection isDesktop={true} />
-          {/* { isSmallScreen() ? <Interested /> : null } */}
-          <SkillsSection />
-          <QuoteSection />
-          {/* <CollaborationSection /> */}
-          <TimelineSection isDesktop={isDesktop} />
-          {isDesktop ? null : renderGap()}
-          <AboutSection />
-          <Footer />
-        </main>
-        <TawkMessenger />
-      </Layout>}
+      <Layout>
+        {isLoading && <Loader onLoadComplete={handleLoadComplete} />}
+        {ready && (
+          <>
+            <Header />
+            <ProgressIndicator />
+            <Cursor isDesktop={isDesktop} />
+            <main className="flex-col flex">
+              {renderBackdrop()}
+              <HeroParallax />
+              {isSmallScreen() ? <Sidebar /> : null}
+              <ProjectsSection isDesktop={true} />
+              <SkillsSection />
+              <QuoteSection />
+              <TimelineSection isDesktop={isDesktop} />
+              {isDesktop ? null : renderGap()}
+              <AboutSection />
+              <Footer />
+            </main>
+            <TawkMessenger />
+          </>
+        )}
+      </Layout>
     </>
   );
-  }
 }
