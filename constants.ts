@@ -616,7 +616,7 @@ export const TIMELINE: Array<TimelineNodeV2> = [
   {
     type: NodeTypes.CHECKPOINT,
     month: "Sept",
-    title: "Started B.Sc. in Computational Engineering and Artificial Intelligence",
+    title: "Started B.Sc. in Computational Science and Artificial Intelligence",
     size: ItemSize.SMALL,
     subtitle:
       "Studying at LUT University in Finland. My major focuses on Machine Learning Models and AI, while my minor, Software and Systems Engineering, covers development of software systems.",

@@ -34,6 +34,9 @@ body {
 }
 
 html {
+  // Keep the scrollbar's space reserved while the intro loader locks scrolling,
+  // so nothing shifts sideways when the lock is released.
+  scrollbar-gutter: stable;
   // scroll-behavior: smooth;
   // overflow-x: hidden;
 

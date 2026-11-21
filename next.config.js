@@ -13,8 +13,10 @@ if (!(process.env.NODE_OPTIONS || "").includes("node-compat.js")) {
 module.exports = {
   reactStrictMode: false,
   images: {
-    // Serve AVIF/WebP on Vercel instead of the original JPEG/PNG.
-    formats: ["image/avif", "image/webp"],
+    // Serve WebP instead of the original JPEG/PNG. AVIF is left out on
+    // purpose: Next 12's AVIF encoder (with sharp 0.33) produced a corrupt,
+    // header-only file for some images (e.g. /timeline/idle-mod.png).
+    formats: ["image/webp"],
     // Optimized images are immutable per URL; cache them for 30 days.
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },

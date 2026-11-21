@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useTransform, MotionValue } from 'framer-motion';
+
+// Final zoom of the hero photo card (25vw x 25vh -> ~69vw x 69vh).
+// Used by hero-parallax for the photo's scale and here for render resolution.
+export const PHOTO_END_SCALE = 2.75;
 import styles from './ScrollStats.module.scss';
 
 interface ScrollStatsProps {
@@ -71,15 +75,16 @@ const ScrollStats: React.FC<ScrollStatsProps> = ({ scrollYProgress }) => {
   return (
     <motion.div 
       className={styles.scrollStatsContainer}
-      style={{ opacity, y: yPosition, scale: 0.25, transformOrigin: 'top left' }}
+      style={{ opacity, y: yPosition, scale: 1 / PHOTO_END_SCALE, transformOrigin: 'top left' }}
       initial={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* Inner wrapper rendered at 4× CSS size so the GPU cache is always
-          high-resolution. The outer scale(0.25) shrinks it back to 1× at
-          scroll-start; as the parent container (scale4: 1→4) zooms in, the
-          net visual factor reaches 1× of this large render → no upscaling. */}
-      <div style={{ transform: 'scale(4)', transformOrigin: 'top left' }}>
+      {/* Inner wrapper rendered at PHOTO_END_SCALE× CSS size so the GPU cache
+          is always high-resolution. The outer scale(1/PHOTO_END_SCALE) shrinks
+          it back to 1× at scroll-start; as the parent photo card zooms in
+          (1 → PHOTO_END_SCALE), the net visual factor reaches 1× of this large
+          render → no upscaling. */}
+      <div style={{ transform: `scale(${PHOTO_END_SCALE})`, transformOrigin: 'top left' }}>
         <div className={styles.scrollStatsInner}>
       <div className={styles.progressIndicator}>
         <div className={styles.progressTrack}>

@@ -40,14 +40,14 @@ const Cursor = ({ isDesktop }: IDesktop) => {
       y: e.clientY,
       duration: 0.1,
       ease: Linear.easeNone,
-      overwrite: true,
+      overwrite: "auto", // replace only the previous x/y tween, keep hover scale
     });
     gsap.to(follower.current, {
       x: e.clientX,
       y: e.clientY,
       duration: 0.3,
       ease: Linear.easeNone,
-      overwrite: true,
+      overwrite: "auto", // replace only the previous x/y tween, keep hover scale
     });
   };
 
@@ -56,17 +56,40 @@ const Cursor = ({ isDesktop }: IDesktop) => {
     cursor.current.classList.remove("hidden");
 
     document.addEventListener("mousemove", moveCircle);
+    // One delegated listener pair covers every `.link`, including ones rendered later.
+    document.addEventListener("mouseover", onPointerOver);
+    document.addEventListener("mouseout", onPointerOut);
+  };
 
-    document.querySelectorAll(".link").forEach((el) => {
-      el.addEventListener("mouseenter", onHover);
-      el.addEventListener("mouseleave", onUnhover);
-    });
+  // Currently hovered `.link`, so moving between its children doesn't re-trigger.
+  const hoveredLink = useRef<Element | null>(null);
+
+  const onPointerOver = (e: MouseEvent) => {
+    const link = (e.target as Element).closest?.(".link");
+    if (link && link !== hoveredLink.current) {
+      hoveredLink.current = link;
+      onHover();
+    }
+  };
+
+  const onPointerOut = (e: MouseEvent) => {
+    if (!hoveredLink.current) return;
+    const next = e.relatedTarget as Element | null;
+    if (!next || !hoveredLink.current.contains(next)) {
+      const nextLink = next?.closest?.(".link") ?? null;
+      hoveredLink.current = nextLink;
+      if (!nextLink) onUnhover();
+    }
   };
 
   useEffect(() => {
-    if (isDesktop) {
-      initCursorAnimation();
-    }
+    if (!isDesktop) return;
+    initCursorAnimation();
+    return () => {
+      document.removeEventListener("mousemove", moveCircle);
+      document.removeEventListener("mouseover", onPointerOver);
+      document.removeEventListener("mouseout", onPointerOut);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cursor, follower, isDesktop]);
 

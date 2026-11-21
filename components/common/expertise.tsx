@@ -3,44 +3,16 @@ import styles from './Expertise.module.scss';
 import Ball from "./ball";
 import { isSmallScreen } from 'pages';
 
+// One tab per full ball bounce (Ball.module.scss: 0.7s, alternate => 1.4s).
+const CYCLE_MS = 1400;
+
 const Expertise = () => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [isBouncing, setIsBouncing] = useState<boolean>(true);
-  const [animDelay, setAnimDelay] = useState<number>(1400);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const startTimeRef = useRef<number>(Date.now());
-  const remainingTimeRef = useRef<number>(1400);
-  const [animationKey, setAnimationKey] = useState(0);
-  useEffect(() => {
-    // console.log('hoveredItem:', hoveredItem);
-  }, [hoveredItem]);
-
-  const handleMouseLeave = () => {
-    setIsBouncing(true); // Resume animation
-    setAnimDelay(remainingTimeRef.current);
-    startTimeRef.current = Date.now();
-    setAnimationKey((prevKey) => prevKey + 1);
-
-    const keys = Object.keys(descriptions);
-    let index = keys.indexOf(hoveredItem as string);
-
-    intervalRef.current = setInterval(() => {
-      setHoveredItem(keys[index]);
-      index = (index + 1) % keys.length;
-      setIsBouncing(true);
-    }, animDelay);
-  };
-
-  useEffect(() => {
-    if (isBouncing) {
-      startTimeRef.current = Date.now();
-      const timeoutId = setTimeout(() => {
-        setAnimDelay(1400); // Reset to 1000ms after the remaining time
-      }, remainingTimeRef.current);
-
-      return () => clearTimeout(timeoutId);
-    }
-  }, [isBouncing]);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
+  // Bumped on resume so the ball's bounce restarts in sync with the timer.
+  const [resumeCount, setResumeCount] = useState(0);
+  // Index (in `keys`) of the tab currently shown; -1 = none yet.
+  const indexRef = useRef<number>(-1);
 
   const descriptions = {
     // LinkedIn: {
@@ -109,39 +81,33 @@ const Expertise = () => {
     Discord: "#FFF101",
   };
 
+  const keys = Object.keys(descriptions);
+
+  // The only timer: runs while not paused, cleared on pause/unmount.
   useEffect(() => {
-    const keys = Object.keys(descriptions);
-    let index = 0;
-
-    const startInterval = () => {
-      intervalRef.current = setInterval(() => {
-        setHoveredItem(keys[index]);
-        setIsBouncing(true);
-        index = (index + 1) % keys.length;
-      }, animDelay);
-    };
-
-    startInterval();
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
+    if (isPaused) return;
+    const id = setInterval(() => {
+      indexRef.current = (indexRef.current + 1) % keys.length;
+      setHoveredItem(keys[indexRef.current]);
+    }, CYCLE_MS);
+    return () => clearInterval(id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [animDelay]);
+  }, [isPaused]);
 
   const handleHover = (item: keyof typeof descriptions) => {
-    // console.log('handleHover called with item:', item);
+    indexRef.current = keys.indexOf(item);
     setHoveredItem(item);
-    setIsBouncing(false);
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-    }
+    setIsPaused(true);
+  };
+
+  // Resume from the hovered tab: it stays one full cycle, then rotation continues.
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+    setResumeCount((n) => n + 1);
   };
 
   return (
-    <div className={styles.container} key={animationKey}>
+    <div className={styles.container}>
       {isSmallScreen() && <h1 className={styles.title}>My Domains</h1>}
       <div className={styles.grid}>
         {Object.keys(descriptions).map((item) => (
@@ -179,9 +145,10 @@ const Expertise = () => {
               </p>
           <div className={styles.ballContainer}>
             <Ball
+              key={resumeCount}
               backgroundColor={colorMapping[hoveredItem]}
               ballColor={ballColor[hoveredItem]} 
-              isBouncing={isBouncing}
+              isBouncing={!isPaused}
             />
           </div>
         </div>
